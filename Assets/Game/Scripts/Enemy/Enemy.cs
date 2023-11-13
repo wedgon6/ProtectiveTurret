@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPoolObject
 {
     [SerializeField] private float _health;
 
@@ -9,6 +9,11 @@ public class Enemy : MonoBehaviour
     public float Health => _health;
 
     public GameObject Target => _target;
+
+    public void OnSpawn()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void Initialize(GameObject target)
     {
@@ -29,5 +34,10 @@ public class Enemy : MonoBehaviour
         {
             _health = 0;
         }
+    }
+
+    public void Push()
+    {
+        throw new System.NotImplementedException();
     }
 }

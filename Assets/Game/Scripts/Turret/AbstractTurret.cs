@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AbstractTurret : MonoBehaviour
@@ -11,7 +12,6 @@ public abstract class AbstractTurret : MonoBehaviour
     protected int _clipSize;
     protected Coroutine _corontine;
     //protected event Action ClipSizeChanged;
-
 
     public int CurrentSizeClip => _clipSize;
 
