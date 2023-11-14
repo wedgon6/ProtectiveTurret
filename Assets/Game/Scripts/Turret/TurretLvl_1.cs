@@ -19,7 +19,7 @@ public class TurretLvl_1 : AbstractTurret
 
     private void FixedUpdate()
     {
-        if(_currentTarget != null)
+        if(_currentTarget != null && _currentTarget.isActiveAndEnabled != false)
         {
             LookAtEnemy();
         }

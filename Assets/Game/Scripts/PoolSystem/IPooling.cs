@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IPooling 
 {
-    public Queue<IPoolObject> PoolObjects { get; }
-    public void InstantiateObject();
+    public int Capasity { get; }
+    public bool TryPoolObject(out IPoolObject result);
+    public void PoolObject(IPoolObject poolObject);
 }

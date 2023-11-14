@@ -5,19 +5,16 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private float _health;
 
     private GameObject _target;
+    private PoolEnemy _poolEnemy;
 
     public float Health => _health;
 
     public GameObject Target => _target;
 
-    public void OnSpawn()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Initialize(GameObject target)
+    public void Initialize(GameObject target, PoolEnemy poolEnemy)
     {
         _target = target;
+        _poolEnemy = poolEnemy;
     }
 
     public void TakeDamage(float damage)
@@ -36,8 +33,9 @@ public class Enemy : MonoBehaviour, IPoolObject
         }
     }
 
-    public void Push()
+    public void ReternToPool()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
+        _poolEnemy.PoolObject(this);
     }
 }

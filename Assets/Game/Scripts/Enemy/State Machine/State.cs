@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
@@ -10,6 +11,11 @@ public abstract class State : MonoBehaviour
     public Enemy Enemy => _enemy;
 
     protected GameObject Target { get; set; }
+
+    private void Awake()
+    {
+        _enemy = GetComponent<Enemy>();
+    }
 
     public void Enter(GameObject target)
     {

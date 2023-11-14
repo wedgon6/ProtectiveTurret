@@ -11,6 +11,6 @@ public class DyingState : State
 
     private void Die()
     {
-        Destroy(gameObject);    
+        Enemy.ReternToPool();
     }
 }

@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour, IPooling
+public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _target;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
+    [SerializeField] private PoolEnemy _poolEnemy;
 
     private Wave _currentWave;
     private int _currentWaveNumber = 0;
     private float _timeAfterLastSpawn;
     private int _spawned;
-
-    public Queue<IPoolObject> PoolObjects => new Queue<IPoolObject>();
 
     private void Awake()
     {
@@ -30,7 +29,7 @@ public class EnemySpawner : MonoBehaviour, IPooling
 
         if (_timeAfterLastSpawn >= _currentWave.Delay)
         {
-            InstantiateObject();
+            InitializeEnemy();
             _spawned++;
             _timeAfterLastSpawn = 0;
         }
@@ -52,10 +51,7 @@ public class EnemySpawner : MonoBehaviour, IPooling
 
         Enemy enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation, 
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
-        enemy.Initialize(_target);
-        PoolObjects.Enqueue(enemy);
-        Debug.Log($"{PoolObjects.Count}");
-
+        enemy.Initialize(_target, _poolEnemy);
     }
 
     private void SetWave(int index)
@@ -74,28 +70,6 @@ public class EnemySpawner : MonoBehaviour, IPooling
         int waitTime = 5;
         yield return new WaitForSeconds(waitTime);
         NextWave();
-    }
-
-    public void InstantiateObject()
-    {
-        if(PoolObjects.Count == 0)
-        {
-            InitializeEnemy();
-            return;
-        }
-
-        var spawnOnject = PoolObjects.Dequeue();
-        PullEnemy(spawnOnject);
-    }
-
-    private void PullEnemy(IPoolObject poolObject)
-    {
-        Enemy enemy = poolObject as Enemy;
-        enemy.transform.position = _spawnPoint[0].position;
-        enemy.transform.rotation = _spawnPoint[0].rotation;
-        enemy.gameObject.SetActive(true);
-        PoolObjects.Enqueue(enemy);
-        Debug.Log($"{PoolObjects.Count}");
     }
 }
 
