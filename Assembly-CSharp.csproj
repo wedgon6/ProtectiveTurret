@@ -69,10 +69,10 @@
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPooling.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\Transition.cs" />
+    <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition\DyingTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Move\MovementPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

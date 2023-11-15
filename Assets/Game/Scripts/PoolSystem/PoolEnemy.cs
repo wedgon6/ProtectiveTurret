@@ -2,14 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class PoolEnemy : IPooling
+public class PoolEnemy : MonoBehaviour, IPooling
 {
     [SerializeField] private Transform _container;
 
-    private const int CapasityEnemy = 3;
     private List<Enemy> _enemiesInPool = new List<Enemy>();
 
-    public int Capasity => CapasityEnemy;
 
     public bool TryPoolObject(out IPoolObject result)
     {

@@ -11,11 +11,16 @@ public class EnemyStateMachine : MonoBehaviour
 
     public State CurrentState => _currentState;
 
+    public void ResetStete()
+    {
+        Reset(_firstState);
+    }
+
     private void Start()
     {
-        _target = GetComponent<Enemy>().Target;
-        Reset(_firstState);
         _enemy = GetComponent<Enemy>();
+        _target = _enemy.Target;
+        Reset(_firstState);
     }
 
     private void Update()

@@ -48,10 +48,22 @@ public class EnemySpawner : MonoBehaviour
     private void InitializeEnemy()
     {
         int currentSpawnPont = Random.Range(0, _spawnPoint.Length);
+        Enemy enemy;
 
-        Enemy enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation, 
+
+        if (_poolEnemy.TryPoolObject(out IPoolObject enemyPool))
+        {
+            enemy = enemyPool as Enemy;
+            enemy.transform.position = _spawnPoint[currentSpawnPont].position;
+            enemy.gameObject.SetActive(true);
+            enemy.ResetState();
+        }
+        else
+        {
+            enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
-        enemy.Initialize(_target, _poolEnemy);
+            enemy.Initialize(_target, _poolEnemy);
+        }
     }
 
     private void SetWave(int index)

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DyingState : State
 {
-    private void Start()
+    private void Update()
     {
-        Die();
+        if (Enemy.IsDead)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
-        Enemy.ReternToPool();
+        Enemy.ReturnToPool();
     }
 }

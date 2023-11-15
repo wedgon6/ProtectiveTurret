@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPoolObject
 {
-    public void ReternToPool();
+    public void ReturnToPool();
 }
