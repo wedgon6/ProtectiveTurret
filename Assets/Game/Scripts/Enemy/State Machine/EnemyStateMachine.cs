@@ -5,7 +5,7 @@ public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
 
-    private GameObject _target;
+    private ReadLine _target;
     private State _currentState;
     private Enemy _enemy;
 

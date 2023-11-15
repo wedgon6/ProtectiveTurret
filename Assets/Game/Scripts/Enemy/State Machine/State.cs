@@ -10,14 +10,14 @@ public abstract class State : MonoBehaviour
 
     public Enemy Enemy => _enemy;
 
-    protected GameObject Target { get; set; }
+    protected ReadLine Target { get; set; }
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
     }
 
-    public void Enter(GameObject target)
+    public void Enter(ReadLine target)
     {
         if (enabled == false)
         {

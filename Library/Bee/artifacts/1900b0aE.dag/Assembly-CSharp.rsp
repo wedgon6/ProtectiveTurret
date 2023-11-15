@@ -358,13 +358,17 @@
 "Assets/Game/Scripts/Enemy/State Machine/EnemyTransition/DyingTransition.cs"
 "Assets/Game/Scripts/Enemy/State Machine/State.cs"
 "Assets/Game/Scripts/Enemy/State Machine/Transition.cs"
+"Assets/Game/Scripts/Map/ReadLine.cs"
 "Assets/Game/Scripts/Move/MovementPlayer.cs"
+"Assets/Game/Scripts/Player/Player.cs"
+"Assets/Game/Scripts/Player/PlayerMoney.cs"
 "Assets/Game/Scripts/PoolSystem/IPooling.cs"
 "Assets/Game/Scripts/PoolSystem/IPoolObject.cs"
 "Assets/Game/Scripts/PoolSystem/PoolEnemy.cs"
 "Assets/Game/Scripts/Turret/AbstractTurret.cs"
 "Assets/Game/Scripts/Turret/Bullet.cs"
 "Assets/Game/Scripts/Turret/TurretLvl_1.cs"
+"Assets/Game/Scripts/UI/MoneuViev.cs"
 "Assets/Game/Scripts/UI/SizeClipUI.cs"
 -langversion:9.0
 

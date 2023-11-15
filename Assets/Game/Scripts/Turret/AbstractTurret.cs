@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AbstractTurret : MonoBehaviour
@@ -11,7 +10,6 @@ public abstract class AbstractTurret : MonoBehaviour
     protected Enemy _currentTarget;
     protected int _clipSize;
     protected Coroutine _corontine;
-    //protected event Action ClipSizeChanged;
 
     public int CurrentSizeClip => _clipSize;
 
@@ -19,6 +17,7 @@ public abstract class AbstractTurret : MonoBehaviour
 
     protected virtual void FindTarget()
     {
+        transform.rotation = Quaternion.identity;
         var colliders = Physics.OverlapSphere(transform.position, SearchRadius);
 
         for (int i = 0; i < colliders.Length; i++)

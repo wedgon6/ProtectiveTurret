@@ -4,21 +4,26 @@ public class Enemy : MonoBehaviour, IPoolObject
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private EnemyStateMachine _stateMachine;
+    [SerializeField] private int _revard;
 
-    private GameObject _target;
+    private ReadLine _target;
     private PoolEnemy _poolEnemy;
     private float _health;
+    private Player _player;
     private bool _isDead;
 
     public float Health => _health;
     public bool IsDead => _isDead;
-    public GameObject Target => _target;
+    public ReadLine Target => _target;
+    public int Revard => _revard;
+    public Player Player => _player;
 
-    public void Initialize(GameObject target, PoolEnemy poolEnemy)
+    public void Initialize(ReadLine target, PoolEnemy poolEnemy, Player player)
     {
         _target = target;
         _poolEnemy = poolEnemy;
         _health = _maxHealth;
+        _player = player;
     }
 
     public void TakeDamage(float damage)

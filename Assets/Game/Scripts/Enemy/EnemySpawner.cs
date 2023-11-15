@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _target;
+    [SerializeField] private ReadLine _target;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private PoolEnemy _poolEnemy;
+    [SerializeField] private Player _player;
 
     private Wave _currentWave;
     private int _currentWaveNumber = 0;
@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
         {
             enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
-            enemy.Initialize(_target, _poolEnemy);
+            enemy.Initialize(_target, _poolEnemy, _player);
         }
     }
 

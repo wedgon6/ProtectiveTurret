@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 30
   _stateMachine: {fileID: 8062840432252478581}
+  _revard: 2
 --- !u!114 &8062840432252478581
 MonoBehaviour:
   m_ObjectHideFlags: 0

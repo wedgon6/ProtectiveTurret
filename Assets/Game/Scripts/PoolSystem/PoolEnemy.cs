@@ -8,7 +8,6 @@ public class PoolEnemy : MonoBehaviour, IPooling
 
     private List<Enemy> _enemiesInPool = new List<Enemy>();
 
-
     public bool TryPoolObject(out IPoolObject result)
     {
         result = _enemiesInPool.FirstOrDefault(p => p.gameObject.activeSelf == false);
