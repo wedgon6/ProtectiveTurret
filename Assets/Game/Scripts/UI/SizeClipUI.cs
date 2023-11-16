@@ -7,7 +7,7 @@ using UnityEngine;
 public class SizeClipUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
-    [SerializeField] private TurretLvl_1 _clip;
+    [SerializeField] private AbstractTurret _clip;
 
     private void Start()
     {
@@ -16,12 +16,12 @@ public class SizeClipUI : MonoBehaviour
 
     private void OnEnable()
     {
-        _clip.ClipSizeChanged += OnAmountChanged;
+        _clip.onClipSizeChanged += OnAmountChanged;
     }
 
     private void OnDisable()
     {
-        _clip.ClipSizeChanged -= OnAmountChanged;
+        _clip.onClipSizeChanged -= OnAmountChanged;
     }
 
     private void OnAmountChanged()

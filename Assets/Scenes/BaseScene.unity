@@ -985,6 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cae4a67a3dc5d4aa25b145d3caa017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _poolBullet: {fileID: 1883925414}
   _shootPoints:
   - {fileID: 1787993228}
   _bullet: {fileID: 6573033793096541921, guid: f9217ff16eb2985469df087ebdf769b5, type: 3}
@@ -1237,7 +1238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f14796b7eba2ab4cb087f55a7f48608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 1001777547}
 --- !u!1 &1110654306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1649,7 @@ GameObject:
   - component: {fileID: 1883925411}
   - component: {fileID: 1883925412}
   - component: {fileID: 1883925413}
+  - component: {fileID: 1883925414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1789,6 +1790,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6535311ac8987428a7acd0af7e418b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1883925414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883925404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1894791198

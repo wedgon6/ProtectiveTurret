@@ -2,16 +2,24 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UIElements;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPoolObject
 {
     [SerializeField] private float _damage;
 
     private float _speedBullet;
     private Rigidbody _rigidbody;
+    private PoolBullet _poolBullet;
 
-    public void Initialize(float speedBullet)
+    public void Initialize(float speedBullet, PoolBullet poolBullet)
     {
         _speedBullet = speedBullet;
+        _poolBullet = poolBullet;
+    }
+
+    public void ReturnToPool()
+    {
+        gameObject.SetActive(false);
+        _poolBullet.PoolObject(this);
     }
 
     private void Awake()
@@ -29,16 +37,7 @@ public class Bullet : MonoBehaviour
         if(collision.collider.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.TryGetComponent(out Enemy enemy))
-        {
-            enemy.TakeDamage(_damage);
-            Destroy(gameObject);
+            ReturnToPool();
         }
     }
 }

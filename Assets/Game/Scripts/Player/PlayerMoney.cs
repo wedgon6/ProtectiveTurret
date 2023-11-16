@@ -6,7 +6,7 @@ public class PlayerMoney : MonoBehaviour
     private int _currentMoney = 0;
 
     public int CurrentMoney => _currentMoney;
-    public event Action ChengetMoney;
+    public Action onChengetMoney;
 
     public void AddMoney(int money)
     {
@@ -14,6 +14,6 @@ public class PlayerMoney : MonoBehaviour
             return;
 
         _currentMoney += money;
-        ChengetMoney?.Invoke();
+        onChengetMoney?.Invoke();
     }
 }

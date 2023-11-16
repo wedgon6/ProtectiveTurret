@@ -61,8 +61,11 @@
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\MovmentState.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Game\Scripts\Map\ReadLine.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\State.cs" />
+    <Compile Include="Assets\Game\Scripts\UI\MoneuViev.cs" />
     <Compile Include="Assets\Game\InputSystem\PlayerInput.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
@@ -72,11 +75,9 @@
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition\DyingTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Move\MovementPlayer.cs" />
-    <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
-    <Compile Include="Assets\Game\Scripts\Map\ReadLine.cs" />
-    <Compile Include="Assets\Game\Scripts\UI\MoneuViev.cs" />
+    <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
+    <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

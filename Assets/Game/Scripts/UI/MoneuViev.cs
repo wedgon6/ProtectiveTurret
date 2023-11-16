@@ -15,12 +15,12 @@ public class MoneuViev : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.ChengetMoney += OnAmountChanged;
+        _player.onChengetMoney += OnAmountChanged;
     }
 
     private void OnDisable()
     {
-        _player.ChengetMoney -= OnAmountChanged;
+        _player.onChengetMoney -= OnAmountChanged;
     }
 
     private void OnAmountChanged()

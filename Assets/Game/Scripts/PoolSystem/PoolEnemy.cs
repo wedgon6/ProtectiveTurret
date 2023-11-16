@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PoolEnemy : MonoBehaviour, IPooling
 {
-    [SerializeField] private Transform _container;
-
     private List<Enemy> _enemiesInPool = new List<Enemy>();
 
     public bool TryPoolObject(out IPoolObject result)
