@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -70,12 +67,5 @@ public class MovementPlayer : MonoBehaviour
         right.y = 0;
 
         return right.normalized;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawRay(transform.position, Vector3.left*10);
     }
 }

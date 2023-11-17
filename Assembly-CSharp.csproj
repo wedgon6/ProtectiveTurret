@@ -64,6 +64,7 @@
     <Compile Include="Assets\Game\Scripts\Map\ReadLine.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\State.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MoneuViev.cs" />
+    <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
     <Compile Include="Assets\Game\InputSystem\PlayerInput.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
@@ -77,7 +78,7 @@
     <Compile Include="Assets\Game\Scripts\Move\MovementPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
+    <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

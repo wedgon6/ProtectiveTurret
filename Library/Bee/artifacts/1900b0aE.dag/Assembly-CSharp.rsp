@@ -358,6 +358,7 @@
 "Assets/Game/Scripts/Enemy/State Machine/EnemyTransition/DyingTransition.cs"
 "Assets/Game/Scripts/Enemy/State Machine/State.cs"
 "Assets/Game/Scripts/Enemy/State Machine/Transition.cs"
+"Assets/Game/Scripts/Map/Barrier.cs"
 "Assets/Game/Scripts/Map/ReadLine.cs"
 "Assets/Game/Scripts/Move/MovementPlayer.cs"
 "Assets/Game/Scripts/Player/Player.cs"

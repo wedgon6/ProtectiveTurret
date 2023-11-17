@@ -67,18 +67,17 @@ public abstract class AbstractTurret : MonoBehaviour
 
         while(curretPoint <= _shootPoints.Length)
         {
+            if (_currentCoutBullet == 0)
+                CorountineStart(Recharge());
+
             for (int j = 0; j < _shootPoints.Length; j++)
             {
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(_bullet, _shootPoints[j].position, _shootPoints[j].rotation).Initialize(SpeedBullet, _poolBullet);
-                //InstantiateBullet(j);
+                InstantiateBullet(j);
                 _currentCoutBullet--;
                 onClipSizeChanged?.Invoke();
 
                 curretPoint = j;
-
-                if (_currentCoutBullet == 0)
-                    CorountineStart(Recharge());
             }
         }
 

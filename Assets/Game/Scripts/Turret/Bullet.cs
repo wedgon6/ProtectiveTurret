@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour, IPoolObject
     {
         gameObject.SetActive(false);
         _poolBullet.PoolObject(this);
+        _rigidbody.velocity = Vector3.zero;
+        transform.position = Vector3.zero;
     }
 
     private void Awake()
@@ -37,6 +39,13 @@ public class Bullet : MonoBehaviour, IPoolObject
         if(collision.collider.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
+            Debug.Log($"{collision}");
+            ReturnToPool();
+        }
+
+        if(collision.collider.TryGetComponent(out Barrier barrier))
+        {
+            Debug.Log($"{collision}");
             ReturnToPool();
         }
     }
