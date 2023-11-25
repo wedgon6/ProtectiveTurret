@@ -1317,7 +1317,7 @@ MonoBehaviour:
   _target: {fileID: 731764867}
   _waves:
   - Template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    Delay: 0
+    Delay: 0.5
     Count: 15
   - Template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
     Delay: 1

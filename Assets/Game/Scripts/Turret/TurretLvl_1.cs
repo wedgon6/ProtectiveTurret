@@ -1,7 +1,7 @@
 public class TurretLvl_1 : AbstractTurret
 {
     protected int _clipSizeLvl1 = 50;
-    protected int _cooldownLvl1 = 2;
+    protected float _cooldownLvl1 = 1.5f;
 
     private void Awake()
     {
@@ -12,20 +12,11 @@ public class TurretLvl_1 : AbstractTurret
 
     private void FixedUpdate()
     {
-        //if(_currentTarget != null && _currentTarget.isActiveAndEnabled != false)
-        //{
-        //    LookAtEnemy();
-        //}
-        //else
-        //{
-        //    FindTarget();
-        //}
         ShootingControl();
     }
 
     protected override void FindTarget()
     {
         base.FindTarget();
-        //CorountineStart(Shooting());
     }
 }

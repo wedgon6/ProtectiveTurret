@@ -18,7 +18,7 @@ public abstract class AbstractTurret : MonoBehaviour
     protected int _clipSize;
     protected int _currentCoutBullet;
     protected Coroutine _corontine;
-    protected int _cooldown;
+    protected float _cooldown;
 
     public Action onClipSizeChanged;
     public int CurrentSizeClip => _currentCoutBullet;
@@ -47,7 +47,7 @@ public abstract class AbstractTurret : MonoBehaviour
         }
         else
         {
-            _currentTarget = _enemies.Min(emeny => emeny.Value);
+            _currentTarget = _enemies.OrderByDescending(distance => distance.Key).First().Value;
             CorountineStart(Shooting());
         }
     }
@@ -84,13 +84,11 @@ public abstract class AbstractTurret : MonoBehaviour
             bullet.transform.position = _shootPoints[shootPoint].position;
             bullet.transform.rotation = _shootPoints[shootPoint].rotation;
             bullet.gameObject.SetActive(true);
-            Debug.Log("достал из пула");
         }
         else
         {
             bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, _shootPoints[shootPoint].rotation);
             bullet.Initialize(SpeedBullet, _poolBullet);
-            Debug.Log("создал");
         }
     }
 
@@ -100,7 +98,7 @@ public abstract class AbstractTurret : MonoBehaviour
 
         while(curretPoint <= _shootPoints.Length)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
 
             if (CanEnemy())
             {
