@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class AbstractTurret : MonoBehaviour
@@ -12,6 +14,7 @@ public abstract class AbstractTurret : MonoBehaviour
     protected const float SpeedBullet = 10f;
 
     protected Enemy _currentTarget;
+    private Dictionary<float, Enemy> _enemies = new Dictionary<float, Enemy>();
     protected int _clipSize;
     protected int _currentCoutBullet;
     protected Coroutine _corontine;
@@ -22,16 +25,30 @@ public abstract class AbstractTurret : MonoBehaviour
 
     protected virtual void FindTarget()
     {
+        _enemies.Clear();
+        _currentTarget = null;
         transform.rotation = Quaternion.identity;
         var colliders = Physics.OverlapSphere(transform.position, SearchRadius);
-
+        
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].TryGetComponent<Enemy>(out Enemy enemy))
             {
-                _currentTarget = enemy;
-                return;
+                float distanceToTarget = Vector3.Distance(enemy.transform.position, transform.position);
+
+                if (distanceToTarget <= SearchRadius)
+                    _enemies.Add(distanceToTarget, enemy);
             }
+        }
+
+        if (_enemies.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            _currentTarget = _enemies.Min(emeny => emeny.Value);
+            CorountineStart(Shooting());
         }
     }
 
@@ -41,6 +58,20 @@ public abstract class AbstractTurret : MonoBehaviour
         lookDir.y = 0;
         lookDir.Normalize();
         transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
+    }
+
+    protected virtual void ShootingControl()
+    {
+        if (CanEnemy())
+        {
+            LookAtEnemy();
+        }
+        else
+        {
+            StopCoroutine(Shooting());
+            FindTarget();
+            return;
+        }
     }
 
     protected virtual void InstantiateBullet(int shootPoint)
@@ -53,11 +84,13 @@ public abstract class AbstractTurret : MonoBehaviour
             bullet.transform.position = _shootPoints[shootPoint].position;
             bullet.transform.rotation = _shootPoints[shootPoint].rotation;
             bullet.gameObject.SetActive(true);
+            Debug.Log("достал из пула");
         }
         else
         {
             bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, _shootPoints[shootPoint].rotation);
             bullet.Initialize(SpeedBullet, _poolBullet);
+            Debug.Log("создал");
         }
     }
 
@@ -67,17 +100,30 @@ public abstract class AbstractTurret : MonoBehaviour
 
         while(curretPoint <= _shootPoints.Length)
         {
-            if (_currentCoutBullet == 0)
-                CorountineStart(Recharge());
+            yield return new WaitForSeconds(0.5f);
 
-            for (int j = 0; j < _shootPoints.Length; j++)
+            if (CanEnemy())
             {
-                yield return new WaitForSeconds(0.5f);
-                InstantiateBullet(j);
-                _currentCoutBullet--;
-                onClipSizeChanged?.Invoke();
+                for (int j = 0; j < _shootPoints.Length; j++)
+                {
 
-                curretPoint = j;
+                    if (_currentCoutBullet == 0)
+                    {
+                        CorountineStart(Recharge());
+                    }
+                    else
+                    {
+                        InstantiateBullet(j);
+                        _currentCoutBullet--;
+                        onClipSizeChanged?.Invoke();
+
+                        curretPoint = j;
+                    }
+                }
+            }
+            else
+            {
+                FindTarget();
             }
         }
 
@@ -89,7 +135,15 @@ public abstract class AbstractTurret : MonoBehaviour
         yield return new WaitForSeconds(_cooldown);
         _currentCoutBullet = _clipSize;
         onClipSizeChanged?.Invoke();
-        CorountineStart(Shooting());
+
+        if (CanEnemy())
+        {
+            CorountineStart(Shooting());
+        }
+        else
+        {
+            FindTarget();
+        }
     }
 
     protected virtual void CorountineStart(IEnumerator corontine)
@@ -98,5 +152,17 @@ public abstract class AbstractTurret : MonoBehaviour
             StopCoroutine(_corontine);
 
         _corontine = StartCoroutine(corontine);
+    }
+
+    private bool CanEnemy()
+    {
+        if (_currentTarget == null || _currentTarget.isActiveAndEnabled == false)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

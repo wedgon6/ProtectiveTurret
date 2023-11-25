@@ -49,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
     {
         int currentSpawnPont = Random.Range(0, _spawnPoint.Length);
         Enemy enemy;
-        Debug.Log($"{currentSpawnPont}");
 
         if (_poolEnemy.TryPoolObject(out IPoolObject enemyPool))
         {

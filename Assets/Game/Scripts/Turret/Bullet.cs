@@ -39,13 +39,11 @@ public class Bullet : MonoBehaviour, IPoolObject
         if(collision.collider.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
-            Debug.Log($"{collision}");
             ReturnToPool();
         }
 
         if(collision.collider.TryGetComponent(out Barrier barrier))
         {
-            Debug.Log($"{collision}");
             ReturnToPool();
         }
     }

@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class MovmentState : State
 {
     [SerializeField] private float _moveSpeed = 2f;
@@ -8,6 +10,12 @@ public class MovmentState : State
 
     private Rigidbody _rigidbody;
     private Vector3 _direction;
+    private NavMeshAgent _agent;
+
+    private void Awake()
+    {
+        _agent = GetComponent<NavMeshAgent>();
+    }
 
     private void Start()
     {
@@ -16,7 +24,8 @@ public class MovmentState : State
 
     private void FixedUpdate()
     {
-        Move();
+        _agent.SetDestination(Target.transform.position);
+        //Move();
     }
 
     private void Move()
