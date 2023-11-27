@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour, IPoolObject
 {
@@ -15,6 +13,12 @@ public class Bullet : MonoBehaviour, IPoolObject
         _speedBullet = speedBullet;
         _poolBullet = poolBullet;
     }
+
+    //public void Shoot(Vector3 startPoint, Vector3 speed)
+    //{
+    //    _rigidbody.position = startPoint;
+    //    _rigidbody.velocity = speed;
+    //}
 
     public void ReturnToPool()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,17 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private ReadLine _target;
-    [SerializeField] private List<Wave> _waves;
+    [SerializeField] private List<EnemyWave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private PoolEnemy _poolEnemy;
     [SerializeField] private Player _player;
 
-    private Wave _currentWave;
+    private EnemyWave _currentWave;
     private int _currentWaveNumber = 0;
     private float _timeAfterLastSpawn;
     private int _spawned;
+
+    public Action onAllEnemyDie;
 
     private void Awake()
     {
@@ -47,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void InitializeEnemy()
     {
-        int currentSpawnPont = Random.Range(0, _spawnPoint.Length);
+        int currentSpawnPont = UnityEngine.Random.Range(0, _spawnPoint.Length);
         Enemy enemy;
 
         if (_poolEnemy.TryPoolObject(out IPoolObject enemyPool))
@@ -82,12 +85,4 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NextWave();
     }
-}
-
-[System.Serializable]
-public class Wave
-{
-    public Enemy Template;
-    public float Delay;
-    public int Count;
 }

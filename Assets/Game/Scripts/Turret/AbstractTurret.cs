@@ -155,12 +155,8 @@ public abstract class AbstractTurret : MonoBehaviour
     private bool CanEnemy()
     {
         if (_currentTarget == null || _currentTarget.isActiveAndEnabled == false)
-        {
             return false;
-        }
         else
-        {
             return true;
-        }
     }
 }
