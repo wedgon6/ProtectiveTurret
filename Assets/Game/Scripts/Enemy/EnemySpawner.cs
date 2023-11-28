@@ -16,7 +16,24 @@ public class EnemySpawner : MonoBehaviour
     private float _timeAfterLastSpawn;
     private int _spawned;
 
-    public Action onAllEnemyDie;
+    public Action OnEnemyDead;
+
+    public void EnemyDead()
+    {
+        OnEnemyDead?.Invoke();
+    }
+
+    public int GetEnemyCount()
+    {
+        int enemyCount = 0;
+
+        for (int i = 0; i < _waves.Count; i++)
+        {
+            enemyCount += _waves[i].Count;
+        }
+
+        return enemyCount;
+    }
 
     private void Awake()
     {
@@ -64,7 +81,7 @@ public class EnemySpawner : MonoBehaviour
         {
             enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
-            enemy.Initialize(_target, _poolEnemy, _player);
+            enemy.Initialize(_target, _poolEnemy, _player, this);
         }
     }
 

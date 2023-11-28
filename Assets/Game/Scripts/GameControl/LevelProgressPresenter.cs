@@ -2,34 +2,36 @@ using UnityEngine;
 
 public class LevelProgressPresenter : MonoBehaviour
 {
+    private const bool IsLooseGame = false;
+    private const bool IsWinGame = true;
+
+    [SerializeField] private GameResultPanels _gameResultPanels;
+
     [Header("Loose")]
     [SerializeField] private ReadLine _readLine;
-    [SerializeField] private LooseGamePanel _loosePanel;
 
     [Header("Win")]
-    [SerializeField] private EnemySpawner _enemySpawner;
-    [SerializeField] private WinGamePanel _winPanel;
+    [SerializeField] private EnemyPresenter _enemyiesPresenter;
 
     private void OnEnable()
     {
-        _readLine.onLooseGame += OnLooseGamePanel;
-        _enemySpawner.onAllEnemyDie += OnWinGamePanel;
+        _readLine.onLooseGame += OnShowLoosePanel;
+        _enemyiesPresenter.OnAllEnemiesDie += OnShowWinPanel;
     }
 
     private void OnDisable()
     {
-        _readLine.onLooseGame -= OnLooseGamePanel;
-        _enemySpawner.onAllEnemyDie -= OnWinGamePanel;
+        _readLine.onLooseGame -= OnShowLoosePanel;
+        _enemyiesPresenter.OnAllEnemiesDie -= OnShowWinPanel;
     }
 
-  
-    private void OnLooseGamePanel()
+    private void OnShowLoosePanel()
     {
-        _loosePanel.SetActive(true);
+        _gameResultPanels.ShowResult(IsLooseGame);
     }
 
-    private void OnWinGamePanel()
+    private void OnShowWinPanel()
     {
-        _winPanel.SetActive(true);
+        _gameResultPanels.ShowResult(IsWinGame);
     }
 }
