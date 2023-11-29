@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     public ReadLine Target => _target;
     public int Revard => _revard;
     public Player Player => _player;
+    public EnemySpawner Spawner => _spawner;
 
     public void Initialize(ReadLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
     {
@@ -41,7 +42,6 @@ public class Enemy : MonoBehaviour, IPoolObject
         if (_health < 0)
         {
             _health = 0;
-            _spawner.OnEnemyDead();
             _isDead = true;
         }
     }

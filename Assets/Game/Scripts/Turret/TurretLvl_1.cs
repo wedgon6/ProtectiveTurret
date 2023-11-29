@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class TurretLvl_1 : AbstractTurret
 {
     protected int _clipSizeLvl1 = 50;
@@ -8,6 +10,7 @@ public class TurretLvl_1 : AbstractTurret
         _clipSize = _clipSizeLvl1;
         _cooldown = _cooldownLvl1;
         _currentCoutBullet = _clipSize;
+        _animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

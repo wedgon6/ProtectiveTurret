@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class AbstractTurret : MonoBehaviour
 {
     [SerializeField] protected PoolBullet _poolBullet;
@@ -19,8 +20,10 @@ public abstract class AbstractTurret : MonoBehaviour
     protected int _currentCoutBullet;
     protected Coroutine _corontine;
     protected float _cooldown;
+    protected Animator _animator;
 
     public Action onClipSizeChanged;
+
     public int CurrentSizeClip => _currentCoutBullet;
 
     protected virtual void FindTarget()
@@ -84,11 +87,13 @@ public abstract class AbstractTurret : MonoBehaviour
             bullet.transform.position = _shootPoints[shootPoint].position;
             bullet.transform.rotation = _shootPoints[shootPoint].rotation;
             bullet.gameObject.SetActive(true);
+            _animator.SetTrigger("Shoot");
         }
         else
         {
             bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, _shootPoints[shootPoint].rotation);
             bullet.Initialize(SpeedBullet, _poolBullet);
+            _animator.SetTrigger("Shoot");
         }
     }
 
