@@ -3,13 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyStateMachine : MonoBehaviour
 {
-    [SerializeField] private State _firstState;
+    [SerializeField] private EnemyState _firstState;
 
-    private ReadLine _target;
-    private State _currentState;
+    private RedLine _target;
+    private EnemyState _currentState;
     private Enemy _enemy;
 
-    public State CurrentState => _currentState;
+    public EnemyState CurrentState => _currentState;
 
     public void ResetStete()
     {
@@ -38,7 +38,7 @@ public class EnemyStateMachine : MonoBehaviour
         }
     }
 
-    private void Reset(State startState)
+    private void Reset(EnemyState startState)
     {
         _currentState = startState;
 
@@ -48,7 +48,7 @@ public class EnemyStateMachine : MonoBehaviour
         }
     }
 
-    private void Transit(State nextState)
+    private void Transit(EnemyState nextState)
     {
         if (_currentState != null)
         {

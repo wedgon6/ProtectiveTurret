@@ -4,7 +4,7 @@ using UnityEngine;
 public class SizeClipUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
-    [SerializeField] private AbstractTurret _clip;
+    [SerializeField] private BaseTurret _clip;
 
     private void Start()
     {

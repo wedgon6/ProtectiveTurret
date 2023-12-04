@@ -8,7 +8,7 @@ public class LevelProgressPresenter : MonoBehaviour
     [SerializeField] private GameResultPanels _gameResultPanels;
 
     [Header("Loose")]
-    [SerializeField] private ReadLine _readLine;
+    [SerializeField] private RedLine _readLine;
 
     [Header("Win")]
     [SerializeField] private EnemyPresenter _enemyiesPresenter;

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private EnemyStateMachine _stateMachine;
     [SerializeField] private int _revard;
 
-    private ReadLine _target;
+    private RedLine _target;
     private PoolEnemy _poolEnemy;
     private float _health;
     private Player _player;
@@ -15,12 +15,12 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     public float Health => _health;
     public bool IsDead => _isDead;
-    public ReadLine Target => _target;
+    public RedLine Target => _target;
     public int Revard => _revard;
     public Player Player => _player;
     public EnemySpawner Spawner => _spawner;
 
-    public void Initialize(ReadLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
+    public void Initialize(RedLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
     {
         _target = target;
         _poolEnemy = poolEnemy;

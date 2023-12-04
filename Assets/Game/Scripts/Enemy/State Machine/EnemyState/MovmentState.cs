@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(NavMeshAgent))]
-public class MovmentState : State
+public class MovmentState : EnemyState
 {
     private NavMeshAgent _agent;
 

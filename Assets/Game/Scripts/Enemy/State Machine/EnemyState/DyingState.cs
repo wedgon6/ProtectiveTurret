@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DyingState : State
+public class DyingState : EnemyState
 {
     private void Update()
     {

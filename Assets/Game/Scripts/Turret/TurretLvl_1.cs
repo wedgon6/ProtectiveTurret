@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TurretLvl_1 : AbstractTurret
+public class TurretLvl_1 : BaseTurret
 {
     protected int _clipSizeLvl1 = 50;
     protected float _cooldownLvl1 = 1.5f;

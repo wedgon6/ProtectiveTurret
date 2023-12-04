@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private ReadLine _target;
+    [SerializeField] private RedLine _target;
     [SerializeField] private List<EnemyWave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private PoolEnemy _poolEnemy;
@@ -57,9 +57,7 @@ public class EnemySpawner : MonoBehaviour
         if (_currentWave.Count <= _spawned)
         {
             if (_waves.Count > _currentWaveNumber + 1)
-            {
                 StartCoroutine(StartNextWave());
-            }
 
             _currentWave = null;
         }

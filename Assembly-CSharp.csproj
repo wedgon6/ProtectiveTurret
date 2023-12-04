@@ -57,15 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game\Scripts\UI\LooseGamePanel.cs" />
-    <Compile Include="Assets\Game\Scripts\Turret\AbstractTurret.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\MovmentState.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemySpawner.cs" />
-    <Compile Include="Assets\Game\Scripts\Map\ReadLine.cs" />
+    <Compile Include="Assets\Game\Scripts\Map\RedLine.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\ProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\LevelState.cs" />
-    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\State.cs" />
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MoneuViev.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
@@ -76,17 +74,23 @@
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\LevelProgressPresenter.cs" />
+    <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemyWave.cs" />
     <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPooling.cs" />
-    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\Transition.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\UI\GameResultPanels.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition\DyingTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Move\MovementPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameStateMashine.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

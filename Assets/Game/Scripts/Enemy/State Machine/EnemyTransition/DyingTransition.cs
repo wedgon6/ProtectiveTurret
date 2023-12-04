@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
-public class DyingTransition : Transition
+public class DyingTransition : EnemyTransition
 {
     private Enemy _enemy;
 
