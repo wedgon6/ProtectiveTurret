@@ -6,10 +6,13 @@ public abstract class GameState : MonoBehaviour
 {
     [SerializeField] private List<GameTransition> _transitions;
 
-    public void Enter()
+    protected Player Player;
+
+    public virtual void Enter(Player player)
     {
         if (enabled == false)
         {
+            Player = player;
             enabled = true;
 
             foreach (var transition in _transitions)
@@ -33,7 +36,7 @@ public abstract class GameState : MonoBehaviour
         return null;
     }
 
-    public void Exit()
+    public virtual void Exit()
     {
         if (enabled == true)
         {

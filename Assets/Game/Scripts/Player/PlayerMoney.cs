@@ -16,4 +16,16 @@ public class PlayerMoney : MonoBehaviour
         _currentMoney += money;
         onChengetMoney?.Invoke();
     }
+
+    public void ReduceMoney(int money)
+    {
+        if (money < 0)
+            return;
+
+        if (money > _currentMoney)
+            return;
+
+        _currentMoney -= money;
+        onChengetMoney?.Invoke();
+    }
 }

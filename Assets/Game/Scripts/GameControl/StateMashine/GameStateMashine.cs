@@ -34,7 +34,7 @@ public class GameStateMashine : MonoBehaviour
 
         if (_currentState != null)
         {
-            _currentState.Enter();
+            _currentState.Enter(_player);
         }
     }
 
@@ -49,7 +49,7 @@ public class GameStateMashine : MonoBehaviour
 
         if (_currentState != null)
         {
-            _currentState.Enter();
+            _currentState.Enter(_player);
         }
     }
 }
