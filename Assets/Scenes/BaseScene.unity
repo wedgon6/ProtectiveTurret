@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20276141, y: 0.65300006}
   m_AnchorMax: {x: 0.82630455, y: 0.68574464}
-  m_AnchoredPosition: {x: -18.5, y: -3.5}
+  m_AnchoredPosition: {x: -18.500122, y: -3.5}
   m_SizeDelta: {x: 12.935974, y: 25.117004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175336049
@@ -1016,6 +1016,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7744423074453055898, guid: b659a44e96caadc46ba354f80250037d, type: 3}
   m_PrefabInstance: {fileID: 338467100}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &402492440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402492445}
+  - component: {fileID: 402492444}
+  - component: {fileID: 402492443}
+  - component: {fileID: 402492442}
+  - component: {fileID: 402492441}
+  m_Layer: 0
+  m_Name: GameStateMashine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &402492441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa047933eb6a2847bc82e83ac4aa274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions: []
+  _spawner: {fileID: 0}
+  _player: {fileID: 0}
+--- !u!114 &402492442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac1c062c8c35034f80d1d4eee938d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 0}
+--- !u!114 &402492443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b36990761c29c439fa5f82d653ce5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 402492442}
+  _playerLevel: {fileID: 1883925415}
+  _player: {fileID: 1883925412}
+  _turretPrefab: []
+  _menuUI: {fileID: 1056023459}
+--- !u!114 &402492444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21df0691a33008c4abd4828fb1462596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turrets: []
+  _player: {fileID: 1883925412}
+  _firstState: {fileID: 402492443}
+--- !u!4 &402492445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 177.88603, y: 127.6236, z: 1.205345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430101452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783402421}
   - component: {fileID: 783402422}
+  - component: {fileID: 783402423}
   m_Layer: 5
   m_Name: LvlProgress
   m_TagString: Untagged
@@ -1872,7 +1969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39200002, y: 0.3017628}
   m_AnchorMax: {x: 0.7465762, y: 0.3614325}
-  m_AnchoredPosition: {x: -1.277008, y: 3.5}
+  m_AnchoredPosition: {x: -1.277008, y: 3.4998474}
   m_SizeDelta: {x: 11.309998, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783402422
@@ -1926,6 +2023,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &783402423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783402420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d37651984cff6479c2752cd09a29be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bar: {fileID: 783402422}
+  _playerLvl: {fileID: 1883925415}
 --- !u!1 &797709765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,7 +3148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.24346924, y: 8.880493}
+  m_AnchoredPosition: {x: -0.24353027, y: 8.880493}
   m_SizeDelta: {x: -0.8000488, y: -16.599976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1110654306
@@ -4326,6 +4437,7 @@ GameObject:
   - component: {fileID: 1883925412}
   - component: {fileID: 1883925413}
   - component: {fileID: 1883925414}
+  - component: {fileID: 1883925415}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4429,6 +4541,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1883925415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883925404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9884668cc1888b4281f761a1d7f569f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1891005195
@@ -4835,7 +4959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.314, y: 0.3017628}
   m_AnchorMax: {x: 0.380179, y: 0.354}
-  m_AnchoredPosition: {x: 0.070007324, y: 8.999939}
+  m_AnchoredPosition: {x: 0.070007324, y: 9.000168}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056708430

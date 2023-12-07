@@ -15,12 +15,21 @@ public class EnemySpawner : MonoBehaviour
     private int _currentWaveNumber = 0;
     private float _timeAfterLastSpawn;
     private int _spawned;
+    private Coroutine _corontine;
 
     public Action OnEnemyDead;
 
     public void EnemyDead()
     {
         OnEnemyDead?.Invoke();
+    }
+
+    public void RestSpawner()
+    {
+        _timeAfterLastSpawn = 0;
+        _currentWaveNumber = 0;
+        _spawned = 0;
+        SetWave(_currentWaveNumber);
     }
 
     public int GetEnemyCount()
@@ -37,30 +46,30 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        SetWave(_currentWaveNumber);
+        //SetWave(_currentWaveNumber);
     }
 
     private void Update()
     {
-        if (_currentWave == null)
-            return;
+        //if (_currentWave == null)
+        //    return;
 
-        _timeAfterLastSpawn += Time.deltaTime;
+        //_timeAfterLastSpawn += Time.deltaTime;
 
-        if (_timeAfterLastSpawn >= _currentWave.Delay)
-        {
-            InitializeEnemy();
-            _spawned++;
-            _timeAfterLastSpawn = 0;
-        }
+        //if (_timeAfterLastSpawn >= _currentWave.Delay)
+        //{
+        //    InitializeEnemy();
+        //    _spawned++;
+        //    _timeAfterLastSpawn = 0;
+        //}
 
-        if (_currentWave.Count <= _spawned)
-        {
-            if (_waves.Count > _currentWaveNumber + 1)
-                StartCoroutine(StartNextWave());
+        //if (_currentWave.Count <= _spawned)
+        //{
+        //    if (_waves.Count > _currentWaveNumber + 1)
+        //        CorountineStart(StartNextWave());
 
-            _currentWave = null;
-        }
+        //    _currentWave = null;
+        //}
     }
 
     private void InitializeEnemy()
@@ -86,6 +95,7 @@ public class EnemySpawner : MonoBehaviour
     private void SetWave(int index)
     {
         _currentWave = _waves[index];
+        CorountineStart(SpawndeEnemuy());
     }
 
     private void NextWave()
@@ -99,5 +109,38 @@ public class EnemySpawner : MonoBehaviour
         int waitTime = 5;
         yield return new WaitForSeconds(waitTime);
         NextWave();
+    }
+
+    private IEnumerator SpawndeEnemuy()
+    {
+        while (_currentWave != null)
+        {
+            _timeAfterLastSpawn += Time.deltaTime;
+
+            if (_timeAfterLastSpawn >= _currentWave.Delay)
+            {
+                InitializeEnemy();
+                _spawned++;
+                _timeAfterLastSpawn = 0;
+            }
+
+            if (_currentWave.Count <= _spawned)
+            {
+                if (_waves.Count > _currentWaveNumber + 1)
+                    CorountineStart(StartNextWave());
+
+                _currentWave = null;
+            }
+
+            yield return null;
+        }
+    }
+
+    private void CorountineStart(IEnumerator corontine)
+    {
+        if (_corontine != null)
+            StopCoroutine(_corontine);
+
+        _corontine = StartCoroutine(corontine);
     }
 }

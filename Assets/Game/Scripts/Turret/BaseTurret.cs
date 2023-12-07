@@ -26,6 +26,11 @@ public class BaseTurret : MonoBehaviour
 
     public int CurrentSizeClip => _currentCoutBullet;
 
+    public void RechargeTurret()
+    {
+        _currentCoutBullet = _clipSize;
+    }
+
     protected virtual void FindTarget()
     {
         _enemies.Clear();

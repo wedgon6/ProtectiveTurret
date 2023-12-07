@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerLevel : MonoBehaviour
@@ -16,13 +15,15 @@ public class PlayerLevel : MonoBehaviour
     public int CurrentExperience => _currentExperience;
     public int CurrentPlayerLvl => _currentPlayerLvl;
 
+    public Action<int, int> OnPlayerExpirianceChanget;
+    public Action OnLvlUp;
+
     private void OnAddExperience()
     {
         _currentExperience++;
+        OnPlayerExpirianceChanget?.Invoke(_currentExperience,_experienceToNextLvl);
 
         if(_currentExperience == _experienceToNextLvl)
-        {
-
-        }
+            OnLvlUp?.Invoke();
     }
 }
