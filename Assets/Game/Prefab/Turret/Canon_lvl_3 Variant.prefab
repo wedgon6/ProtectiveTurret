@@ -196,6 +196,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012105359850, guid: 16e71322676cb6840a252ad4f7fc2d26, type: 3}
   m_PrefabInstance: {fileID: 7250194320974608228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-916222029792970966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250321317959915150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-82094213261765387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,10 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cae4a67a3dc5d4aa25b145d3caa017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolBullet: {fileID: 0}
   _shootPoints:
   - {fileID: 9059777277444293886}
   - {fileID: 5189844604892176965}
   - {fileID: 6145042988370195624}
   - {fileID: 9059339924803419266}
   _bullet: {fileID: 6573033793096541921, guid: f9217ff16eb2985469df087ebdf769b5, type: 3}
+  _poolBullet: {fileID: -916222029792970966}

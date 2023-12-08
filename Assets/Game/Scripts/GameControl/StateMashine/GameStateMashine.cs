@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameStateMashine : MonoBehaviour
 {
-    [SerializeField] private List <BaseTurret> _turrets;
     [SerializeField] private Player _player;
     [SerializeField] private GameState _firstState;
 
@@ -12,6 +12,10 @@ public class GameStateMashine : MonoBehaviour
 
     public GameState CurrentState => _currentState;
 
+    private void Start()
+    {
+        Reset(_firstState);
+    }
 
     private void Update()
     {

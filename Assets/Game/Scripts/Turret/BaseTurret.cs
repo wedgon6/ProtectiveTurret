@@ -7,20 +7,22 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class BaseTurret : MonoBehaviour
 {
-    [SerializeField] protected PoolBullet _poolBullet;
     [SerializeField] protected Transform[] _shootPoints;
     [SerializeField] protected Bullet _bullet;
+    [SerializeField] protected PoolBullet _poolBullet;
 
+    private Dictionary<float, Enemy> _enemies = new Dictionary<float, Enemy>();
+    
     protected const float SearchRadius = 20f;
     protected const float SpeedBullet = 10f;
-
+    
     protected Enemy _currentTarget;
-    private Dictionary<float, Enemy> _enemies = new Dictionary<float, Enemy>();
+    protected Coroutine _corontine;
+    protected Animator _animator;
+
     protected int _clipSize;
     protected int _currentCoutBullet;
-    protected Coroutine _corontine;
     protected float _cooldown;
-    protected Animator _animator;
 
     public Action onClipSizeChanged;
 

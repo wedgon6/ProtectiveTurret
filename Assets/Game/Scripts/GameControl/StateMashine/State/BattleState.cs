@@ -13,4 +13,9 @@ public class BattleState : GameState
         _player.ResetTurret();
         _spawner.RestSpawner();
     }
+
+    private void Update()
+    {
+        
+    }
 }

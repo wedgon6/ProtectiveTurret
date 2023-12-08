@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
     private float _timeAfterLastSpawn;
     private int _spawned;
     private Coroutine _corontine;
+    private List<IPoolObject> _createdEnemies = new List<IPoolObject>();
 
     public Action OnEnemyDead;
 
@@ -24,8 +25,21 @@ public class EnemySpawner : MonoBehaviour
         OnEnemyDead?.Invoke();
     }
 
+    public void PutEnemyToPool()
+    {
+        if (_createdEnemies.Count > 0)
+        {
+            foreach (var enemy in _createdEnemies)
+            {
+                enemy.ReturnToPool();
+            }
+        }
+    }
+
     public void RestSpawner()
     {
+        PutEnemyToPool();
+
         _timeAfterLastSpawn = 0;
         _currentWaveNumber = 0;
         _spawned = 0;
@@ -51,25 +65,25 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        //if (_currentWave == null)
-        //    return;
+        if (_currentWave == null)
+            return;
 
-        //_timeAfterLastSpawn += Time.deltaTime;
+        _timeAfterLastSpawn += Time.deltaTime;
 
-        //if (_timeAfterLastSpawn >= _currentWave.Delay)
-        //{
-        //    InitializeEnemy();
-        //    _spawned++;
-        //    _timeAfterLastSpawn = 0;
-        //}
+        if (_timeAfterLastSpawn >= _currentWave.Delay)
+        {
+            InitializeEnemy();
+            _spawned++;
+            _timeAfterLastSpawn = 0;
+        }
 
-        //if (_currentWave.Count <= _spawned)
-        //{
-        //    if (_waves.Count > _currentWaveNumber + 1)
-        //        CorountineStart(StartNextWave());
+        if (_currentWave.Count <= _spawned)
+        {
+            if (_waves.Count > _currentWaveNumber + 1)
+                CorountineStart(StartNextWave());
 
-        //    _currentWave = null;
-        //}
+            _currentWave = null;
+        }
     }
 
     private void InitializeEnemy()
@@ -89,13 +103,13 @@ public class EnemySpawner : MonoBehaviour
             enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
             enemy.Initialize(_target, _poolEnemy, _player, this);
+            _createdEnemies.Add(enemy);
         }
     }
 
     private void SetWave(int index)
     {
         _currentWave = _waves[index];
-        CorountineStart(SpawndeEnemuy());
     }
 
     private void NextWave()
@@ -106,34 +120,9 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator StartNextWave()
     {
-        int waitTime = 5;
+        int waitTime = 1;
         yield return new WaitForSeconds(waitTime);
         NextWave();
-    }
-
-    private IEnumerator SpawndeEnemuy()
-    {
-        while (_currentWave != null)
-        {
-            _timeAfterLastSpawn += Time.deltaTime;
-
-            if (_timeAfterLastSpawn >= _currentWave.Delay)
-            {
-                InitializeEnemy();
-                _spawned++;
-                _timeAfterLastSpawn = 0;
-            }
-
-            if (_currentWave.Count <= _spawned)
-            {
-                if (_waves.Count > _currentWaveNumber + 1)
-                    CorountineStart(StartNextWave());
-
-                _currentWave = null;
-            }
-
-            yield return null;
-        }
     }
 
     private void CorountineStart(IEnumerator corontine)

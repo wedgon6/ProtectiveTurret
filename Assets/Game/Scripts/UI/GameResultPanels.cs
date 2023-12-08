@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameResultPanels : MonoBehaviour
 {
-    [SerializeField] private LooseGamePanel _looseGame;
+    [SerializeField] private LoseGamePanel _looseGame;
     [SerializeField] private WinGamePanel _winGame;
 
     public void ShowResult(bool isActive)

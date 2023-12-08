@@ -5,12 +5,16 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
+    [SerializeField] private PoolBullet _poolBullet;
 
     private BaseTurret _turret;
+
+    public BaseTurret CurrentTurret => _turret;
 
     public void Initialize(BaseTurret turret)
     {
         Instantiate(turret,_turretPosition);
+        _turret = turret;
     }
 
     public void AddMonue(int moneu)
@@ -20,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void RotationTurret(float rotationY)
     {
-        _turretPosition.eulerAngles = new Vector3(0, rotationY, 0);
+        _turret.gameObject.transform.eulerAngles = new Vector3(0, rotationY, 0);
     }
 
     public void ResetTurret()

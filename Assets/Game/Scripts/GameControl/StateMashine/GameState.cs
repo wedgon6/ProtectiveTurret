@@ -48,4 +48,8 @@ public abstract class GameState : MonoBehaviour
             enabled = false;
         }
     }
+
+    private void Awake()
+    {
+    }
 }
