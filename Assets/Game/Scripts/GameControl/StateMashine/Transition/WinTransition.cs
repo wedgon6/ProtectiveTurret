@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WinTransition : GameTransition
 {
-    [SerializeField] EnemyPresenter _enemyPresenter;
+    [SerializeField] private EnemyPresenter _enemyPresenter;
 
     private void OnEnable()
     {
         _enemyPresenter.OnAllEnemiesDie += OnNeedTransition;
+        NeedTransit = false;
     }
 
     private void OnDisable()

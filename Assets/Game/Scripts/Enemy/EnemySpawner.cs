@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
     private List<IPoolObject> _createdEnemies = new List<IPoolObject>();
 
     public Action OnEnemyDead;
+    public Action OnSpawnerReset;
 
     public void EnemyDead()
     {
@@ -34,6 +35,8 @@ public class EnemySpawner : MonoBehaviour
                 enemy.ReturnToPool();
             }
         }
+
+        _currentWave = null;
     }
 
     public void RestSpawner()
@@ -44,6 +47,7 @@ public class EnemySpawner : MonoBehaviour
         _currentWaveNumber = 0;
         _spawned = 0;
         SetWave(_currentWaveNumber);
+        OnSpawnerReset?.Invoke();
     }
 
     public int GetEnemyCount()
@@ -56,11 +60,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return enemyCount;
-    }
-
-    private void Awake()
-    {
-        //SetWave(_currentWaveNumber);
     }
 
     private void Update()

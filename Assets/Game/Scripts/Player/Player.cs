@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public void Initialize(BaseTurret turret)
     {
-        Instantiate(turret,_turretPosition);
+        Instantiate(turret,_turretPosition.transform.position, _turretPosition.rotation,_turretPosition);
         _turret = turret;
     }
 
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void RotationTurret(float rotationY)
     {
-        _turret.gameObject.transform.eulerAngles = new Vector3(0, rotationY, 0);
+        _turretPosition.rotation = Quaternion.Euler(0, rotationY, 0);
     }
 
     public void ResetTurret()

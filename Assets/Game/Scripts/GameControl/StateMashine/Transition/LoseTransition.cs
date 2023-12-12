@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoseTransition : GameTransition
@@ -8,6 +6,7 @@ public class LoseTransition : GameTransition
 
     private void OnEnable()
     {
+        NeedTransit = false;
         _redLine.onLooseGame += OnNeedTransition;
     }
 
@@ -18,6 +17,6 @@ public class LoseTransition : GameTransition
 
     private void OnNeedTransition()
     {
-
+        NeedTransit = true;
     }
 }

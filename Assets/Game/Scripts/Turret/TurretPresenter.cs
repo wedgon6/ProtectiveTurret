@@ -8,10 +8,12 @@ public class TurretPresenter : MonoBehaviour
     [SerializeField] private PlayerLevel _playerLevel;
     [SerializeField] private Player _player;
 
+    private bool _isHaveTurret = false;
+
     public void TrySetTurret()
     {
-        //if (_player.CurrentTurret != null)
-        //    return;
+        if (_isHaveTurret == true)
+            return;
 
         int playerLvl = _playerLevel.CurrentPlayerLvl;
 
@@ -22,5 +24,6 @@ public class TurretPresenter : MonoBehaviour
         }
 
         _player.Initialize(_baseTurrets[playerLvl - 1]);
+        _isHaveTurret = true;
     }
 }

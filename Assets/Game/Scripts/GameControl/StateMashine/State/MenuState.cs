@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuState : GameState
@@ -7,11 +6,16 @@ public class MenuState : GameState
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
 
+    private const float _startPositionX = -1.55f;
+    private const float _startPositionY = -5.32f;
+    private const float _startPositionZ = 4.96f;
+
     public override void Enter(Player player)
     {
         base.Enter(player);
         _menuUI.gameObject.SetActive(true);
         _turretPresenter.TrySetTurret();
+        _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
         _player.RotationTurret(150);
     }
 

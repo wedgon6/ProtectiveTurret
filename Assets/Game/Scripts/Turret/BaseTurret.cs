@@ -147,13 +147,9 @@ public class BaseTurret : MonoBehaviour
         onClipSizeChanged?.Invoke();
 
         if (CanEnemy())
-        {
             CorountineStart(Shooting());
-        }
         else
-        {
             FindTarget();
-        }
     }
 
     protected virtual void CorountineStart(IEnumerator corontine)

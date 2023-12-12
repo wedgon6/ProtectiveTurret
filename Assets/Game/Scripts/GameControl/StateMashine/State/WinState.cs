@@ -8,8 +8,8 @@ public class WinState : GameState
 
     public override void Enter(Player player)
     {
-        base.Enter(player);
         _winGamePanel.gameObject.SetActive(true);
+        base.Enter(player);
     }
 
     public override void Exit()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoseState : GameState
@@ -9,8 +7,9 @@ public class LoseState : GameState
 
     public override void Enter(Player player)
     {
-        base.Enter(player);
         _loseGamePanel.gameObject.SetActive(true);
+        base.Enter(player);
+        Time.timeScale = 0;
     }
 
     public override void Exit()
@@ -18,6 +17,7 @@ public class LoseState : GameState
         base.Exit();
         _spawner.PutEnemyToPool();
         _loseGamePanel.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void Update()

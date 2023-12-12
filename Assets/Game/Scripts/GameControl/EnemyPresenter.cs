@@ -1,4 +1,5 @@
 using System;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class EnemyPresenter : MonoBehaviour
@@ -11,19 +12,16 @@ public class EnemyPresenter : MonoBehaviour
     public Action OnAllEnemiesDie;
     public Action<int,int> OnEnemyDie;  
 
-    private void Awake()
-    {
-        _countEnemy = _spawner.GetEnemyCount();
-    }
-
     private void OnEnable()
     {
         _spawner.OnEnemyDead += OnEnemyDead;
+        _spawner.OnSpawnerReset += OnResetWave;
     }
 
     private void OnDisable()
     {
         _spawner.OnEnemyDead -= OnEnemyDead;
+        _spawner.OnSpawnerReset -= OnResetWave;
     }
 
     private void OnEnemyDead()
@@ -35,4 +33,10 @@ public class EnemyPresenter : MonoBehaviour
             OnAllEnemiesDie?.Invoke();
     }
 
+    private void OnResetWave()
+    {
+        _countEnemy = _spawner.GetEnemyCount();
+        _deadEnemiesCount = 0;
+        OnEnemyDie.Invoke(_deadEnemiesCount, _countEnemy);
+    }
 }

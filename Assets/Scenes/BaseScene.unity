@@ -189,8 +189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -80.08, y: 0}
+  m_SizeDelta: {x: 160.16, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96054112
 MonoBehaviour:
@@ -573,10 +573,10 @@ RectTransform:
   m_Father: {fileID: 538426843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.15037952}
-  m_AnchorMax: {x: 0.93046445, y: 0.8995651}
-  m_AnchoredPosition: {x: -1.4999771, y: -3}
-  m_SizeDelta: {x: -3, y: 10}
+  m_AnchorMin: {x: 0.96550643, y: 0.5}
+  m_AnchorMax: {x: 0.96550643, y: 0.5}
+  m_AnchoredPosition: {x: -42, y: 4}
+  m_SizeDelta: {x: 72, y: 79.108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237089255
 MonoBehaviour:
@@ -854,8 +854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -80.079, y: 0.494}
+  m_SizeDelta: {x: 160.16, y: 49.012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321849347
 MonoBehaviour:
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f8402d34f581240823c675e738bfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 402492443}
+  _targetState: {fileID: 402492448}
   _redLine: {fileID: 731764867}
 --- !u!114 &402492447
 MonoBehaviour:
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcf4b7d399ef8240b4145afa4a743d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 402492443}
+  _targetState: {fileID: 402492449}
   _enemyPresenter: {fileID: 1189180569}
 --- !u!114 &402492448
 MonoBehaviour:
@@ -1095,7 +1095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8afdd036baeca847bfa33d8b9868da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 402492450}
   _loseGamePanel: {fileID: 1082436378}
   _spawner: {fileID: 1001777546}
 --- !u!114 &402492449
@@ -1110,7 +1111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8f49fdff9fd3b4d84f487365e5064b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 402492450}
   _winGamePanel: {fileID: 882457746}
 --- !u!114 &402492450
 MonoBehaviour:
@@ -1335,9 +1337,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.06589152}
-  m_AnchorMax: {x: 0.11681542, y: 0.18800001}
-  m_AnchoredPosition: {x: 2.5075684, y: 7.0010986}
-  m_SizeDelta: {x: -6.0788574, y: 3.9820557}
+  m_AnchorMax: {x: 0.181546, y: 0.19600001}
+  m_AnchoredPosition: {x: 1.3470459, y: 1.5010986}
+  m_SizeDelta: {x: -8.400002, y: -7.0179996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523652741
 MonoBehaviour:
@@ -1554,7 +1556,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 402492450}
         m_TargetAssemblyTypeName: MenuTransition, Assembly-CSharp
-        m_MethodName: EeturnToMeny
+        m_MethodName: ReturnToMeny
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1767,8 +1769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7278443}
   m_AnchorMax: {x: 0.11681542, y: 0.8474378}
-  m_AnchoredPosition: {x: 2.5075684, y: -4.7388916}
-  m_SizeDelta: {x: -6.079834, y: 2.2220001}
+  m_AnchoredPosition: {x: 49.346924, y: -4.7388916}
+  m_SizeDelta: {x: 87.599, y: 2.222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576552967
 MonoBehaviour:
@@ -1994,7 +1996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39200002, y: 0.3017628}
   m_AnchorMax: {x: 0.7465762, y: 0.3614325}
-  m_AnchoredPosition: {x: -1.277008, y: 3.4998474}
+  m_AnchoredPosition: {x: -1.277008, y: 3.499878}
   m_SizeDelta: {x: 11.309998, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783402422
@@ -2697,11 +2699,11 @@ MonoBehaviour:
   _target: {fileID: 731764867}
   _waves:
   - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _delay: 0.8
-    _count: 30
+    _delay: 0.3
+    _count: 5
   - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
     _delay: 0.5
-    _count: 20
+    _count: 5
   _spawnPoint:
   - {fileID: 1279041268}
   - {fileID: 1481756114}
@@ -3924,7 +3926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: 2.6113968}
+  m_AnchoredPosition: {x: -2.499939, y: 2.6113968}
   m_SizeDelta: {x: -15, y: -33.836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1532948181
@@ -3939,7 +3941,7 @@ GameObject:
   - component: {fileID: 1532948184}
   - component: {fileID: 1532948183}
   m_Layer: 5
-  m_Name: LooseLable
+  m_Name: WinLable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
