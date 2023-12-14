@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 public class PlayerLevel : MonoBehaviour
-{
+{ 
     private const int StartExperienceToNextLvl = 3;
     private const int FactorExperienceToNextLvl = 2;
     private const int StartPalerLvl = 1;
