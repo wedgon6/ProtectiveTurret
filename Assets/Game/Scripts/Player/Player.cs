@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(MovementPlayer))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMoney _money;
@@ -7,18 +8,29 @@ public class Player : MonoBehaviour
     [SerializeField] private PoolBullet _poolBullet;
 
     private BaseTurret _turret;
+    private int _currentMoney;
+    private MovementPlayer _movement;
 
     public BaseTurret CurrentTurret => _turret;
+    public int CurrentMoney => _currentMoney;
 
     public void Initialize(BaseTurret turret)
     {
         Instantiate(turret,_turretPosition.transform.position, _turretPosition.rotation,_turretPosition);
         _turret = turret;
+        _currentMoney = _money.CurrentMoney;
+        _money.OnChengetMoney += OnMoneyChenged;
+        _movement = GetComponent<MovementPlayer>();
     }
 
-    public void AddMonue(int moneu)
+    public void AddMonuy(int money)
     {
-        _money.AddMoney(moneu);
+        _money.AddMoney(money);
+    }
+
+    public void ReduceMoney(int money)
+    {
+        _money.ReduceMoney(money);
     }
 
     public void RotationTurret(float rotationY)
@@ -32,5 +44,15 @@ public class Player : MonoBehaviour
             return;
 
         _turret.RechargeTurret();
+    }
+
+    public void BoostMoveSpeed()
+    {
+        _movement.AddMoveSpeed();
+    }
+
+    private void OnMoneyChenged()
+    {
+        _currentMoney = _money.CurrentMoney;
     }
 }

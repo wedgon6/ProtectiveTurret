@@ -56,9 +56,11 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\WinState.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\PlayerAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\MovmentState.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\LoseState.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\EnemyPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
@@ -102,9 +105,9 @@
     <Compile Include="Assets\Game\Scripts\Turret\TurretPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
-    <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
-    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\PlayerAbillity.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\DamageAbillity.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

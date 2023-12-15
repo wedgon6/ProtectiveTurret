@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 30
   _stateMachine: {fileID: -2904775066482072312}
-  _revard: 2
+  _revard: 20
 --- !u!114 &-2904775066482072312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,8 +1664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 569880808110217583}
-  _moveSpeed: 0.3
-  _maxSpeed: 1
 --- !u!114 &569880808110217583
 MonoBehaviour:
   m_ObjectHideFlags: 0

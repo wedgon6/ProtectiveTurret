@@ -13,6 +13,13 @@ public class MovementPlayer : MonoBehaviour
     private Rigidbody _rigidbody;
     private InputAction _move;
 
+    public void AddMoveSpeed()
+    {
+        _moveSpeed *= 1.5f;
+        _maxMoveSpeed *= 1.5f;
+        Debug.Log("Апнул скорость");
+    }
+
     private void Awake()
     {
         _playerInputSystem = new PlayerInput();
