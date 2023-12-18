@@ -26,11 +26,12 @@ public class BaseTurret : MonoBehaviour
 
     public Action onClipSizeChanged;
 
-    public int CurrentSizeClip => _currentCoutBullet;
+    public int CurrentCountBullet => _currentCoutBullet;
 
     public void RechargeTurret()
     {
         _currentCoutBullet = _clipSize;
+        onClipSizeChanged?.Invoke();
     }
 
     protected virtual void FindTarget()

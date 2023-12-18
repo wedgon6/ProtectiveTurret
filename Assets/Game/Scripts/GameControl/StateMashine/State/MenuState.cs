@@ -10,6 +10,11 @@ public class MenuState : GameState
     private const float _startPositionY = -5.32f;
     private const float _startPositionZ = 4.96f;
 
+    private void Awake()
+    {
+        _player.Initialize();
+    }
+
     public override void Enter(Player player)
     {
         base.Enter(player);

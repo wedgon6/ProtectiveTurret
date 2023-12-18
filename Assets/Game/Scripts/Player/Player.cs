@@ -14,13 +14,22 @@ public class Player : MonoBehaviour
     public BaseTurret CurrentTurret => _turret;
     public int CurrentMoney => _currentMoney;
 
-    public void Initialize(BaseTurret turret)
+    public void Initialize()
     {
-        Instantiate(turret,_turretPosition.transform.position, _turretPosition.rotation,_turretPosition);
-        _turret = turret;
         _currentMoney = _money.CurrentMoney;
         _money.OnChengetMoney += OnMoneyChenged;
         _movement = GetComponent<MovementPlayer>();
+    }
+
+    public void InitializeTurret(BaseTurret turret)
+    {
+        if(_turret != null)
+        {
+            Destroy(_turret);
+        }
+
+        Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
+        _turret = turret;
     }
 
     public void AddMonuy(int money)

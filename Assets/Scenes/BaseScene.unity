@@ -1387,13 +1387,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523652739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5061f65ab3317c04bbd189e4a48d4ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _amountBullet: {fileID: 96054112}
-  _clip: {fileID: 0}
 --- !u!1 &538426842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,9 +1768,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7278443}
-  m_AnchorMax: {x: 0.11681542, y: 0.8474378}
-  m_AnchoredPosition: {x: 49.346924, y: -4.7388916}
-  m_SizeDelta: {x: 87.599, y: 2.222}
+  m_AnchorMax: {x: 0.1677365, y: 0.8474378}
+  m_AnchoredPosition: {x: -2.1530762, y: -4.7388916}
+  m_SizeDelta: {x: -15.401001, y: 2.222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576552967
 MonoBehaviour:
@@ -1969,7 +1968,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783402421}
   - component: {fileID: 783402422}
-  - component: {fileID: 783402423}
   m_Layer: 5
   m_Name: LvlProgress
   m_TagString: Untagged
@@ -2051,20 +2049,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &783402423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783402420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73d37651984cff6479c2752cd09a29be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bar: {fileID: 783402422}
-  _playerLvl: {fileID: 1883925415}
 --- !u!1 &797709765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,7 +2421,7 @@ GameObject:
   - component: {fileID: 900158794}
   - component: {fileID: 900158793}
   m_Layer: 5
-  m_Name: ClipSprite
+  m_Name: ClipSpriteIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3416,6 +3400,7 @@ MonoBehaviour:
   - {fileID: -4305921965764162190, guid: dc73073ffdfe7a545a1d5f4156845b24, type: 3}
   - {fileID: -382068185702370769, guid: f5cb89186a4207b45831ac4578da2b07, type: 3}
   _player: {fileID: 1883925412}
+  _playerLvl: {fileID: 1883925415}
   _template: {fileID: 5338374537282966022, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
   _itemContainer: {fileID: 1131702279}
 --- !u!1 &1159019728
@@ -3625,6 +3610,7 @@ MonoBehaviour:
   - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
   _playerLevel: {fileID: 1883925415}
   _player: {fileID: 1883925412}
+  _sizeClipTurret: {fileID: 523652743}
 --- !u!1 &1274321720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,6 +5164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2058916102}
+  - component: {fileID: 2058916103}
   m_Layer: 5
   m_Name: PlayerLvl
   m_TagString: Untagged
@@ -5207,6 +5194,21 @@ RectTransform:
   m_AnchoredPosition: {x: -2.044983, y: 5.6099854}
   m_SizeDelta: {x: 3.369995, y: 6.998001}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2058916103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058916101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d37651984cff6479c2752cd09a29be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bar: {fileID: 783402422}
+  _playerLvlProgress: {fileID: 1883925415}
+  _playerLvlValue: {fileID: 873400023}
 --- !u!1 &2095466030
 GameObject:
   m_ObjectHideFlags: 0

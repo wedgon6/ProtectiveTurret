@@ -81,10 +81,12 @@
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\EnemyPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\LevelProgressPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\LoseTransition.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPooling.cs" />
     <Compile Include="Assets\Game\Scripts\UI\LoseGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\DamageAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\MenuTransition.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
@@ -105,9 +108,6 @@
     <Compile Include="Assets\Game\Scripts\Turret\TurretPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
-    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\DamageAbillity.cs" />
-    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

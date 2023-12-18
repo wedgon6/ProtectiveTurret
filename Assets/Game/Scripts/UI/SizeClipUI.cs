@@ -4,15 +4,14 @@ using UnityEngine;
 public class SizeClipUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
-    [SerializeField] private BaseTurret _clip;
+    
+    private BaseTurret _clip;
 
-    private void Start()
+    public void SetTurret(BaseTurret turret)
     {
-        _amountBullet.text = _clip.CurrentSizeClip.ToString(); 
-    }
-
-    private void OnEnable()
-    {
+        _clip = turret;
+        _amountBullet.text = _clip.CurrentCountBullet.ToString();
+        Debug.Log($"clip --- {_clip.CurrentCountBullet}/n text -- {_amountBullet.text}");
         _clip.onClipSizeChanged += OnAmountChanged;
     }
 
@@ -23,6 +22,6 @@ public class SizeClipUI : MonoBehaviour
 
     private void OnAmountChanged()
     {
-        _amountBullet.text = _clip.CurrentSizeClip.ToString();
+        _amountBullet.text = _clip.CurrentCountBullet.ToString();
     }
 }

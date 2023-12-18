@@ -18,12 +18,17 @@ public class PlayerLevel : MonoBehaviour
     public Action<int, int> OnPlayerExpirianceChanget;
     public Action OnLvlUp;
 
-    private void OnAddExperience()
+    public void AddExperience()
     {
         _currentExperience++;
         OnPlayerExpirianceChanget?.Invoke(_currentExperience,_experienceToNextLvl);
 
         if(_currentExperience == _experienceToNextLvl)
+        {
+            _currentExperience = 0;
+            _currentPlayerLvl++;
+            OnPlayerExpirianceChanget?.Invoke(_currentExperience, _experienceToNextLvl);
             OnLvlUp?.Invoke();
+        }
     }
 }
