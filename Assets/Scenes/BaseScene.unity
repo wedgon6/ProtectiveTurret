@@ -1319,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &523652740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3539,7 +3539,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189180567}
-  - component: {fileID: 1189180566}
   - component: {fileID: 1189180569}
   - component: {fileID: 1189180570}
   m_Layer: 0
@@ -3549,21 +3548,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1189180566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189180565}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98537133f3eb76d4880b2db1f06a102c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameResultPanels: {fileID: 1110654311}
-  _readLine: {fileID: 731764867}
-  _enemyiesPresenter: {fileID: 1189180569}
 --- !u!4 &1189180567
 Transform:
   m_ObjectHideFlags: 0
@@ -3605,9 +3589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseTurrets:
+  - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
   - {fileID: 7743801278584831193, guid: b659a44e96caadc46ba354f80250037d, type: 3}
   - {fileID: -6799280094918002331, guid: 04082846642ca9f4095ffb599d69d9f2, type: 3}
-  - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
   _playerLevel: {fileID: 1883925415}
   _player: {fileID: 1883925412}
   _sizeClipTurret: {fileID: 523652743}

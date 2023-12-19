@@ -87,7 +87,6 @@
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
-    <Compile Include="Assets\Game\Scripts\GameControl\LevelProgressPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\LoseTransition.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />

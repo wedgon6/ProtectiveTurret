@@ -20,18 +20,19 @@ public class BaseTurret : MonoBehaviour
     protected Coroutine _corontine;
     protected Animator _animator;
 
-    protected int _clipSize;
+    protected int _clipSize = 50;
+    protected float _cooldown = 1.5f;
     protected int _currentCoutBullet;
-    protected float _cooldown;
 
-    public Action onClipSizeChanged;
+    public Action OnClipSizeChanged;
 
     public int CurrentCountBullet => _currentCoutBullet;
 
     public void RechargeTurret()
     {
         _currentCoutBullet = _clipSize;
-        onClipSizeChanged?.Invoke();
+        OnClipSizeChanged?.Invoke();
+        Debug.Log("Перезарядка турели");
     }
 
     protected virtual void FindTarget()
@@ -73,7 +74,7 @@ public class BaseTurret : MonoBehaviour
 
     protected virtual void ShootingControl()
     {
-        if (CanEnemy())
+        if (HaveEnemy())
         {
             LookAtEnemy();
         }
@@ -103,6 +104,10 @@ public class BaseTurret : MonoBehaviour
             bullet.Initialize(SpeedBullet, _poolBullet);
             _animator.SetTrigger("Shoot");
         }
+
+        _currentCoutBullet--;
+        OnClipSizeChanged?.Invoke();
+        Debug.Log("отнят пули");
     }
 
     protected virtual IEnumerator Shooting()
@@ -113,7 +118,7 @@ public class BaseTurret : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
 
-            if (CanEnemy())
+            if (HaveEnemy())
             {
                 for (int j = 0; j < _shootPoints.Length; j++)
                 {
@@ -125,9 +130,6 @@ public class BaseTurret : MonoBehaviour
                     else
                     {
                         InstantiateBullet(j);
-                        _currentCoutBullet--;
-                        onClipSizeChanged?.Invoke();
-
                         curretPoint = j;
                     }
                 }
@@ -145,9 +147,9 @@ public class BaseTurret : MonoBehaviour
     {
         yield return new WaitForSeconds(_cooldown);
         _currentCoutBullet = _clipSize;
-        onClipSizeChanged?.Invoke();
+        OnClipSizeChanged?.Invoke();
 
-        if (CanEnemy())
+        if (HaveEnemy())
             CorountineStart(Shooting());
         else
             FindTarget();
@@ -161,7 +163,7 @@ public class BaseTurret : MonoBehaviour
         _corontine = StartCoroutine(corontine);
     }
 
-    private bool CanEnemy()
+    private bool HaveEnemy()
     {
         if (_currentTarget == null || _currentTarget.isActiveAndEnabled == false)
             return false;

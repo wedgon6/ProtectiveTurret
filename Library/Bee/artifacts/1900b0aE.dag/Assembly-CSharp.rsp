@@ -363,7 +363,6 @@
 "Assets/Game/Scripts/Enemy/State Machine/EnemyTransition.cs"
 "Assets/Game/Scripts/Enemy/State Machine/EnemyTransition/DyingTransition.cs"
 "Assets/Game/Scripts/GameControl/EnemyPresenter.cs"
-"Assets/Game/Scripts/GameControl/LevelProgressPresenter.cs"
 "Assets/Game/Scripts/GameControl/LevelState.cs"
 "Assets/Game/Scripts/GameControl/Shoop/Shoop.cs"
 "Assets/Game/Scripts/GameControl/Shoop/ShoopView.cs"

@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
             Destroy(_turret);
         }
 
-        Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
         _turret = turret;
+        Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
     }
 
     public void AddMonuy(int money)

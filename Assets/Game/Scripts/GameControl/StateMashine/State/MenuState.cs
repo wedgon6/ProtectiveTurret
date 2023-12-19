@@ -33,6 +33,5 @@ public class MenuState : GameState
 
     private void Update()
     {
-        
     }
 }

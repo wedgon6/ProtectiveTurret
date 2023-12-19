@@ -73,6 +73,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canon_lvl_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013227101710, guid: d9231829d3cedca409477c9327eb6425, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013053745136, guid: d9231829d3cedca409477c9327eb6425, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -11,6 +11,7 @@ public class TurretPresenter : MonoBehaviour
 
     private bool _isHaveTurret = false;
     private int _indexTurret = 0;
+    private BaseTurret _currentTurret;
 
     public void TrySetTurret()
     {
@@ -18,7 +19,7 @@ public class TurretPresenter : MonoBehaviour
             return;
 
        InitializePlayerTurret();
-       _sizeClipTurret.SetTurret(_baseTurrets[_indexTurret]);
+        _sizeClipTurret.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -51,19 +52,24 @@ public class TurretPresenter : MonoBehaviour
     {
         if(_playerLevel.CurrentPlayerLvl == 1)
         {
-            _player.InitializeTurret(_baseTurrets[0]);
+            _currentTurret = _baseTurrets[0];
+            _player.InitializeTurret(_currentTurret);
             _isHaveTurret = true;
+            _sizeClipTurret.SetTurret(_currentTurret);
             return;
         }
 
         if (_indexTurret >= _baseTurrets.Count)
         {
             Debug.Log($"{_baseTurrets.Count}");
-            _player.InitializeTurret(_baseTurrets[_baseTurrets.Count]);
+            _currentTurret = _baseTurrets[_baseTurrets.Count];
+            _player.InitializeTurret(_currentTurret);
+            _sizeClipTurret.SetTurret(_currentTurret);
             return;
         }
 
-        _player.InitializeTurret(_baseTurrets[_indexTurret]);
-        _sizeClipTurret.SetTurret(_baseTurrets[_indexTurret]);
+        _currentTurret = _baseTurrets[_indexTurret];
+        _player.InitializeTurret(_currentTurret);
+        _sizeClipTurret.SetTurret(_currentTurret);
     }
 }
