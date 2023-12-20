@@ -53,8 +53,8 @@ public class TurretPresenter : MonoBehaviour
         if(_playerLevel.CurrentPlayerLvl == 1)
         {
             _currentTurret = _baseTurrets[0];
-            _player.InitializeTurret(_currentTurret);
             _isHaveTurret = true;
+            _player.InitializeTurret(_currentTurret);
             _sizeClipTurret.SetTurret(_currentTurret);
             return;
         }

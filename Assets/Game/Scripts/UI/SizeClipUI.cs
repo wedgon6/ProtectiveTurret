@@ -21,13 +21,8 @@ public class SizeClipUI : MonoBehaviour
         }
 
         _clip.OnClipSizeChanged += OnAmountChanged;
-        _amountBullet.text = _clip.CurrentCountBullet.ToString();
+        //_amountBullet.text = _clip.CurrentCountBullet.ToString();
         Debug.Log($"clip --- {_clip.CurrentCountBullet}/n text -- {_amountBullet.text}");
-    }
-
-    private void OnEnable()
-    {
-        //_clip.onClipSizeChanged += OnAmountChanged;
     }
 
     private void OnDisable()

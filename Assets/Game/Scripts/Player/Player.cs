@@ -5,7 +5,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
-    [SerializeField] private PoolBullet _poolBullet;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -28,8 +27,7 @@ public class Player : MonoBehaviour
             Destroy(_turret);
         }
 
-        _turret = turret;
-        Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
+        _turret = Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
     }
 
     public void AddMonuy(int money)

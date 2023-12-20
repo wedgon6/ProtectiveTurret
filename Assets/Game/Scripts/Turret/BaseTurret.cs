@@ -35,6 +35,11 @@ public class BaseTurret : MonoBehaviour
         Debug.Log("Перезарядка турели");
     }
 
+    public void DestroyTurret()
+    {
+        Destroy(gameObject);
+    }
+
     protected virtual void FindTarget()
     {
         _enemies.Clear();
@@ -86,7 +91,7 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    protected virtual void InstantiateBullet(int shootPoint)
+    protected virtual void InstantiateBullet(int shootPoint, Enemy target)
     {
         Bullet bullet;
 
@@ -101,7 +106,7 @@ public class BaseTurret : MonoBehaviour
         else
         {
             bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, _shootPoints[shootPoint].rotation);
-            bullet.Initialize(SpeedBullet, _poolBullet);
+            bullet.Initialize(SpeedBullet, _poolBullet, target);
             _animator.SetTrigger("Shoot");
         }
 
@@ -129,7 +134,7 @@ public class BaseTurret : MonoBehaviour
                     }
                     else
                     {
-                        InstantiateBullet(j);
+                        InstantiateBullet(j, _currentTarget);
                         curretPoint = j;
                     }
                 }

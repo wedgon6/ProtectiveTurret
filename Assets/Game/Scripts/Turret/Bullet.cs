@@ -7,11 +7,13 @@ public class Bullet : MonoBehaviour, IPoolObject
     private float _speedBullet;
     private Rigidbody _rigidbody;
     private PoolBullet _poolBullet;
+    protected Enemy _enemy;
 
-    public void Initialize(float speedBullet, PoolBullet poolBullet)
+    public void Initialize(float speedBullet, PoolBullet poolBullet, Enemy target)
     {
         _speedBullet = speedBullet;
         _poolBullet = poolBullet;
+        _enemy = target; 
     }
 
     //public void Shoot(Vector3 startPoint, Vector3 speed)
@@ -36,6 +38,8 @@ public class Bullet : MonoBehaviour, IPoolObject
     private void FixedUpdate()
     {
         _rigidbody.AddForce(transform.forward * _speedBullet, ForceMode.VelocityChange);
+        //transform.position = Vector3.MoveTowards(transform.position, _enemy.transform.position, _speedBullet * Time.fixedDeltaTime);
+        //transform.Translate(_enemy.transform.position * _speedBullet*Time.fixedDeltaTime,Space.World);
     }
 
     private void OnCollisionEnter(Collision collision)
