@@ -27,7 +27,8 @@ public class SizeClipUI : MonoBehaviour
 
     private void OnDisable()
     {
-        _clip.OnClipSizeChanged -= OnAmountChanged;
+        if(_clip != null )
+            _clip.OnClipSizeChanged -= OnAmountChanged;
     }
 
     private void OnAmountChanged()

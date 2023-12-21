@@ -1328,7 +1328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &523652740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3654,12 +3654,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseTurrets:
-  - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
   - {fileID: 7743801278584831193, guid: b659a44e96caadc46ba354f80250037d, type: 3}
   - {fileID: -6799280094918002331, guid: 04082846642ca9f4095ffb599d69d9f2, type: 3}
+  - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
   _playerLevel: {fileID: 1883925415}
   _player: {fileID: 1883925412}
-  _sizeClipTurret: {fileID: 523652743}
 --- !u!1 &1274321720
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,6 +4747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: {fileID: 1883925413}
   _turretPosition: {fileID: 972671864}
+  _sizeClip: {fileID: 523652743}
 --- !u!114 &1883925413
 MonoBehaviour:
   m_ObjectHideFlags: 0

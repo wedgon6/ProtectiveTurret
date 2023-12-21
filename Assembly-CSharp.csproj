@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\LoseState.cs" />
     <Compile Include="Assets\Game\InputSystem\PlayerInput.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\BattleTransition.cs" />
@@ -71,10 +73,13 @@
     <Compile Include="Assets\Game\Scripts\GameControl\EnemyPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\MovmentState.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemyWave.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\LoseTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
@@ -83,8 +88,10 @@
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
     <Compile Include="Assets\Game\Scripts\UI\LoseGamePanel.cs" />
@@ -92,6 +99,9 @@
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
     <Compile Include="Assets\Game\Scripts\Move\MovementPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\BattleState.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\LevelState.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPooling.cs" />
@@ -103,21 +113,27 @@
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\WinTransition.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\MenuTransition.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Game\Scripts\Map\RedLine.cs" />
     <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition\DyingTransition.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MoneuViev.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\WaveProgressBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Game\Art\Particle\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Game\Art\Particle\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Game\Art\Particle\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />

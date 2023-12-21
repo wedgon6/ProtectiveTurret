@@ -15,8 +15,8 @@ public class MovementPlayer : MonoBehaviour
 
     public void AddMoveSpeed()
     {
-        _moveSpeed *= 1.5f;
-        _maxMoveSpeed *= 1.5f;
+        _moveSpeed += 1.2f;
+        _maxMoveSpeed += 1.2f;
         Debug.Log("Апнул скорость");
     }
 

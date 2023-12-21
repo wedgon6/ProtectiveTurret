@@ -99,13 +99,13 @@ public class BaseTurret : MonoBehaviour
         {
             bullet = pollBullet as Bullet;
             bullet.transform.position = _shootPoints[shootPoint].position;
-            bullet.transform.rotation = _shootPoints[shootPoint].rotation;
+            bullet.transform.rotation = transform.rotation;
             bullet.gameObject.SetActive(true);
             _animator.SetTrigger("Shoot");
         }
         else
         {
-            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, _shootPoints[shootPoint].rotation);
+            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, transform.rotation);
             bullet.Initialize(SpeedBullet, _poolBullet, target);
             _animator.SetTrigger("Shoot");
         }
@@ -174,5 +174,14 @@ public class BaseTurret : MonoBehaviour
             return false;
         else
             return true;
+    }
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    private void FixedUpdate()
+    {
+        ShootingControl();
     }
 }

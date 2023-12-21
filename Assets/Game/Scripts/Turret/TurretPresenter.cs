@@ -7,7 +7,6 @@ public class TurretPresenter : MonoBehaviour
     [SerializeField] private List<BaseTurret> _baseTurrets;
     [SerializeField] private PlayerLevel _playerLevel;
     [SerializeField] private Player _player;
-    [SerializeField] private SizeClipUI _sizeClipTurret;
 
     private bool _isHaveTurret = false;
     private int _indexTurret = 0;
@@ -19,7 +18,6 @@ public class TurretPresenter : MonoBehaviour
             return;
 
        InitializePlayerTurret();
-        _sizeClipTurret.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -55,21 +53,17 @@ public class TurretPresenter : MonoBehaviour
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
             _player.InitializeTurret(_currentTurret);
-            _sizeClipTurret.SetTurret(_currentTurret);
             return;
         }
 
         if (_indexTurret >= _baseTurrets.Count)
         {
-            Debug.Log($"{_baseTurrets.Count}");
             _currentTurret = _baseTurrets[_baseTurrets.Count];
             _player.InitializeTurret(_currentTurret);
-            _sizeClipTurret.SetTurret(_currentTurret);
             return;
         }
 
         _currentTurret = _baseTurrets[_indexTurret];
         _player.InitializeTurret(_currentTurret);
-        _sizeClipTurret.SetTurret(_currentTurret);
     }
 }

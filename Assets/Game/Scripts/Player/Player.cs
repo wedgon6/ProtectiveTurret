@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
+    [SerializeField] private SizeClipUI _sizeClip;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -24,10 +25,12 @@ public class Player : MonoBehaviour
     {
         if(_turret != null)
         {
-            Destroy(_turret);
+            Destroy(_turret.gameObject);
         }
 
         _turret = Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
+        _sizeClip.SetTurret(_turret);
+        _turret.RechargeTurret();
     }
 
     public void AddMonuy(int money)

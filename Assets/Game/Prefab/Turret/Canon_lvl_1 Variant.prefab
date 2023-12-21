@@ -5,11 +5,16 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 800640644, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       propertyPath: _poolBullet
@@ -82,6 +87,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 800640644, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
     - {fileID: 3342115805831069881, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1000013566905100, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6614943964508633847}
+    - targetCorrespondingSourceObject: {fileID: 1000013566905100, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -512252288170216116}
   m_SourcePrefab: {fileID: 100100000, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
 --- !u!1 &7742830967665359184 stripped
 GameObject:
@@ -100,3 +114,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-512252288170216116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742830967665359184}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9741c1d31a4ad4e9b9a288c2a8fbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoints:
+  - {fileID: 7743801279577190096}
+  _bullet: {fileID: 6573033793096541921, guid: f9217ff16eb2985469df087ebdf769b5, type: 3}
+  _poolBullet: {fileID: -6614943964508633847}
+--- !u!4 &7743801279577190096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1787993228, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+  m_PrefabInstance: {fileID: 7743801279217627740}
+  m_PrefabAsset: {fileID: 0}
