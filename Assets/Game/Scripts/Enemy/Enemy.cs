@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private float _maxHealth;
     [SerializeField] private EnemyStateMachine _stateMachine;
     [SerializeField] private int _revard;
+    [SerializeField] private GameObject _particle;
 
     private RedLine _target;
     private PoolEnemy _poolEnemy;
@@ -51,9 +52,15 @@ public class Enemy : MonoBehaviour, IPoolObject
         _stateMachine.ResetStete();
     }
 
+    public void GetCrosshairs()
+    {
+        _particle.SetActive(true);
+    }
+
     public void ReturnToPool()
     {
         gameObject.SetActive(false);
+        _particle.SetActive(false);
         _poolEnemy.PoolObject(this);
         _health = _maxHealth;
         _isDead = false;

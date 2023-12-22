@@ -76,6 +76,7 @@
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState.cs" />
+    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\AmmoCountAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemyWave.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\LoseTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
-    <Compile Include="Assets\Game\Scripts\Shoop\Abillity\DamageAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\WinState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
@@ -109,7 +109,6 @@
     <Compile Include="Assets\Game\Scripts\Turret\TurretPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MenuPanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameStateMashine.cs" />
-    <Compile Include="Assets\Game\Scripts\UI\GameResultPanels.cs" />
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\WinTransition.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\MenuTransition.cs" />

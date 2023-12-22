@@ -65,6 +65,7 @@ public class BaseTurret : MonoBehaviour
         else
         {
             _currentTarget = _enemies.OrderByDescending(distance => distance.Key).First().Value;
+            _currentTarget.GetCrosshairs();
             CorountineStart(Shooting());
         }
     }

@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SizeClipUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
+    [SerializeField] private Image _reloadImage;
     
     private BaseTurret _clip;
 
@@ -23,6 +25,7 @@ public class SizeClipUI : MonoBehaviour
         _clip.OnClipSizeChanged += OnAmountChanged;
         //_amountBullet.text = _clip.CurrentCountBullet.ToString();
         Debug.Log($"clip --- {_clip.CurrentCountBullet}/n text -- {_amountBullet.text}");
+        _reloadImage.fillAmount = 1f / 2f;
     }
 
     private void OnDisable()
