@@ -20,19 +20,26 @@ public class BaseTurret : MonoBehaviour
     protected Coroutine _corontine;
     protected Animator _animator;
 
-    protected int _clipSize = 50;
-    protected float _cooldown = 1.5f;
+    protected int _ammouSize;
+    protected float _cooldown;
     protected int _currentCoutBullet;
 
     public Action OnClipSizeChanged;
+    public Action OnRechargeAmmou;
 
     public int CurrentCountBullet => _currentCoutBullet;
+    public float CoolDonw => _cooldown;
+
+    public void SetTurretParameters(int ammouSize, float reloadTime)
+    {
+        _ammouSize = ammouSize;
+        _cooldown = reloadTime;
+    }
 
     public void RechargeTurret()
     {
-        _currentCoutBullet = _clipSize;
+        _currentCoutBullet = _ammouSize;
         OnClipSizeChanged?.Invoke();
-        Debug.Log("Перезарядка турели");
     }
 
     public void DestroyTurret()
@@ -113,7 +120,6 @@ public class BaseTurret : MonoBehaviour
 
         _currentCoutBullet--;
         OnClipSizeChanged?.Invoke();
-        Debug.Log("отнят пули");
     }
 
     protected virtual IEnumerator Shooting()
@@ -151,8 +157,9 @@ public class BaseTurret : MonoBehaviour
 
     protected virtual IEnumerator Recharge()
     {
+        OnRechargeAmmou?.Invoke();
         yield return new WaitForSeconds(_cooldown);
-        _currentCoutBullet = _clipSize;
+        _currentCoutBullet = _ammouSize;
         OnClipSizeChanged?.Invoke();
 
         if (HaveEnemy())

@@ -26,10 +26,10 @@ public class Shoop : MonoBehaviour
 
     private void OnSellButtonClick(PlayerAbillity abillity, ShoopView view)
     {
-        TrySellWeapon(abillity, view);
+        TrySellAbillity(abillity, view);
     }
 
-    private void TrySellWeapon(PlayerAbillity abillity, ShoopView view)
+    private void TrySellAbillity(PlayerAbillity abillity, ShoopView view)
     {
         if (abillity.Price > _player.CurrentMoney)
             return;

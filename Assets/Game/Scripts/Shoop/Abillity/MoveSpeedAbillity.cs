@@ -6,6 +6,8 @@ public class MoveSpeedAbillity : PlayerAbillity
     {
         player.BoostMoveSpeed();
         _currentPrice = (int)Math.Round(_currentPrice * _multiplier, 0);
+        _currentLvl++;
         OnPriceChenget?.Invoke();
+        OnLvlChenget?.Invoke();
     }
 }

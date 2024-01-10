@@ -12,6 +12,26 @@ public class TurretPresenter : MonoBehaviour
     private int _indexTurret = 0;
     private BaseTurret _currentTurret;
 
+    private float _baseReloadTime = 4f;
+    private float _decreaseReload = 0.16f;
+    private int _baseAmmouSize = 20;
+    private int _ammouSizeRise = 15;
+
+    public void AddAmmouTurret()
+    {
+        _baseAmmouSize += _ammouSizeRise;
+        _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
+    }
+
+    public void ReduceCooldownReload()
+    {
+        if (_baseReloadTime <= _decreaseReload)
+            return;
+
+        _baseReloadTime -= _decreaseReload;
+        _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
+    }
+
     public void TrySetTurret()
     {
         if (_isHaveTurret == true)
@@ -52,18 +72,18 @@ public class TurretPresenter : MonoBehaviour
         {
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
-            _player.InitializeTurret(_currentTurret);
+            _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
             return;
         }
 
         if (_indexTurret >= _baseTurrets.Count)
         {
             _currentTurret = _baseTurrets[_baseTurrets.Count];
-            _player.InitializeTurret(_currentTurret);
+            _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
             return;
         }
 
         _currentTurret = _baseTurrets[_indexTurret];
-        _player.InitializeTurret(_currentTurret);
+        _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
     }
 }

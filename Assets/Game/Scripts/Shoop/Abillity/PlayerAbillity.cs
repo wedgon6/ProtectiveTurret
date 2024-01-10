@@ -8,7 +8,7 @@ public abstract class PlayerAbillity : MonoBehaviour
     [SerializeField] protected float _multiplier;
     [SerializeField] private int _startPrice;
 
-    private int _currentLvl = 1;
+    protected int _currentLvl = 1;
     
     protected int _currentPrice;
 
@@ -18,6 +18,7 @@ public abstract class PlayerAbillity : MonoBehaviour
     public int CurrentLvl => _currentLvl;
 
     public Action OnPriceChenget;
+    public Action OnLvlChenget;
 
     public void Initialize()
     {

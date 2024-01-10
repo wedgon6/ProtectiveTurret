@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +10,7 @@ public class SizeClipUI : MonoBehaviour
     [SerializeField] private Image _reloadImage;
     
     private BaseTurret _clip;
+    private Coroutine _rechargeCoroutine;
 
     public void SetTurret(BaseTurret turret)
     {
@@ -18,25 +21,41 @@ public class SizeClipUI : MonoBehaviour
         else
         {
             _clip.OnClipSizeChanged -= OnAmountChanged;
+            _clip.OnRechargeAmmou -= OnRecharge;
             _clip = null;
             _clip = turret;
         }
 
         _clip.OnClipSizeChanged += OnAmountChanged;
-        //_amountBullet.text = _clip.CurrentCountBullet.ToString();
-        Debug.Log($"clip --- {_clip.CurrentCountBullet}/n text -- {_amountBullet.text}");
-        _reloadImage.fillAmount = 1f / 2f;
+        _clip.OnRechargeAmmou += OnRecharge;
     }
 
     private void OnDisable()
     {
-        if(_clip != null )
+        if(_clip != null)
+        {
             _clip.OnClipSizeChanged -= OnAmountChanged;
+            _clip.OnRechargeAmmou -= OnRecharge;
+        }
     }
 
     private void OnAmountChanged()
     {
         _amountBullet.text = _clip.CurrentCountBullet.ToString();
-        Debug.Log($"clip изменились пули");
+    }
+
+    private void OnRecharge()
+    {
+        if (_rechargeCoroutine != null)
+            StopCoroutine(_rechargeCoroutine);
+
+        _rechargeCoroutine = StartCoroutine(RechargeAnimation());
+    }
+
+    private IEnumerator RechargeAnimation()
+    {
+        _reloadImage.DOFillAmount(1, _clip.CoolDonw).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(2f);
+        _reloadImage.fillAmount = 0f;
     }
 }

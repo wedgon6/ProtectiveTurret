@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
     [SerializeField] private SizeClipUI _sizeClip;
+    [SerializeField] private TurretPresenter _turretPresenter;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
         _movement = GetComponent<MovementPlayer>();
     }
 
-    public void InitializeTurret(BaseTurret turret)
+    public void InitializeTurret(BaseTurret turret, int ammouSize, float cooldownReload)
     {
         if(_turret != null)
         {
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
         }
 
         _turret = Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
+        _turret.SetTurretParameters(ammouSize, cooldownReload);
         _sizeClip.SetTurret(_turret);
         _turret.RechargeTurret();
     }
@@ -59,6 +61,16 @@ public class Player : MonoBehaviour
     public void BoostMoveSpeed()
     {
         _movement.AddMoveSpeed();
+    }
+
+    public void AddAmmouSize()
+    {
+        _turretPresenter.AddAmmouTurret();
+    }
+
+    public void DiscountCooldownReload()
+    {
+        _turretPresenter.ReduceCooldownReload();
     }
 
     private void OnMoneyChenged()

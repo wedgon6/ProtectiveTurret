@@ -4811,6 +4811,7 @@ MonoBehaviour:
   _money: {fileID: 1883925413}
   _turretPosition: {fileID: 972671864}
   _sizeClip: {fileID: 523652743}
+  _turretPresenter: {fileID: 1189180570}
 --- !u!114 &1883925413
 MonoBehaviour:
   m_ObjectHideFlags: 0
