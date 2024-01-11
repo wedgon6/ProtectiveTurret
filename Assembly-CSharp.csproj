@@ -65,6 +65,7 @@
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\BattleTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ViewLeaderboard.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\SDKInitialize.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\PlayerAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\AmmoCountAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\Leaderboard.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemyWave.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Language.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXRotation.cs" />
@@ -109,10 +112,13 @@
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MenuPanel.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\DataPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameStateMashine.cs" />
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\WinTransition.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\MenuTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Localization.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ElementPlayer.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Game\Scripts\Map\RedLine.cs" />
     <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
@@ -884,6 +890,26 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{4E5561EA-48A5-5821-6D66-332756455472}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalization.TMP.csproj">
+      <Project>{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}</Project>
+      <Name>LeanLocalization.TMP</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalization.csproj">
+      <Project>{1ECDBBFC-6393-2483-58DD-20F36A0725CC}</Project>
+      <Name>LeanLocalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalizationEditor.csproj">
+      <Project>{948808A2-13C5-E526-D6BA-371C392850E9}</Project>
+      <Name>LeanLocalizationEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{B63365C3-CAEF-D27D-6178-3ACABADCFC42}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{BFD060F2-70E8-2D12-FEFC-5D4C04ADBF36}</Project>
+      <Name>LeanCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

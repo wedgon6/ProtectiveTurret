@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
+    <None Include="Assets\Plugins\CW\READ ME.txt" />
+    <None Include="Assets\Plugins\CW\Third-Party Notices.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
   </ItemGroup>
@@ -804,6 +806,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="LeanLocalization.TMP.csproj">
+      <Project>{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}</Project>
+      <Name>LeanLocalization.TMP</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalization.csproj">
+      <Project>{1ECDBBFC-6393-2483-58DD-20F36A0725CC}</Project>
+      <Name>LeanLocalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalizationEditor.csproj">
+      <Project>{948808A2-13C5-E526-D6BA-371C392850E9}</Project>
+      <Name>LeanLocalizationEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{B63365C3-CAEF-D27D-6178-3ACABADCFC42}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{BFD060F2-70E8-2D12-FEFC-5D4C04ADBF36}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
