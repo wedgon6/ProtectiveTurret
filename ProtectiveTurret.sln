@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization.TMP", "LeanLocalization.TMP.csproj", "{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.YandexGames.Samples.Playtesting", "Agava.YandexGames.Samples.Playtesting.csproj", "{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalizationEditor", "LeanLocalizationEditor.csproj", "{948808A2-13C5-E526-D6BA-371C392850E9}"
 EndProject
 Global
@@ -45,6 +47,10 @@ Global
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{948808A2-13C5-E526-D6BA-371C392850E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{948808A2-13C5-E526-D6BA-371C392850E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{948808A2-13C5-E526-D6BA-371C392850E9}.Release|Any CPU.ActiveCfg = Release|Any CPU

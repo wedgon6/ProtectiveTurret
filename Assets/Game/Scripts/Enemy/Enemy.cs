@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private float _maxHealth;
     [SerializeField] private EnemyStateMachine _stateMachine;
     [SerializeField] private int _revard;
+    [SerializeField] private int _countScore;
     [SerializeField] private GameObject _particle;
 
     private RedLine _target;
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     public int Revard => _revard;
     public Player Player => _player;
     public EnemySpawner Spawner => _spawner;
+    public int CountScore => _countScore;
 
     public void Initialize(RedLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
     {

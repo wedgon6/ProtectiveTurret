@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
     [SerializeField] private SizeClipUI _sizeClip;
+    [SerializeField] private PlayerScore _playerScore;
     [SerializeField] private TurretPresenter _turretPresenter;
 
     private BaseTurret _turret;
@@ -35,9 +36,10 @@ public class Player : MonoBehaviour
         _turret.RechargeTurret();
     }
 
-    public void AddMonuy(int money)
+    public void AddMoney(int money, int score)
     {
         _money.AddMoney(money);
+        _playerScore.AddScore(score);
     }
 
     public void ReduceMoney(int money)

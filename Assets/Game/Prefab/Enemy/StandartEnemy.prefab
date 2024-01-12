@@ -1654,6 +1654,7 @@ MonoBehaviour:
   _maxHealth: 30
   _stateMachine: {fileID: -2904775066482072312}
   _revard: 1000000
+  _countScore: 10
   _particle: {fileID: 1738807460353944895}
 --- !u!114 &-2904775066482072312
 MonoBehaviour:

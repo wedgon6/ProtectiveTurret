@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,5 +13,4 @@ public class ElementPlayer : MonoBehaviour
         _playerRank.text = rank.ToString();
         _playerScore.text = score.ToString();
     }
-
 }

@@ -13,13 +13,7 @@ public class Leaderboard : MonoBehaviour
 
     public void SetPlayer(int score)
     {
-        if (PlayerAccount.IsAuthorized == false)
-            return;
-
-        Agava.YandexGames.Leaderboard.GetPlayerEntry(LeaderboardName, onSuccessCallback_ =>
-        {
-            Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
-        });
+        Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
     }
 
     public void Fill()
@@ -40,9 +34,9 @@ public class Leaderboard : MonoBehaviour
                 if (string.IsNullOrEmpty(name))
                 {
                     name = AnonymousName;
-
-                    _leaderboardPlayers.Add(new DataPlayer(name, rank, score));
                 }
+
+                _leaderboardPlayers.Add(new DataPlayer(name, rank, score));
             }
 
             _leaderboardView.ConstructLeaderboard(_leaderboardPlayers);

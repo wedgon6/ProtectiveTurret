@@ -818,6 +818,10 @@
       <Project>{948808A2-13C5-E526-D6BA-371C392850E9}</Project>
       <Name>LeanLocalizationEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Agava.YandexGames.Samples.Playtesting.csproj">
+      <Project>{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}</Project>
+      <Name>Agava.YandexGames.Samples.Playtesting</Name>
+    </ProjectReference>
     <ProjectReference Include="CW.Common.csproj">
       <Project>{B63365C3-CAEF-D27D-6178-3ACABADCFC42}</Project>
       <Name>CW.Common</Name>

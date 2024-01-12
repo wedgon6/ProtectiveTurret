@@ -330,6 +330,7 @@
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.4/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Agava.YandexGames.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Agava.YandexGames.Samples.Playtesting.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
@@ -417,6 +418,7 @@
 "Assets/Game/Scripts/Player/Player.cs"
 "Assets/Game/Scripts/Player/PlayerLevel.cs"
 "Assets/Game/Scripts/Player/PlayerMoney.cs"
+"Assets/Game/Scripts/Player/PlayerScore.cs"
 "Assets/Game/Scripts/PoolSystem/IPooling.cs"
 "Assets/Game/Scripts/PoolSystem/IPoolObject.cs"
 "Assets/Game/Scripts/PoolSystem/PoolBullet.cs"
@@ -440,6 +442,7 @@
 "Assets/Game/Scripts/UI/MenuPanel.cs"
 "Assets/Game/Scripts/UI/MoneuViev.cs"
 "Assets/Game/Scripts/UI/PlayerLvlProgressBar.cs"
+"Assets/Game/Scripts/UI/SettingsPanel.cs"
 "Assets/Game/Scripts/UI/SizeClipUI.cs"
 "Assets/Game/Scripts/UI/WinGamePanel.cs"
 -langversion:9.0

@@ -15,7 +15,7 @@ public class DyingState : EnemyState
     private void Die()
     {
         Enemy.ReturnToPool();
-        Enemy.Player.AddMonuy(Enemy.Revard);
+        Enemy.Player.AddMoney(Enemy.Revard,Enemy.CountScore);
         Enemy.Spawner.OnEnemyDead();
     }
 }
