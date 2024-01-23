@@ -5,6 +5,7 @@ public class MenuState : GameState
     [SerializeField] private Player _player;
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
+    [SerializeField] private Leaderboard _leaderboard;
 
     private const float _startPositionX = -1.55f;
     private const float _startPositionY = -5.32f;
@@ -13,6 +14,7 @@ public class MenuState : GameState
     private void Awake()
     {
         _player.Initialize();
+        _leaderboard.SetPlayer(_player.CurrentScore);
     }
 
     public override void Enter(Player player)

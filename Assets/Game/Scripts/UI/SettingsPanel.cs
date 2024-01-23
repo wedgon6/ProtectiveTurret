@@ -7,10 +7,12 @@ public class SettingsPanelController : MonoBehaviour
     public void OpenSettingsPannel()
     {
         _settingsPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void CloseSettingsPanel()
     {
         _settingsPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
