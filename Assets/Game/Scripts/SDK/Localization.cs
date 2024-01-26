@@ -8,17 +8,8 @@ public sealed class Localization : MonoBehaviour
     private const string RussianCode = "ru";
     private const string TurkishCode = "tr";
 
-    private void Awake()
+    public void ChangeLanguage(string languageCode)
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        ChangeLanguage();
-#endif
-    }
-
-    private void ChangeLanguage()
-    {
-        string languageCode = YandexGamesSdk.Environment.i18n.lang;
-
         string language = languageCode switch
         {
             EnglishCode => Language.en.ToString(),

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SDKInitialize : MonoBehaviour
 {
-#if !UNITY_EDITOR
+    [SerializeField] private Localization _localization;
+
+#if UNITY_WEBGL && !UNITY_EDITOR
    private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
@@ -18,10 +20,11 @@ public class SDKInitialize : MonoBehaviour
 
     private void OnInitialized()
     {
+        _localization.ChangeLanguage(YandexGamesSdk.Environment.i18n.lang);
         SceneManager.LoadScene("BaseScene");
     }
 #else
-    private void Awake()
+    private void Start()
     {
         SceneManager.LoadScene("BaseScene");
     }

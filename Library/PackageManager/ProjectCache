@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638386117568675910
-    m_Hash: 2032470596
+      ticks: 638417171372598158
+    m_Hash: 2666467603
   m_LockFileStatus:
     m_FilePath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638386118288449112
-    m_Hash: 329159185
+      ticks: 638417171836912941
+    m_Hash: 3125167152
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages"
-m_EditorVersion: 2022.3.4f1 (35713cd46cd7)
+m_EditorVersion: 2022.3.7f1 (b16b3b16c7a0)
 m_ResolvedPackages:
 - packageId: com.agava.yandexgames@https://github.com/forcepusher/com.agava.yandexgames.git#15.1.1
   testable: 0
@@ -88,17 +88,30 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: High-level NavMesh components for building and using NavMeshes at
     runtime and at edit time.
   status: 0
   errors: []
   versions:
     all:
+    - 1.0.0-exp.1
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    - 1.1.0-pre.1
+    - 1.1.0-pre.2
+    - 1.1.1
+    - 1.1.3
     - 1.1.4
+    - 1.1.5
+    - 2.0.0-pre.3
+    - 2.0.0-pre.4
+    - 2.0.0
     compatible:
     - 1.1.4
-    recommended: 1.1.4
+    - 1.1.5
+    recommended: 1.1.5
     deprecated: []
   dependencies:
   - name: com.unity.modules.ai
@@ -117,7 +130,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638224218100000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html
   hasRepository: 1
   repository:
@@ -870,7 +883,6 @@ m_ResolvedPackages:
     - 1.8.0-pre.1
     - 1.8.0-pre.2
     compatible:
-    - 1.6.1
     - 1.6.3
     - 1.7.0
     - 1.8.0-pre.1
@@ -917,7 +929,7 @@ m_ResolvedPackages:
     revision: e29989176f3a8473ba30854e4bfae953083eba28
     path: 
   unityLifecycle:
-    version: 1.6.1
+    version: 1.6.3
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -988,7 +1000,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.timeline
-    version: 1.7.4
+    version: 1.7.5
   - name: com.unity.modules.director
     version: 1.0.0
   - name: com.unity.modules.audio
@@ -1102,6 +1114,7 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1120,6 +1133,7 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1288,25 +1302,29 @@ m_ResolvedPackages:
     - 3.0.4
     - 3.0.5
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
+    - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
+    - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
-    recommended: 3.0.6
+    recommended: 3.0.7
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -1350,12 +1368,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.timeline@1.7.4
+- packageId: com.unity.timeline@1.7.5
   testable: 0
   isDirectDependency: 1
-  version: 1.7.4
+  version: 1.7.5
   source: 1
-  resolvedPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret\\Library\\PackageCache\\com.unity.timeline@1.7.4"
+  resolvedPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret\\Library\\PackageCache\\com.unity.timeline@1.7.5"
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1364,7 +1382,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: assets
   description: Use Unity Timeline to create cinematic content, game-play sequences,
     audio sequences, and complex particle effects.
   status: 0
@@ -1457,7 +1475,6 @@ m_ResolvedPackages:
     - 1.8.5
     - 1.8.6
     compatible:
-    - 1.7.4
     - 1.7.5
     - 1.7.6
     - 1.8.0
@@ -1503,16 +1520,16 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638143790870000000
+  datePublishedTicks: 638229649600000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.timeline@1.7/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 1f458a5d3f2bc66f0c1182feeaa9fcea4e8b1496
+    revision: fdb1ca9a2c2a131e0ff9cb257b2eae3b53337b3a
     path: 
   unityLifecycle:
-    version: 1.7.4
+    version: 1.7.5
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -3849,9 +3866,11 @@ m_ResolvedPackages:
     - 1.2.2
     - 1.2.3
     - 1.2.4
+    - 1.2.5
     compatible:
     - 1.2.4
-    recommended: 1.2.4
+    - 1.2.5
+    recommended: 1.2.5
     deprecated: []
   dependencies:
   - name: com.unity.test-framework

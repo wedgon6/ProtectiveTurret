@@ -41,16 +41,6 @@ Experimental
 U2D
 SpriteBone
 Profiler
-PhotoCaptureFileOutputFormat
-XR
-WSA
-WebCam
-PhotoCapture
-PhotoCaptureFrame
-VideoCapture
-CapturePixelFormat
-WebCamMode
-CameraParameters
 PlayerLoopSystemInternal
 LowLevel
 PlayerLoopSystem
