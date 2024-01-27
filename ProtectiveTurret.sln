@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCommon", "LeanCommon.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTween.Modules", "DOTween.Modules.csproj", "{90B5D4EE-1D71-0B6C-94D5-9B1EC60F35A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.WebUtility.Samples.Playtesting", "Agava.WebUtility.Samples.Playtesting.csproj", "{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization.TMP", "LeanLocalization.TMP.csproj", "{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.YandexGames.Samples.Playtesting", "Agava.YandexGames.Samples.Playtesting.csproj", "{56C6C111-11AD-ADEC-5B23-E9AAE6E8851C}"
@@ -43,6 +45,10 @@ Global
 		{90B5D4EE-1D71-0B6C-94D5-9B1EC60F35A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B5D4EE-1D71-0B6C-94D5-9B1EC60F35A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B5D4EE-1D71-0B6C-94D5-9B1EC60F35A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}.Release|Any CPU.ActiveCfg = Release|Any CPU

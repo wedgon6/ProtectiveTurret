@@ -1,4 +1,3 @@
-using Agava.YandexGames;
 using Lean.Localization;
 using UnityEngine;
 

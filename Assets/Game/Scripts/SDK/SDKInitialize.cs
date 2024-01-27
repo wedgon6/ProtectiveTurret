@@ -21,6 +21,7 @@ public class SDKInitialize : MonoBehaviour
     private void OnInitialized()
     {
         _localization.ChangeLanguage(YandexGamesSdk.Environment.i18n.lang);
+        YandexGamesSdk.GameReady();
         SceneManager.LoadScene("BaseScene");
     }
 #else

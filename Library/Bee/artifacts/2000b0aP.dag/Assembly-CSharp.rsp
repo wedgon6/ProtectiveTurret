@@ -362,6 +362,7 @@
 "Assets/Game/Scripts/SDK/Leaderboard/ViewLeaderboard.cs"
 "Assets/Game/Scripts/SDK/Localization.cs"
 "Assets/Game/Scripts/SDK/SDKInitialize.cs"
+"Assets/Game/Scripts/SDK/TestFocus.cs"
 "Assets/Game/Scripts/Shoop/Abillity/AmmoCountAbillity.cs"
 "Assets/Game/Scripts/Shoop/Abillity/MoveSpeedAbillity.cs"
 "Assets/Game/Scripts/Shoop/Abillity/PlayerAbillity.cs"
@@ -378,6 +379,7 @@
 "Assets/Game/Scripts/UI/SettingsPanel.cs"
 "Assets/Game/Scripts/UI/SizeClipUI.cs"
 "Assets/Game/Scripts/UI/WinGamePanel.cs"
+"Assets/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs"
 -langversion:9.0
 
 /deterministic

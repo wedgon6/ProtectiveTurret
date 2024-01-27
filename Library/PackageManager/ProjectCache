@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638417171372598158
-    m_Hash: 2666467603
+      ticks: 638419835623175331
+    m_Hash: 989745217
   m_LockFileStatus:
     m_FilePath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638417171836912941
-    m_Hash: 3125167152
+      ticks: 638419835623568227
+    m_Hash: 855076536
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,58 @@ m_LocalPackages:
 m_ProjectPath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages"
 m_EditorVersion: 2022.3.7f1 (b16b3b16c7a0)
 m_ResolvedPackages:
+- packageId: com.agava.webutility@https://github.com/forcepusher/com.agava.webutility.git#3.1.0
+  testable: 0
+  isDirectDependency: 1
+  version: 3.1.0
+  source: 5
+  resolvedPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret\\Library\\PackageCache\\com.agava.webutility@32d39130ea"
+  assetPath: Packages/com.agava.webutility
+  name: com.agava.webutility
+  displayName: Web Utility
+  author:
+    name: github.com/forcepusher
+    email: 
+    url: 
+  category: 
+  type: library
+  description: Tools that fix common issues in Unity WebGL export.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.agava.yandexgames@https://github.com/forcepusher/com.agava.yandexgames.git#15.1.1
   testable: 0
   isDirectDependency: 1

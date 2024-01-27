@@ -99,6 +99,7 @@
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXRotation.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\TestFocus.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
     <Compile Include="Assets\Game\Scripts\UI\LoseGamePanel.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPooling.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\ReloadAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretPresenter.cs" />
+    <Compile Include="Assets\Game\AssetsStore\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\Game\Scripts\UI\MenuPanel.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerScore.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\DataPlayer.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Assets\Game\Scripts\SDK\Localization.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ElementPlayer.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
+    <Compile Include="Assets\Game Buffs\Free Realistic Textures\Scripts\GameBuffsInitializer.cs" />
     <Compile Include="Assets\Game\Scripts\Map\RedLine.cs" />
     <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
@@ -152,6 +155,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Game Buffs\Free Realistic Textures\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -857,6 +861,9 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Agava.WebUtility">
+      <HintPath>Library\ScriptAssemblies\Agava.WebUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
@@ -883,6 +890,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Agava.WebUtility.Samples.Playtesting.csproj">
+      <Project>{2EEDA68D-F8D6-B76B-51D1-4C867C9CBC8A}</Project>
+      <Name>Agava.WebUtility.Samples.Playtesting</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanLocalization.TMP.csproj">
       <Project>{D9B31134-DB3C-E4B8-9738-69F88FAF66F6}</Project>
       <Name>LeanLocalization.TMP</Name>
