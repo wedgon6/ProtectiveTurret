@@ -16,12 +16,6 @@ public class Bullet : MonoBehaviour, IPoolObject
         _enemy = target; 
     }
 
-    //public void Shoot(Vector3 startPoint, Vector3 speed)
-    //{
-    //    _rigidbody.position = startPoint;
-    //    _rigidbody.velocity = speed;
-    //}
-
     public void ReturnToPool()
     {
         gameObject.SetActive(false);
@@ -38,8 +32,6 @@ public class Bullet : MonoBehaviour, IPoolObject
     private void FixedUpdate()
     {
         _rigidbody.AddForce(transform.forward * _speedBullet, ForceMode.VelocityChange);
-        //transform.position = Vector3.MoveTowards(transform.position, _enemy.transform.position, _speedBullet * Time.fixedDeltaTime);
-        //transform.Translate(_enemy.transform.position * _speedBullet*Time.fixedDeltaTime,Space.World);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,6 +43,11 @@ public class Bullet : MonoBehaviour, IPoolObject
         }
 
         if(collision.collider.TryGetComponent(out Barrier barrier))
+        {
+            ReturnToPool();
+        }
+
+        if (collision.collider.TryGetComponent(out Terrain terrain))
         {
             ReturnToPool();
         }

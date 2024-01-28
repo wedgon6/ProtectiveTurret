@@ -127,7 +127,6 @@
     <Compile Include="Assets\Game\Scripts\SDK\Localization.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ElementPlayer.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
-    <Compile Include="Assets\Game Buffs\Free Realistic Textures\Scripts\GameBuffsInitializer.cs" />
     <Compile Include="Assets\Game\Scripts\Map\RedLine.cs" />
     <Compile Include="Assets\Game\Scripts\Map\Barrier.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyStateMachine.cs" />
@@ -162,6 +161,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Game\AssetsStore\centurionweapon\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

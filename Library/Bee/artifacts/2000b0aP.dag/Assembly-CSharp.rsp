@@ -281,6 +281,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.XRModule.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/2000b0aP.dag/Agava.WebUtility.ref.dll"
+-r:"Library/Bee/artifacts/2000b0aP.dag/Agava.WebUtility.Samples.Playtesting.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Agava.YandexGames.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Agava.YandexGames.Samples.Playtesting.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Cinemachine.ref.dll"
@@ -316,6 +318,7 @@
 "Assets/Game/Art/Particle/Epic Toon FX/Scripts/ETFXLightFade.cs"
 "Assets/Game/Art/Particle/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs"
 "Assets/Game/Art/Particle/Epic Toon FX/Scripts/ETFXRotation.cs"
+"Assets/Game/AssetsStore/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs"
 "Assets/Game/InputSystem/PlayerInput.cs"
 "Assets/Game/Scripts/Enemy/Enemy.cs"
 "Assets/Game/Scripts/Enemy/EnemySpawner.cs"
@@ -379,7 +382,6 @@
 "Assets/Game/Scripts/UI/SettingsPanel.cs"
 "Assets/Game/Scripts/UI/SizeClipUI.cs"
 "Assets/Game/Scripts/UI/WinGamePanel.cs"
-"Assets/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs"
 -langversion:9.0
 
 /deterministic
