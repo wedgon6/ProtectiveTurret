@@ -7,33 +7,34 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class BaseTurret : MonoBehaviour
 {
+    protected const float SearchRadius = 20f;
+    protected const float SpeedBullet = 10f;
+
     [SerializeField] protected Transform[] _shootPoints;
     [SerializeField] protected Bullet _bullet;
     [SerializeField] protected PoolBullet _poolBullet;
 
     private Dictionary<float, Enemy> _enemies = new Dictionary<float, Enemy>();
     
-    protected const float SearchRadius = 20f;
-    protected const float SpeedBullet = 10f;
-    
     protected Enemy _currentTarget;
     protected Coroutine _corontine;
     protected Animator _animator;
 
     protected int _ammouSize;
-    protected float _cooldown;
+    protected float _cooldownReload;
     protected int _currentCoutBullet;
+    protected float _delayShot = 0.25f;
 
     public Action OnClipSizeChanged;
     public Action OnRechargeAmmou;
 
     public int CurrentCountBullet => _currentCoutBullet;
-    public float CoolDonw => _cooldown;
+    public float CoolDonw => _cooldownReload;
 
     public void SetTurretParameters(int ammouSize, float reloadTime)
     {
         _ammouSize = ammouSize;
-        _cooldown = reloadTime;
+        _cooldownReload = reloadTime;
     }
 
     public void RechargeTurret()
@@ -128,7 +129,7 @@ public class BaseTurret : MonoBehaviour
 
         while(curretPoint <= _shootPoints.Length)
         {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(_delayShot);
 
             if (HaveEnemy())
             {
@@ -158,7 +159,7 @@ public class BaseTurret : MonoBehaviour
     protected virtual IEnumerator Recharge()
     {
         OnRechargeAmmou?.Invoke();
-        yield return new WaitForSeconds(_cooldown);
+        yield return new WaitForSeconds(_cooldownReload);
         _currentCoutBullet = _ammouSize;
         OnClipSizeChanged?.Invoke();
 

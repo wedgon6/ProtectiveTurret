@@ -86,6 +86,7 @@
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Move\MovementPlayer.cs" />
+    <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_5.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\LoseTransition.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyTransition.cs" />
     <Compile Include="Assets\Game\Scripts\SaveAndLoad\SaveAndLoadSytem.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SettingsPanel.cs" />
+    <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_4.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\BattleState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXLightFade.cs" />
