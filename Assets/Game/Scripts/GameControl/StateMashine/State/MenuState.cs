@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class MenuState : GameState
 {
+    private const float _startPositionX = -1.55f;
+    private const float _startPositionY = -5.32f;
+    private const float _startPositionZ = 4.96f;
+
     [SerializeField] private Player _player;
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private Leaderboard _leaderboard;
 
-    private const float _startPositionX = -1.55f;
-    private const float _startPositionY = -5.32f;
-    private const float _startPositionZ = 4.96f;
-
     private void Awake()
     {
         _player.Initialize();
-        _leaderboard.SetPlayer(_player.CurrentScore);
     }
 
     public override void Enter(Player player)
@@ -24,6 +23,7 @@ public class MenuState : GameState
         _turretPresenter.TrySetTurret();
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
         _player.RotationTurret(150);
+        _leaderboard.SetPlayer(_player.CurrentScore);
     }
 
     public override void Exit()

@@ -373,6 +373,8 @@
 "Assets/Game/Scripts/Turret/BaseTurret.cs"
 "Assets/Game/Scripts/Turret/Bullet.cs"
 "Assets/Game/Scripts/Turret/TurretLvl_1.cs"
+"Assets/Game/Scripts/Turret/TurretLvl_4.cs"
+"Assets/Game/Scripts/Turret/TurretLvl_5.cs"
 "Assets/Game/Scripts/Turret/TurretPresenter.cs"
 "Assets/Game/Scripts/UI/CloseButton.cs"
 "Assets/Game/Scripts/UI/LoseGamePanel.cs"
