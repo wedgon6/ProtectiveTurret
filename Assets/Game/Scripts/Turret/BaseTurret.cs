@@ -8,7 +8,7 @@ using UnityEngine;
 public class BaseTurret : MonoBehaviour
 {
     protected const float SearchRadius = 20f;
-    protected const float SpeedBullet = 10f;
+    protected const float SpeedBullet = 5f;
 
     [SerializeField] protected Transform[] _shootPoints;
     [SerializeField] protected Bullet _bullet;
@@ -78,19 +78,20 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    protected virtual void LookAtEnemy()
-    {
-        Vector3 lookDir = _currentTarget.transform.position - transform.position;
-        lookDir.y = 0;
-        lookDir.Normalize();
-        transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
-    }
+    //protected virtual void LookAtEnemy()
+    //{
+    //    Vector3 lookDir = _currentTarget.transform.position - transform.position;
+    //    lookDir.y = 0;
+    //    lookDir.Normalize();
+    //    transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
+    //}
 
     protected virtual void ShootingControl()
     {
         if (HaveEnemy())
         {
-            LookAtEnemy();
+            //LookAtEnemy();
+            transform.rotation = SetRotation();
         }
         else
         {
@@ -108,18 +109,22 @@ public class BaseTurret : MonoBehaviour
         {
             bullet = pollBullet as Bullet;
             bullet.transform.position = _shootPoints[shootPoint].position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.rotation = SetRotation();
+            bullet.Initialize(SpeedBullet, _poolBullet, target);
             bullet.gameObject.SetActive(true);
             _animator.SetTrigger("Shoot");
         }
         else
         {
-            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, transform.rotation);
+            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, SetRotation());
             bullet.Initialize(SpeedBullet, _poolBullet, target);
             _animator.SetTrigger("Shoot");
         }
 
+        Debug.Log(transform.rotation);
+        Debug.Log(_shootPoints[0].rotation);
         _currentCoutBullet--;
+        FindTarget();
         OnClipSizeChanged?.Invoke();
     }
 
@@ -192,5 +197,13 @@ public class BaseTurret : MonoBehaviour
     private void FixedUpdate()
     {
         ShootingControl();
+    }
+
+    private Quaternion SetRotation()
+    {
+        Vector3 lookDir = _currentTarget.transform.position - transform.position;
+        lookDir.y = 0;
+        lookDir.Normalize();
+        return Quaternion.LookRotation(lookDir, Vector3.up);
     }
 }

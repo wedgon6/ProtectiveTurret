@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +16,8 @@ public class ViewLeaderboard : MonoBehaviour
         {
             ElementPlayer elementPlayerInstance = Instantiate(_leaderboardElementPrefab, _containet);
             elementPlayerInstance.Initialize(player.Name, player.Rank, player.Score);
+
+            _spawnedElements.Add(elementPlayerInstance);
         }
     }
 

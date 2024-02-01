@@ -17,7 +17,6 @@ public class MovementPlayer : MonoBehaviour
     {
         _moveSpeed += 1.2f;
         _maxMoveSpeed += 1.2f;
-        Debug.Log("Апнул скорость");
     }
 
     private void Awake()

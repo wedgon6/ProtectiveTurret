@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour, IPoolObject
     {
         _speedBullet = speedBullet;
         _poolBullet = poolBullet;
-        _enemy = target; 
+        _enemy = target;
+        Debug.Log(transform.rotation);
     }
 
     public void ReturnToPool()
@@ -32,6 +33,7 @@ public class Bullet : MonoBehaviour, IPoolObject
     private void FixedUpdate()
     {
         _rigidbody.AddForce(transform.forward * _speedBullet, ForceMode.VelocityChange);
+        //_rigidbody.AddForce(new Vector3(transform.position.x, transform.position.y, _enemy.transform.position.z) * _speedBullet, ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)

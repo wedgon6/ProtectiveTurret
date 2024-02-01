@@ -7,13 +7,16 @@ public class Leaderboard : MonoBehaviour
 {
     private const string AnonymousName = "Anonymous";
     private const string LeaderboardName = "Leaderboard";
-    private readonly List<DataPlayer> _leaderboardPlayers = new();
 
     [SerializeField] private ViewLeaderboard _leaderboardView;
 
+    private readonly List<DataPlayer> _leaderboardPlayers = new();
+
     public void SetPlayer(int score)
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
+#endif
     }
 
     public void Fill()

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +77,7 @@ public class TurretPresenter : MonoBehaviour
 
         if (_indexTurret >= _baseTurrets.Count)
         {
-            _currentTurret = _baseTurrets[_baseTurrets.Count];
+            _currentTurret = _baseTurrets[_baseTurrets.Count-1];
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
             return;
         }
