@@ -320,6 +320,7 @@
 "Assets/Game/Art/Particle/Epic Toon FX/Scripts/ETFXRotation.cs"
 "Assets/Game/AssetsStore/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs"
 "Assets/Game/InputSystem/PlayerInput.cs"
+"Assets/Game/Scripts/Enemy/EnemiesList.cs"
 "Assets/Game/Scripts/Enemy/Enemy.cs"
 "Assets/Game/Scripts/Enemy/EnemySpawner.cs"
 "Assets/Game/Scripts/Enemy/EnemyWave.cs"

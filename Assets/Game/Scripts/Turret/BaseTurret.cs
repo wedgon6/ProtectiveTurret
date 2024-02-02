@@ -8,7 +8,7 @@ using UnityEngine;
 public class BaseTurret : MonoBehaviour
 {
     protected const float SearchRadius = 20f;
-    protected const float SpeedBullet = 5f;
+    protected const float SpeedBullet = 15f;
 
     [SerializeField] protected Transform[] _shootPoints;
     [SerializeField] protected Bullet _bullet;
@@ -78,20 +78,19 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    //protected virtual void LookAtEnemy()
-    //{
-    //    Vector3 lookDir = _currentTarget.transform.position - transform.position;
-    //    lookDir.y = 0;
-    //    lookDir.Normalize();
-    //    transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
-    //}
+    protected virtual void LookAtEnemy()
+    {
+        Vector3 lookDir = _currentTarget.transform.position - transform.position;
+        lookDir.y = 0;
+        lookDir.Normalize();
+        transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
+    }
 
     protected virtual void ShootingControl()
     {
         if (HaveEnemy())
         {
-            //LookAtEnemy();
-            transform.rotation = SetRotation();
+            LookAtEnemy();
         }
         else
         {
@@ -109,22 +108,18 @@ public class BaseTurret : MonoBehaviour
         {
             bullet = pollBullet as Bullet;
             bullet.transform.position = _shootPoints[shootPoint].position;
-            bullet.transform.rotation = SetRotation();
-            bullet.Initialize(SpeedBullet, _poolBullet, target);
+            bullet.transform.rotation = transform.rotation;
             bullet.gameObject.SetActive(true);
-            _animator.SetTrigger("Shoot");
         }
         else
         {
-            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, SetRotation());
-            bullet.Initialize(SpeedBullet, _poolBullet, target);
-            _animator.SetTrigger("Shoot");
+            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, transform.rotation);
         }
 
-        Debug.Log(transform.rotation);
-        Debug.Log(_shootPoints[0].rotation);
+        bullet.Initialize(SpeedBullet, _poolBullet, target);
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * SpeedBullet, ForceMode.VelocityChange);
+        _animator.SetTrigger("Shoot");
         _currentCoutBullet--;
-        FindTarget();
         OnClipSizeChanged?.Invoke();
     }
 
@@ -197,13 +192,5 @@ public class BaseTurret : MonoBehaviour
     private void FixedUpdate()
     {
         ShootingControl();
-    }
-
-    private Quaternion SetRotation()
-    {
-        Vector3 lookDir = _currentTarget.transform.position - transform.position;
-        lookDir.y = 0;
-        lookDir.Normalize();
-        return Quaternion.LookRotation(lookDir, Vector3.up);
     }
 }

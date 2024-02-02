@@ -93,6 +93,7 @@
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\WinState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\EnemiesList.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />

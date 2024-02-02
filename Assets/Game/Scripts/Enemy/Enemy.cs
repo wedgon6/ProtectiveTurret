@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private EnemyStateMachine _stateMachine;
     [SerializeField] private int _revard;
     [SerializeField] private int _countScore;
-    [SerializeField] private GameObject _particle;
+    [SerializeField] private GameObject _backlight;
 
     private RedLine _target;
     private PoolEnemy _poolEnemy;
@@ -15,13 +15,13 @@ public class Enemy : MonoBehaviour, IPoolObject
     private bool _isDead;
     private EnemySpawner _spawner;
 
-    public float Health => _health;
-    public bool IsDead => _isDead;
     public RedLine Target => _target;
-    public int Revard => _revard;
     public Player Player => _player;
     public EnemySpawner Spawner => _spawner;
+    public float Health => _health;
+    public int Revard => _revard;
     public int CountScore => _countScore;
+    public bool IsDead => _isDead;
 
     public void Initialize(RedLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
     {
@@ -56,13 +56,13 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     public void GetCrosshairs()
     {
-        _particle.SetActive(true);
+        _backlight.SetActive(true);
     }
 
     public void ReturnToPool()
     {
         gameObject.SetActive(false);
-        _particle.SetActive(false);
+        _backlight.SetActive(false);
         _poolEnemy.PoolObject(this);
         _health = _maxHealth;
         _isDead = false;

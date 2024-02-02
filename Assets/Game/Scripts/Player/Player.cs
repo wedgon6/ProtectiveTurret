@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SizeClipUI _sizeClip;
     [SerializeField] private PlayerScore _playerScore;
     [SerializeField] private TurretPresenter _turretPresenter;
+    [SerializeField] private PlayerLevel _playerLevel;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
 
     public BaseTurret CurrentTurret => _turret;
     public int CurrentMoney => _currentMoney;
+    public int CurrentLvl => _playerLevel.CurrentPlayerLvl;
     public int CurrentScore => _playerScore.CurrentScore;
 
     public void Initialize()

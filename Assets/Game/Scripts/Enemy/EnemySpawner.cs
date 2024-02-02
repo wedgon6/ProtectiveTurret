@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private const int EasyWaveIndex = 3;
+    private const int MidWaveIndex = 7;
+    private const int HardWaveIndex = 11;
+
     [SerializeField] private RedLine _target;
     [SerializeField] private List<EnemyWave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private PoolEnemy _poolEnemy;
     [SerializeField] private Player _player;
+    [SerializeField] private EnemiesList _enemiesPrefab;
+    [SerializeField] private float _delay;
 
     private EnemyWave _currentWave;
     private int _currentWaveNumber = 0;
+    private int _countWaves;
     private float _timeAfterLastSpawn;
     private int _spawned;
     private Coroutine _corontine;
@@ -46,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
         _timeAfterLastSpawn = 0;
         _currentWaveNumber = 0;
         _spawned = 0;
+        CreateWaves();
         SetWave(_currentWaveNumber);
         OnSpawnerReset?.Invoke();
     }
@@ -69,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
         _timeAfterLastSpawn += Time.deltaTime;
 
-        if (_timeAfterLastSpawn >= _currentWave.Delay)
+        if (_timeAfterLastSpawn >= _delay)
         {
             InitializeEnemy();
             _spawned++;
@@ -115,6 +123,18 @@ public class EnemySpawner : MonoBehaviour
     {
         SetWave(++_currentWaveNumber);
         _spawned = 0;
+    }
+
+    private void CreateWaves()
+    {
+        if(_player.CurrentLvl > EasyWaveIndex)
+            _countWaves = 2;
+
+        if(_player.CurrentLvl <= EasyWaveIndex && _player.CurrentLvl > MidWaveIndex)
+            _countWaves = 3;
+
+        if (_player.CurrentLvl <= HardWaveIndex)
+            _countWaves = 4;
     }
 
     private IEnumerator StartNextWave()

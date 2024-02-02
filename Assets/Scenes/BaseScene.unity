@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20276141, y: 0.65300006}
   m_AnchorMax: {x: 0.82630455, y: 0.68574464}
-  m_AnchoredPosition: {x: -18.500366, y: 0}
+  m_AnchoredPosition: {x: -18.500305, y: 0}
   m_SizeDelta: {x: 12.935974, y: 25.117004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175336049
@@ -764,7 +764,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5a602c49893beb64a936411f2d577e60, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3618,10 +3618,8 @@ MonoBehaviour:
   _target: {fileID: 731764867}
   _waves:
   - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _delay: 0.3
     _count: 5
   - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _delay: 0.5
     _count: 5
   _spawnPoint:
   - {fileID: 1279041268}
@@ -3630,6 +3628,11 @@ MonoBehaviour:
   - {fileID: 93494434}
   _poolEnemy: {fileID: 1001777548}
   _player: {fileID: 1883925412}
+  _enemiesPrefab:
+    _standartEnemy: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
+    _fastEnemy: {fileID: -719692163475517893, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
+    _bigEnemy: {fileID: 4563756816970781176, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
+  _delay: 0.7
 --- !u!4 &1001777547
 Transform:
   m_ObjectHideFlags: 0
@@ -6404,6 +6407,7 @@ MonoBehaviour:
   _sizeClip: {fileID: 523652743}
   _playerScore: {fileID: 1883925417}
   _turretPresenter: {fileID: 1189180570}
+  _playerLevel: {fileID: 1883925415}
 --- !u!114 &1883925413
 MonoBehaviour:
   m_ObjectHideFlags: 0
