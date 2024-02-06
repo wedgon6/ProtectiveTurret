@@ -61,6 +61,7 @@
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\LoseState.cs" />
     <Compile Include="Assets\Game\InputSystem\PlayerInput.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\TypeEnemy\BigEnemy.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerMoney.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\BaseTurret.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Game\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\EnemyPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\MovmentState.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\TypeEnemy\StandartEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SettingsPanel.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_4.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\TypeEnemy\FastEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\BattleState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXLightFade.cs" />

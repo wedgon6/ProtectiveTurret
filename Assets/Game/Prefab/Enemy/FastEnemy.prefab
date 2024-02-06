@@ -76,9 +76,6 @@ PrefabInstance:
       addedObject: {fileID: 6022588085373132579}
     - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -719692163475517893}
-    - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6357899980816131369}
     - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
       insertIndex: -1
@@ -92,6 +89,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 257770585867714650}
+    - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4979026921783704034}
   m_SourcePrefab: {fileID: 100100000, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
 --- !u!1 &3121570223316409967 stripped
 GameObject:
@@ -148,23 +148,6 @@ CapsuleCollider:
   m_Height: 2.8997416
   m_Direction: 1
   m_Center: {x: -0.017354965, y: 0.9498708, z: 0.15248775}
---- !u!114 &-719692163475517893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3121570223316409967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 15
-  _stateMachine: {fileID: 6357899980816131369}
-  _revard: 30
-  _countScore: 2
-  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
 --- !u!114 &6357899980816131369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,3 +223,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!114 &-4979026921783704034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3121570223316409967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6250e29422dd9ed4c821934cc8905a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 50
+  _stateMachine: {fileID: 6357899980816131369}
+  _revard: 30000
+  _countScore: 3
+  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
+  _tagEnemy: Fast

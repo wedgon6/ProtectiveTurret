@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private int _revard;
     [SerializeField] private int _countScore;
     [SerializeField] private GameObject _backlight;
+    [SerializeField] private string _tagEnemy;
 
     private RedLine _target;
     private PoolEnemy _poolEnemy;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     public int Revard => _revard;
     public int CountScore => _countScore;
     public bool IsDead => _isDead;
+    public string TagEnemy => _tagEnemy;
 
     public void Initialize(RedLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
     {

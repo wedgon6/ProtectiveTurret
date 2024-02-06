@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,22 +10,26 @@ public class EnemySpawner : MonoBehaviour
     private const int EasyWaveIndex = 3;
     private const int MidWaveIndex = 7;
     private const int HardWaveIndex = 11;
+    private const int WaveLenght = 5;
 
     [SerializeField] private RedLine _target;
-    [SerializeField] private List<EnemyWave> _waves;
     [SerializeField] private Transform[] _spawnPoint;
-    [SerializeField] private PoolEnemy _poolEnemy;
     [SerializeField] private Player _player;
     [SerializeField] private EnemiesList _enemiesPrefab;
     [SerializeField] private float _delay;
 
-    private EnemyWave _currentWave;
+    [SerializeField] private PoolEnemy _poolStandartEnemy;
+    [SerializeField] private PoolEnemy _poolFastEnemy;
+    [SerializeField] private PoolEnemy _poolBigEnemy;
+
+    private EnemyWave _currentWave = null;
     private int _currentWaveNumber = 0;
     private int _countWaves;
     private float _timeAfterLastSpawn;
     private int _spawned;
     private Coroutine _corontine;
     private List<IPoolObject> _createdEnemies = new List<IPoolObject>();
+    private List<EnemyWave> _enemyWaves = new List<EnemyWave>();
 
     public Action OnEnemyDead;
     public Action OnSpawnerReset;
@@ -49,22 +55,21 @@ public class EnemySpawner : MonoBehaviour
     public void RestSpawner()
     {
         PutEnemyToPool();
+        _enemyWaves.Clear();
 
         _timeAfterLastSpawn = 0;
         _currentWaveNumber = 0;
         _spawned = 0;
-        CreateWaves();
-        SetWave(_currentWaveNumber);
-        OnSpawnerReset?.Invoke();
+        SetWaveComplexity();
     }
 
     public int GetEnemyCount()
     {
         int enemyCount = 0;
 
-        for (int i = 0; i < _waves.Count; i++)
+        for (int i = 0; i < _enemyWaves.Count; i++)
         {
-            enemyCount += _waves[i].Count;
+            enemyCount += _enemyWaves[i].Template.Count;
         }
 
         return enemyCount;
@@ -73,7 +78,10 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         if (_currentWave == null)
+        {
+            Debug.Log("вышел из апдейта");
             return;
+        }
 
         _timeAfterLastSpawn += Time.deltaTime;
 
@@ -84,9 +92,11 @@ public class EnemySpawner : MonoBehaviour
             _timeAfterLastSpawn = 0;
         }
 
-        if (_currentWave.Count <= _spawned)
+        if (_currentWave.Template.Count <= _spawned)
         {
-            if (_waves.Count > _currentWaveNumber + 1)
+            Debug.Log(_spawned);
+            Debug.Log(_currentWave.Template.Count);
+            if (_enemyWaves.Count > _currentWaveNumber + 1)
                 CorountineStart(StartNextWave());
 
             _currentWave = null;
@@ -95,46 +105,136 @@ public class EnemySpawner : MonoBehaviour
 
     private void InitializeEnemy()
     {
-        int currentSpawnPont = UnityEngine.Random.Range(0, _spawnPoint.Length);
-        Enemy enemy;
 
-        if (_poolEnemy.TryPoolObject(out IPoolObject enemyPool))
+        int currentSpawnPont = UnityEngine.Random.Range(0, _spawnPoint.Length);
+        Enemy enemy = _currentWave.GetNextEnemy();
+
+        if (enemy == null)
+            return;
+
+        if (TyrFindEnemy(enemy, out Enemy poolEnemy))
         {
-            enemy = enemyPool as Enemy;
+            enemy = poolEnemy;
             enemy.transform.position = _spawnPoint[currentSpawnPont].position;
             enemy.gameObject.SetActive(true);
             enemy.ResetState();
         }
         else
         {
-            enemy = Instantiate(_currentWave.Template, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
+            enemy = Instantiate(enemy, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
             _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
-            enemy.Initialize(_target, _poolEnemy, _player, this);
+            InitializeEnemy(enemy);
             _createdEnemies.Add(enemy);
         }
     }
 
+    private void InitializeEnemy(Enemy enemy)
+    {
+        if (enemy.TryGetComponent(out StandartEnemy standartEnemy))
+        {
+            enemy.Initialize(_target, _poolStandartEnemy, _player, this);
+            return;
+        }
+
+        if (enemy.TryGetComponent(out FastEnemy fastEnemy))
+        {
+            enemy.Initialize(_target, _poolFastEnemy, _player, this);
+            return;
+        }
+
+        if (enemy.TryGetComponent(out BigEnemy bigEnemy))
+        {
+            enemy.Initialize(_target, _poolBigEnemy, _player, this);
+            return;
+        }
+    }
+
+    private bool TyrFindEnemy(IPoolObject enemyType, out Enemy poolEnemy)
+    {
+        Enemy enemy = enemyType as Enemy;
+        poolEnemy = null;
+
+        if (enemy.TryGetComponent(out StandartEnemy standartEnemy))
+        {
+            if (_poolStandartEnemy.TryPoolObject(out IPoolObject enemyPool))
+                poolEnemy = enemyPool as Enemy;
+        }
+
+        if (enemy.TryGetComponent(out FastEnemy fastEnemy))
+        {
+            if (_poolFastEnemy.TryPoolObject(out IPoolObject enemyPool))
+                poolEnemy = enemyPool as Enemy;
+        }
+
+        if (enemy.TryGetComponent(out BigEnemy bigEnemy))
+        {
+            if (_poolBigEnemy.TryPoolObject(out IPoolObject enemyPool))
+                poolEnemy = enemyPool as Enemy;
+        }
+
+        return poolEnemy != null;
+    }
+
     private void SetWave(int index)
     {
-        _currentWave = _waves[index];
+        _currentWave = _enemyWaves[index];
+        Debug.Log(index);
     }
 
     private void NextWave()
     {
-        SetWave(++_currentWaveNumber);
         _spawned = 0;
+        SetWave(++_currentWaveNumber);
+        Debug.Log("Вызвал из НекстВейв");
     }
 
-    private void CreateWaves()
+    private void SetWaveComplexity()
     {
-        if(_player.CurrentLvl > EasyWaveIndex)
+
+        if(_player.CurrentLvl <= EasyWaveIndex)
+        {
             _countWaves = 2;
+            SetWaves(_countWaves, EasyWaveIndex);
+            Debug.Log("установил лешкий");
+            return;
+        }
 
-        if(_player.CurrentLvl <= EasyWaveIndex && _player.CurrentLvl > MidWaveIndex)
+        if(_player.CurrentLvl > EasyWaveIndex && _player.CurrentLvl < MidWaveIndex)
+        {
             _countWaves = 3;
+            SetWaves(_countWaves, MidWaveIndex);
+            Debug.Log("установил средний");
+            return;
+        }
 
-        if (_player.CurrentLvl <= HardWaveIndex)
+        if (_player.CurrentLvl >= HardWaveIndex)
+        {
             _countWaves = 4;
+            SetWaves(_countWaves, HardWaveIndex);
+            Debug.Log("установил тяжелый");
+            return;
+        }
+    }
+
+    private void SetWaves(int countWave, int complexityWave)
+    {
+        List<Enemy> enemies = new List<Enemy>();
+
+        for (int i = 0; i < countWave; i++)
+        {
+
+            for (int j = 0; j < WaveLenght; j++)
+            {
+                enemies.Add(_enemiesPrefab.GetEnemy(complexityWave));
+            }
+            
+            _enemyWaves.Add(new EnemyWave(enemies));
+        }
+
+        SetWave(_currentWaveNumber);
+        OnSpawnerReset?.Invoke();
+        Debug.Log("Вызвал из СетВэйвс");
+        Debug.Log(_enemyWaves.Count);
     }
 
     private IEnumerator StartNextWave()

@@ -22,7 +22,7 @@ public class LeaderBoardButton : MonoBehaviour
         if (PlayerAccount.IsAuthorized == false)
             return;
 
-        if(PlayerAccount.IsAuthorized)
+        if (PlayerAccount.IsAuthorized)
             PlayerAccount.RequestPersonalProfileDataPermission();
 
     }

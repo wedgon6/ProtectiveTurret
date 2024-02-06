@@ -112,9 +112,6 @@ PrefabInstance:
       addedObject: {fileID: 6699658339645606736}
     - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4563756816970781176}
-    - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6072563417528465466}
     - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
       insertIndex: -1
@@ -128,6 +125,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7358923653883138065}
+    - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6739722090190204700}
   m_SourcePrefab: {fileID: 100100000, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
 --- !u!1 &757908868768017620 stripped
 GameObject:
@@ -184,23 +184,6 @@ CapsuleCollider:
   m_Height: 40.25043
   m_Direction: 1
   m_Center: {x: 0, y: 1.3669586, z: 5.221471}
---- !u!114 &4563756816970781176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757908868768017620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _stateMachine: {fileID: 6072563417528465466}
-  _revard: 50
-  _countScore: 5
-  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
 --- !u!114 &6072563417528465466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +259,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 423995215545336823}
+--- !u!114 &-6739722090190204700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757908868768017620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab94806a748c384aadc3ba58d129aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _stateMachine: {fileID: 6072563417528465466}
+  _revard: 5000
+  _countScore: 5
+  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
+  _tagEnemy: Big

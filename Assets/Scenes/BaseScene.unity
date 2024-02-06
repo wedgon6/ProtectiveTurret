@@ -1220,7 +1220,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 344106029}
         m_TargetAssemblyTypeName: LeaderBoardButton, Assembly-CSharp
-        m_MethodName: OpenLeaderboard
+        m_MethodName: OpenLeaderboardView
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3485,7 +3485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1162.0105, y: -25}
+  m_AnchoredPosition: {x: 1136.458, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990713383
@@ -3616,23 +3616,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 731764867}
-  _waves:
-  - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _count: 5
-  - _template: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _count: 5
   _spawnPoint:
   - {fileID: 1279041268}
   - {fileID: 1481756114}
   - {fileID: 220896458}
   - {fileID: 93494434}
-  _poolEnemy: {fileID: 1001777548}
   _player: {fileID: 1883925412}
   _enemiesPrefab:
-    _standartEnemy: {fileID: 5670771044539387792, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _fastEnemy: {fileID: -719692163475517893, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
-    _bigEnemy: {fileID: 4563756816970781176, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
+    _standartEnemy: {fileID: 5815604418124086089, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
+    _fastEnemy: {fileID: -4979026921783704034, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
+    _bigEnemy: {fileID: -6739722090190204700, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
+    _indexsStandartEnemy: 0000000001000000020000000300000004000000
+    _indexsFastEnemy: 05000000060000000700000008000000
+    _indexsBigEnemy: 090000000a000000
   _delay: 0.7
+  _poolStandartEnemy: {fileID: 1001777548}
+  _poolFastEnemy: {fileID: 1279041269}
+  _poolBigEnemy: {fileID: 1481756115}
 --- !u!4 &1001777547
 Transform:
   m_ObjectHideFlags: 0
@@ -4651,7 +4651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 232.4021, y: -25}
+  m_AnchoredPosition: {x: 227.2916, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1273506788
@@ -4760,6 +4760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279041268}
+  - component: {fileID: 1279041269}
   m_Layer: 0
   m_Name: SpawnPoint1
   m_TagString: Untagged
@@ -4782,6 +4783,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001777547}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1279041269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279041267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f14796b7eba2ab4cb087f55a7f48608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328169053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,6 +5139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481756114}
+  - component: {fileID: 1481756115}
   m_Layer: 0
   m_Name: SpawnPoint2
   m_TagString: Untagged
@@ -5148,6 +5162,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001777547}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1481756115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481756113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f14796b7eba2ab4cb087f55a7f48608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518833249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,7 +5378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 697.2063, y: -25}
+  m_AnchoredPosition: {x: 681.87476, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1557985323

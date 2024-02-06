@@ -1,17 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class EnemyWave
 {
-    [SerializeField] private Enemy _template;
-    [SerializeField] private int _count;
+    private List<Enemy> _template;
+    private int _currentIndex = -1;
 
-    public Enemy Template => _template;
-    public int Count => _count; 
-
-    public EnemyWave(Enemy template, int count)
+    public EnemyWave(List<Enemy> template)
     {
         _template = template;
-        _count = count;
+    }
+
+    public List<Enemy> Template => _template;
+
+    public Enemy GetNextEnemy()
+    {
+        _currentIndex++;
+
+        if (_currentIndex > _template.Count-1)
+            return null;
+
+        return _template[_currentIndex];
     }
 }

@@ -24,7 +24,6 @@ public class MenuState : GameState
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
         _player.RotationTurret(150);
         _leaderboard.SetPlayer(_player.CurrentScore);
-        Debug.Log(_player.CurrentScore);
     }
 
     public override void Exit()

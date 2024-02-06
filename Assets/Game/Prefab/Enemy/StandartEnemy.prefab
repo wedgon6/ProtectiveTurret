@@ -1585,7 +1585,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4066225401008978763}
   - component: {fileID: 4066225401001252011}
-  - component: {fileID: 5670771044539387792}
   - component: {fileID: -2904775066482072312}
   - component: {fileID: 4531605027525497368}
   - component: {fileID: 2947057423362170252}
@@ -1593,6 +1592,7 @@ GameObject:
   - component: {fileID: 4481766721524800508}
   - component: {fileID: 2632999975679311926}
   - component: {fileID: 2318008779594443870}
+  - component: {fileID: 5815604418124086089}
   m_Layer: 0
   m_Name: StandartEnemy
   m_TagString: Untagged
@@ -1609,7 +1609,7 @@ Transform:
   m_GameObject: {fileID: 4066225401008547691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.73, y: -5.12, z: 31.400002}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1639,23 +1639,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5670771044539387792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4066225401008547691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 30
-  _stateMachine: {fileID: -2904775066482072312}
-  _revard: 1000000
-  _countScore: 1
-  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
 --- !u!114 &-2904775066482072312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,6 +1764,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5815604418124086089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066225401008547691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3459d20bdeedcb946bf686451e317a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 30
+  _stateMachine: {fileID: -2904775066482072312}
+  _revard: 1000000
+  _countScore: 1
+  _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
+  _tagEnemy: Standart
 --- !u!1 &4066225401008547693
 GameObject:
   m_ObjectHideFlags: 0
