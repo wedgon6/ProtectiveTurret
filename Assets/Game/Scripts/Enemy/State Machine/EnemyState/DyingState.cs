@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class DyingState : EnemyState
 {
     private void Update()
@@ -15,7 +11,8 @@ public class DyingState : EnemyState
     private void Die()
     {
         Enemy.ReturnToPool();
-        Enemy.Player.AddMoney(Enemy.Revard,Enemy.CountScore);
+        Enemy.Player.AddMoney(Enemy.Revard);
+        Enemy.Player.AddScore(Enemy.CountScore);
         Enemy.Spawner.OnEnemyDead();
     }
 }

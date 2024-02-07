@@ -70,6 +70,7 @@
     <Compile Include="Assets\Game\Scripts\SDK\SDKInitialize.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\PlayerAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\Ads\AdvertisementPresenter.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerLevel.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\Enemy.cs" />

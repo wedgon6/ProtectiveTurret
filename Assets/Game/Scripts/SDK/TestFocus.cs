@@ -1,6 +1,5 @@
 using UnityEngine;
 using Agava.WebUtility;
-using static Agava.YandexGames.YandexGamesEnvironment;
 
 public class TestFocus : MonoBehaviour
 {

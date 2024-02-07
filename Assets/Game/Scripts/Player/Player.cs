@@ -39,9 +39,13 @@ public class Player : MonoBehaviour
         _turret.RechargeTurret();
     }
 
-    public void AddMoney(int money, int score)
+    public void AddMoney(int money)
     {
         _money.AddMoney(money);
+    }
+
+    public void AddScore(int score)
+    {
         _playerScore.AddScore(score);
     }
 
@@ -53,6 +57,11 @@ public class Player : MonoBehaviour
     public void RotationTurret(float rotationY)
     {
         _turretPosition.rotation = Quaternion.Euler(0, rotationY, 0);
+    }
+
+    public void SetMovmentMode(bool canMove)
+    {
+        _movement.SetModeMovmen(canMove);
     }
 
     public void ResetTurret()

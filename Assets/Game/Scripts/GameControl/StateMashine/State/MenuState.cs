@@ -10,6 +10,7 @@ public class MenuState : GameState
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private Leaderboard _leaderboard;
+    [SerializeField] private AdvertisementPresenter _advertisementPresenter;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class MenuState : GameState
         base.Enter(player);
         _menuUI.gameObject.SetActive(true);
         _turretPresenter.TrySetTurret();
+        _player.SetMovmentMode(false);
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
         _player.RotationTurret(150);
         _leaderboard.SetPlayer(_player.CurrentScore);
@@ -28,6 +30,7 @@ public class MenuState : GameState
 
     public override void Exit()
     {
+        _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(false);
         _player.RotationTurret(0);
         base.Exit();
