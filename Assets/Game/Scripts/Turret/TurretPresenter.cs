@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TurretPresenter : MonoBehaviour
@@ -36,7 +37,7 @@ public class TurretPresenter : MonoBehaviour
         if (_isHaveTurret == true)
             return;
 
-       InitializePlayerTurret();
+        InitializePlayerTurret();
     }
 
     private void OnEnable()
@@ -71,6 +72,7 @@ public class TurretPresenter : MonoBehaviour
         {
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
+            Debug.Log("Подписался на стрельбу");
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
             return;
         }

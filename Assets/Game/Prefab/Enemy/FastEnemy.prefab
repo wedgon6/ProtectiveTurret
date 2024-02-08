@@ -144,10 +144,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6698426
+  m_Radius: 0.9597361
   m_Height: 2.8997416
   m_Direction: 1
-  m_Center: {x: -0.017354965, y: 0.9498708, z: 0.15248775}
+  m_Center: {x: -0.017354965, y: 0.9498708, z: 0.44238126}
 --- !u!114 &6357899980816131369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

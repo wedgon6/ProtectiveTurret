@@ -21,11 +21,12 @@ public class BaseTurret : MonoBehaviour
     protected Animator _animator;
 
     protected int _ammouSize;
-    protected float _cooldownReload;
     protected int _currentCoutBullet;
+    protected float _cooldownReload;
     protected float _delayShot = 0.25f;
 
     public Action OnClipSizeChanged;
+    public Action OnShot;
     public Action OnRechargeAmmou;
 
     public int CurrentCountBullet => _currentCoutBullet;
@@ -121,6 +122,7 @@ public class BaseTurret : MonoBehaviour
         _animator.SetTrigger("Shoot");
         _currentCoutBullet--;
         OnClipSizeChanged?.Invoke();
+        OnShot?.Invoke();
     }
 
     protected virtual IEnumerator Shooting()

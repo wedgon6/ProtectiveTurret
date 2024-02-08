@@ -69,8 +69,8 @@
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ViewLeaderboard.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\SDKInitialize.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\PlayerAbillity.cs" />
-    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Ads\AdvertisementPresenter.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\MenuState.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\Player\PlayerLevel.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\Enemy.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\WinState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
+    <Compile Include="Assets\Game\Scripts\SDK\SaveRoot.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemiesList.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\Shoop.cs" />
     <Compile Include="Assets\Game\Scripts\UI\LoseGamePanel.cs" />
+    <Compile Include="Assets\Game\Scripts\Turret\TurretAudioSourse.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\Shoop\ShoopView.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SettingsPanel.cs" />

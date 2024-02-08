@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerScore _playerScore;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private PlayerLevel _playerLevel;
+    [SerializeField] private TurretAudioSourse _turretAudio;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -29,13 +30,12 @@ public class Player : MonoBehaviour
     public void InitializeTurret(BaseTurret turret, int ammouSize, float cooldownReload)
     {
         if(_turret != null)
-        {
             Destroy(_turret.gameObject);
-        }
 
         _turret = Instantiate(turret, _turretPosition.transform.position, _turretPosition.rotation, _turretPosition);
         _turret.SetTurretParameters(ammouSize, cooldownReload);
         _sizeClip.SetTurret(_turret);
+        _turretAudio.SetTurret(_turret);
         _turret.RechargeTurret();
     }
 
