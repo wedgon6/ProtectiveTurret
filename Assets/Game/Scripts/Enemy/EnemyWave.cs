@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 public class EnemyWave
@@ -16,6 +15,9 @@ public class EnemyWave
 
     public Enemy GetNextEnemy()
     {
+        if (_template == null)
+            return null;
+
         _currentIndex++;
 
         if (_currentIndex > _template.Count-1)

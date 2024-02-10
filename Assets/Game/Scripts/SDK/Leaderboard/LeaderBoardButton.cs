@@ -9,7 +9,7 @@ public class LeaderBoardButton : MonoBehaviour
     public void OpenLeaderboardView()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        private void OpenLeaderboard();
+        OpenLeaderboard();
 #endif
 
         _leaderboardPanel.SetActive(true);

@@ -90,14 +90,17 @@ public class EnemySpawner : MonoBehaviour
             _timeAfterLastSpawn = 0;
         }
 
+        if (_currentWave.Template == null)
+            return;
+
         if (_currentWave.Template.Count <= _spawned)
         {
             Debug.Log(_spawned);
             Debug.Log(_currentWave.Template.Count);
+            _currentWave = null;
+
             if (_enemyWaves.Count > _currentWaveNumber + 1)
                 CorountineStart(StartNextWave());
-
-            _currentWave = null;
         }
     }
 
