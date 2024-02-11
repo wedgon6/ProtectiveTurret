@@ -200,7 +200,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        if(_player.CurrentLvl > EasyWaveIndex && _player.CurrentLvl < MidWaveIndex)
+        if(_player.CurrentLvl > EasyWaveIndex && _player.CurrentLvl <= MidWaveIndex)
         {
             _countWaves = 3;
             SetWaves(_countWaves, MidWaveIndex);
@@ -208,7 +208,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        if (_player.CurrentLvl >= HardWaveIndex)
+        if (_player.CurrentLvl > MidWaveIndex)
         {
             _countWaves = 4;
             SetWaves(_countWaves, HardWaveIndex);

@@ -26,7 +26,7 @@ public class EnemyPresenter : MonoBehaviour
     private void OnEnemyDead()
     {
         _deadEnemiesCount++;
-        OnEnemyDie.Invoke(_deadEnemiesCount, _countEnemy);
+        OnEnemyDie?.Invoke(_deadEnemiesCount, _countEnemy);
 
         if (_deadEnemiesCount == _countEnemy)
             OnAllEnemiesDie?.Invoke();

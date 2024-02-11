@@ -58,7 +58,7 @@ public class EnemiesList
                     return enemy = _fastEnemy;
             }
         }
-        else if(complexityWave >= HardWaveIndex)
+        else if(complexityWave > MidWaveIndex)
         {
             enemyIndex = Random.Range(0, 11);
 
