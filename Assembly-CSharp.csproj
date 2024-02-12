@@ -96,7 +96,6 @@
     <Compile Include="Assets\Game\Scripts\Turret\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\WinState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SizeClipUI.cs" />
-    <Compile Include="Assets\Game\Scripts\SDK\SaveRoot.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemiesList.cs" />
     <Compile Include="Assets\Game\Scripts\UI\PlayerLvlProgressBar.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameState.cs" />
@@ -129,9 +128,11 @@
     <Compile Include="Assets\Game\Scripts\Player\PlayerScore.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\DataPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameStateMashine.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\StartGameState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\CloseButton.cs" />
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\WinTransition.cs" />
+    <Compile Include="Assets\Game\Scripts\SaveAndLoad\GameInfo.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\MenuTransition.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Localization.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\ElementPlayer.cs" />

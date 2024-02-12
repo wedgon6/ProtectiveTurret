@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
     public BaseTurret CurrentTurret => _turret;
     public int CurrentMoney => _currentMoney;
     public int CurrentLvl => _playerLevel.CurrentPlayerLvl;
+    public int CurrenExpereance => _playerLevel.CurrentExperience;
     public int CurrentScore => _playerScore.CurrentScore;
+    public float CurrentMoveSpeed => _movement.MoveSpeed;
 
     public void Initialize()
     {

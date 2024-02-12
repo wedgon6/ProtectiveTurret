@@ -15,6 +15,8 @@ public class MovementPlayer : MonoBehaviour
     private InputAction _move;
     private bool _isMoving = false;
 
+    public float MoveSpeed => _moveSpeed;
+
     public void AddMoveSpeed()
     {
         _moveSpeed += 1.2f;

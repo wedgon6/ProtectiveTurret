@@ -1477,6 +1477,7 @@ GameObject:
   - component: {fileID: 402492449}
   - component: {fileID: 402492448}
   - component: {fileID: 402492450}
+  - component: {fileID: 402492451}
   m_Layer: 0
   m_Name: GameStateMashine
   m_TagString: Untagged
@@ -1636,6 +1637,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 402492443}
+--- !u!114 &402492451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14318e87ee1bb8f479b42aa6fe72bb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1883925412}
 --- !u!1 &430101452
 GameObject:
   m_ObjectHideFlags: 0
