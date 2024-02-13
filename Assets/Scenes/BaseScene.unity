@@ -1478,6 +1478,7 @@ GameObject:
   - component: {fileID: 402492448}
   - component: {fileID: 402492450}
   - component: {fileID: 402492451}
+  - component: {fileID: 402492452}
   m_Layer: 0
   m_Name: GameStateMashine
   m_TagString: Untagged
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   _spawner: {fileID: 1001777546}
   _player: {fileID: 1883925412}
   _progressBar: {fileID: 175336050}
+  _saveAndLoadSytem: {fileID: 402492451}
   _advertisementPresenter: {fileID: 1189180571}
 --- !u!114 &402492442
 MonoBehaviour:
@@ -1536,6 +1538,7 @@ MonoBehaviour:
   _turretPresenter: {fileID: 1189180570}
   _leaderboard: {fileID: 1110654311}
   _advertisementPresenter: {fileID: 1189180571}
+  _saveAndLoadSytem: {fileID: 0}
 --- !u!114 &402492444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1883925412}
-  _firstState: {fileID: 402492443}
+  _firstState: {fileID: 402492452}
 --- !u!4 &402492445
 Transform:
   m_ObjectHideFlags: 0
@@ -1650,6 +1653,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1883925412}
+  _shoop: {fileID: 1131702284}
+--- !u!114 &402492452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402492440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24f710f76bf715438d76b980c3cf9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 402492450}
+  _player: {fileID: 1883925412}
+  _shoop: {fileID: 1131702284}
+  _saveAndLoadSytem: {fileID: 402492451}
+  _menuTransition: {fileID: 402492450}
 --- !u!1 &430101452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,7 +4028,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.1
+  m_fontSize: 71.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

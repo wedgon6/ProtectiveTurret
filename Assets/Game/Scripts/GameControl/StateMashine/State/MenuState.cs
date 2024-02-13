@@ -11,11 +11,7 @@ public class MenuState : GameState
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private Leaderboard _leaderboard;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
-
-    private void Awake()
-    {
-        _player.Initialize();
-    }
+    [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
 
     public override void Enter(Player player)
     {
@@ -33,6 +29,9 @@ public class MenuState : GameState
         _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(false);
         _player.RotationTurret(0);
+#if UNITY_WEBGL && !UNITY_EDITOR
+        _saveAndLoadSytem.SetCloudSaveData();
+#endif
         base.Exit();
     }
 

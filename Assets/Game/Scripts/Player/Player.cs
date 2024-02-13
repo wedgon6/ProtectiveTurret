@@ -29,6 +29,14 @@ public class Player : MonoBehaviour
         _movement = GetComponent<MovementPlayer>();
     }
 
+    public void SetPlayerData(int playerLvl, int playerMoney, int currentExperiancePlayer, float playerMoveSpeed,int currentScore)
+    {
+        _playerLevel.SetData(playerLvl, currentExperiancePlayer);
+        _money.SetMoney(playerMoney);
+        _movement.SetMoveSpeed(playerMoveSpeed);
+        _playerScore.SetScoreData(currentScore);
+    }
+
     public void InitializeTurret(BaseTurret turret, int ammouSize, float cooldownReload)
     {
         if(_turret != null)

@@ -17,6 +17,12 @@ public class MovementPlayer : MonoBehaviour
 
     public float MoveSpeed => _moveSpeed;
 
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        _moveSpeed = moveSpeed;
+        _maxMoveSpeed = _moveSpeed * 2;
+    }
+
     public void AddMoveSpeed()
     {
         _moveSpeed += 1.2f;
@@ -43,12 +49,6 @@ public class MovementPlayer : MonoBehaviour
         _playerInputSystem = new PlayerInput();
         _rigidbody = GetComponent<Rigidbody>();
     }
-
-    //private void OnEnable()
-    //{
-    //    _playerInputSystem.Enable();
-    //    _move = _playerInputSystem.Player.Move;
-    //}
 
     private void OnDisable()
     {

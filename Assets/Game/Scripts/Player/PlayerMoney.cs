@@ -8,6 +8,12 @@ public class PlayerMoney : MonoBehaviour
     public int CurrentMoney => _currentMoney;
     public Action OnChengetMoney;
 
+    public void SetMoney(int currentMoneu)
+    {
+        _currentMoney = currentMoneu;
+        OnChengetMoney?.Invoke();
+    }
+
     public void AddMoney(int money)
     {
         if(money < 0)

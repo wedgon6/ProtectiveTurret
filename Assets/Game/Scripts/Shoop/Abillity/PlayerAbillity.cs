@@ -20,9 +20,10 @@ public abstract class PlayerAbillity : MonoBehaviour
     public Action OnPriceChenget;
     public Action OnLvlChenget;
 
-    public void Initialize()
+    public void Initialize(int currentPrice = 1, int currentLvL = 1)
     {
         _currentPrice = _startPrice;
+        _currentLvl = currentLvL;
     }
 
     public abstract void Buy(Player player);

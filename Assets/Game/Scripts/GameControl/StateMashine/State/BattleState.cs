@@ -5,6 +5,7 @@ public class BattleState : GameState
     [SerializeField] private EnemySpawner _spawner;
     [SerializeField] private Player _player;
     [SerializeField] private WaveProgressBar _progressBar;
+    [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
 
     public override void Enter(Player player)
@@ -19,6 +20,9 @@ public class BattleState : GameState
     public override void Exit()
     {
         _advertisementPresenter.ShowInterstitialAd();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        _saveAndLoadSytem.SetCloudSaveData();
+#endif
         base.Exit();
         _progressBar.gameObject.SetActive(false);
     }

@@ -9,12 +9,19 @@ public class Shoop : MonoBehaviour
     [SerializeField] private ShoopView _template;
     [SerializeField] private GameObject _itemContainer;
 
-    private void Start()
+    public List<PlayerAbillity> Abillities => _abillities;
+
+    public void InitializeShop()
     {
         for (int i = 0; i < _abillities.Count; i++)
         {
             AddItem(_abillities[i]);
         }
+    }
+
+    public void SetAbillities(List<PlayerAbillity> abillities)
+    {
+        _abillities = abillities;
     }
 
     private void AddItem(PlayerAbillity abillity)
