@@ -16,6 +16,8 @@ public class MenuState : GameState
     public override void Enter(Player player)
     {
         base.Enter(player);
+        Debug.Log("Μενώ");
+        Debug.Log(string.IsNullOrEmpty(_saveAndLoadSytem.SaveData));
         _menuUI.gameObject.SetActive(true);
         _turretPresenter.TrySetTurret();
         _player.SetMovmentMode(false);
@@ -29,9 +31,11 @@ public class MenuState : GameState
         _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(false);
         _player.RotationTurret(0);
-#if UNITY_WEBGL && !UNITY_EDITOR
+
+
         _saveAndLoadSytem.SetCloudSaveData();
-#endif
+
+
         base.Exit();
     }
 

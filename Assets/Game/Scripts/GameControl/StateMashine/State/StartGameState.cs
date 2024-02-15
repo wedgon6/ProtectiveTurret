@@ -13,12 +13,14 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         {
             base.Enter(player);
             _player.Initialize();
-
-            if (_saveAndLoadSytem.SaveData != string.Empty)
+            Debug.Log("Старт");
+            Debug.Log(string.IsNullOrEmpty(_saveAndLoadSytem.SaveData));
+            if (string.IsNullOrEmpty(_saveAndLoadSytem.SaveData) == false)
             {
-#if UNITY_WEBGL && !UNITY_EDITOR
+                Debug.Log("Привет из ифа");
+
                 _saveAndLoadSytem.GetCloudSaveData();
-#endif
+
             }
 
             _shoop.InitializeShop();

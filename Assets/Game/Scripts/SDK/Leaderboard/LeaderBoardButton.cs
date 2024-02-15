@@ -13,6 +13,7 @@ public class LeaderBoardButton : MonoBehaviour
 #endif
 
         _leaderboardPanel.SetActive(true);
+        _leaderboard.Test();
 #if UNITY_WEBGL && !UNITY_EDITOR
         _leaderboard.Fill();
 #endif

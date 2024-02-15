@@ -20,9 +20,9 @@ public class BattleState : GameState
     public override void Exit()
     {
         _advertisementPresenter.ShowInterstitialAd();
-#if UNITY_WEBGL && !UNITY_EDITOR
+
         _saveAndLoadSytem.SetCloudSaveData();
-#endif
+
         base.Exit();
         _progressBar.gameObject.SetActive(false);
     }

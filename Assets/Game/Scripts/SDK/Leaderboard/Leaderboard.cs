@@ -15,8 +15,17 @@ public class Leaderboard : MonoBehaviour
     public void SetPlayer(int score)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
+        Agava.YandexGames.Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
+        {
+            if (result.score < score)
+                Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
+        });
 #endif
+    }
+
+    public void Test()
+    {
+        _leaderboardView.Test();
     }
 
     public void Fill()

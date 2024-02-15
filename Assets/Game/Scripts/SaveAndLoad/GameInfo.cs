@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class GameInfo
 {
     private Player _player;
-    private int _playerLvl;
-    private int _playerMoney;
-    private int _currentExperiancePlayer;
-    private float _playerMoveSpeed;
-    private int _playerScore;
+    public int PlayerLvl;
+    public int PlayerMoney;
+    public int CurrentExperiancePlayer;
+    public float PlayerMoveSpeed;
+    public int PlayerScore;
 
     private List<PlayerAbillity> _playerAbillities;
 
@@ -18,20 +18,14 @@ public class GameInfo
         _player = player;
         _playerAbillities = playerAbillities;
     }
-
-    public int PlayerLvl => _playerLvl;
-    public int PlayerMoney => _playerMoney; 
-    public int CurrentExperiancePlayer => _currentExperiancePlayer;
-    public float PlayerMoveSpeed => _playerMoveSpeed;
-    public int PlayerScore => _playerScore;
     public List<PlayerAbillity> PlayerAbillities => _playerAbillities;
 
     public void GetPlayerData()
     {
-        _playerLvl = _player.CurrentLvl;
-        _playerMoney = _player.CurrentMoney;
-        _currentExperiancePlayer = _player.CurrenExpereance;
-        _playerMoveSpeed = _player.CurrentMoveSpeed;
-        _playerScore = _player.CurrentScore;
+        PlayerLvl = _player.CurrentLvl;
+        PlayerMoney = _player.CurrentMoney;
+        CurrentExperiancePlayer = _player.CurrenExpereance;
+        PlayerMoveSpeed = _player.CurrentMoveSpeed;
+        PlayerScore = _player.CurrentScore;
     }
 }

@@ -77,7 +77,6 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_currentWave == null)
         {
-            Debug.Log("вышел из апдейта");
             return;
         }
 
@@ -186,7 +185,6 @@ public class EnemySpawner : MonoBehaviour
     {
         _spawned = 0;
         SetWave(++_currentWaveNumber);
-        Debug.Log("Вызвал из НекстВейв");
     }
 
     private void SetWaveComplexity()
@@ -196,7 +194,6 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 2;
             SetWaves(_countWaves, EasyWaveIndex);
-            Debug.Log("установил лешкий");
             return;
         }
 
@@ -204,7 +201,6 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 3;
             SetWaves(_countWaves, MidWaveIndex);
-            Debug.Log("установил средний");
             return;
         }
 
@@ -212,7 +208,6 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 4;
             SetWaves(_countWaves, HardWaveIndex);
-            Debug.Log("установил тяжелый");
             return;
         }
     }
@@ -234,8 +229,6 @@ public class EnemySpawner : MonoBehaviour
 
         SetWave(_currentWaveNumber);
         OnSpawnerReset?.Invoke();
-        Debug.Log("Вызвал из СетВэйвс");
-        Debug.Log(_enemyWaves.Count);
     }
 
     private IEnumerator StartNextWave()
