@@ -132,5 +132,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Reload Speed
   _icon: {fileID: 21300000, guid: b305fc609f0639f49a339b06400f3673, type: 3}
-  _multiplier: 1.5
+  _multiplier: 1.2
   _startPrice: 150

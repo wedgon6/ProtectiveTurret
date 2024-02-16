@@ -12,13 +12,13 @@ public class PlayerLvlProgressBar : MonoBehaviour
     {
         _playerLvlValue.text = _playerLvlProgress.CurrentPlayerLvl.ToString();
         _playerLvlProgress.OnPlayerExpirianceChanget += OnPlayerLvlProgressChenget;
-        _playerLvlProgress.OnLvlUp += OnPlayerLvlUp;
+        _playerLvlProgress.OnPlayerLvlChenget += OnPlayerLvlUp;
     }
 
     private void OnDisable()
     {
         _playerLvlProgress.OnPlayerExpirianceChanget -= OnPlayerLvlProgressChenget;
-        _playerLvlProgress.OnLvlUp -= OnPlayerLvlUp;
+        _playerLvlProgress.OnPlayerLvlChenget -= OnPlayerLvlUp;
     }
 
     private void OnPlayerLvlProgressChenget(int currentValue, int totalValue)

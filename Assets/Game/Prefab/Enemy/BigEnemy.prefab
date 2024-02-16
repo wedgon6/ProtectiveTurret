@@ -271,9 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab94806a748c384aadc3ba58d129aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 150
   _stateMachine: {fileID: 6072563417528465466}
-  _revard: 5000
+  _revard: 100
   _countScore: 5
   _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
   _tagEnemy: Big

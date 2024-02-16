@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638419835623175331
-    m_Hash: 989745217
+      ticks: 638436971319144262
+    m_Hash: 3380814448
   m_LockFileStatus:
     m_FilePath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638419835623568227
-    m_Hash: 855076536
+      ticks: 638436971319663990
+    m_Hash: 2180118407
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -74,12 +74,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.agava.yandexgames@https://github.com/forcepusher/com.agava.yandexgames.git#15.1.1
+- packageId: com.agava.yandexgames@https://github.com/forcepusher/com.agava.yandexgames.git#16.0.1
   testable: 0
   isDirectDependency: 1
-  version: 15.1.1
+  version: 16.0.0
   source: 5
-  resolvedPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret\\Library\\PackageCache\\com.agava.yandexgames@c127b54d3c"
+  resolvedPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret\\Library\\PackageCache\\com.agava.yandexgames@6c1dcfeb19"
   assetPath: Packages/com.agava.yandexgames
   name: com.agava.yandexgames
   displayName: Yandex Games
@@ -1355,6 +1355,7 @@ m_ResolvedPackages:
     - 3.0.5
     - 3.0.6
     - 3.0.7
+    - 3.0.8
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -1362,11 +1363,13 @@ m_ResolvedPackages:
     - 3.2.0-pre.5
     - 3.2.0-pre.6
     - 3.2.0-pre.7
+    - 3.2.0-pre.8
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
     - 3.0.7
+    - 3.0.8
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -1374,9 +1377,10 @@ m_ResolvedPackages:
     - 3.2.0-pre.5
     - 3.2.0-pre.6
     - 3.2.0-pre.7
+    - 3.2.0-pre.8
     - 4.0.0-pre.1
     - 4.0.0-pre.2
-    recommended: 3.0.7
+    recommended: 3.0.8
     deprecated: []
   dependencies:
   - name: com.unity.ugui

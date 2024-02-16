@@ -3118,28 +3118,28 @@
         "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.XRModule.dll",
         "Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll",
         "Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Advertising/InterstitialAd.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Advertising/StickyAd.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Advertising/VideoAd.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/Billing.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/CatalogProduct.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/GetProductCatalogResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/GetPurchasedProductsResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/PurchasedProduct.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Billing/PurchaseProductResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Leaderboard/Leaderboard.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Leaderboard/LeaderboardDescriptionResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Leaderboard/LeaderboardEntryResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Leaderboard/LeaderboardGetEntriesResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/PlayerAccount/PlayerAccount.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/PlayerAccount/PlayerAccountProfileDataResponse.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/PlayerAccount/ProfilePictureSize.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Tools/ReviewPopup.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Tools/Shortcut.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Utility/PlayerPrefs.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/Utility/RemoteImage.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/YandexGamesEnvironment.cs",
-        "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/YandexGamesSdk.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Advertising/InterstitialAd.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Advertising/StickyAd.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Advertising/VideoAd.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/Billing.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/CatalogProduct.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/GetProductCatalogResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/GetPurchasedProductsResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/PurchasedProduct.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Billing/PurchaseProductResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Leaderboard/Leaderboard.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Leaderboard/LeaderboardDescriptionResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Leaderboard/LeaderboardEntryResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Leaderboard/LeaderboardGetEntriesResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/PlayerAccount/PlayerAccount.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/PlayerAccount/PlayerAccountProfileDataResponse.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/PlayerAccount/ProfilePictureSize.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Tools/ReviewPopup.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Tools/Shortcut.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Utility/PlayerPrefs.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/Utility/RemoteImage.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/YandexGamesEnvironment.cs",
+        "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/YandexGamesSdk.cs",
         "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "Library/Bee/artifacts/2000b0aP.dag/Agava.YandexGames.rsp"
@@ -7091,12 +7091,12 @@
         "Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll",
         "Library/Bee/artifacts/2000b0aP.dag/Agava.YandexGames.ref.dll",
         "Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/PlaytestingCanvas.cs",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/ProductCatalogPanel.cs",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/ProductPanel.cs",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/PurchasedProductListPanel.cs",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/PurchasedProductPanel.cs",
-        "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/WebEventSystem.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/PlaytestingCanvas.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/ProductCatalogPanel.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/ProductPanel.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/PurchasedProductListPanel.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/PurchasedProductPanel.cs",
+        "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/WebEventSystem.cs",
         "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "Library/Bee/artifacts/2000b0aP.dag/Agava.YandexGames.Samples.Playtesting.rsp"
@@ -14774,7 +14774,7 @@
       "File": "Assets/Samples/Web Utility/3.1.0/Playtesting Sample/csc.rsp"
     },
     {
-      "File": "Assets/Samples/Yandex Games/15.1.1/Playtesting Sample/csc.rsp"
+      "File": "Assets/Samples/Yandex Games/16.0.0/Playtesting Sample/csc.rsp"
     },
     {
       "File": "C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Web.dll"
@@ -14798,7 +14798,7 @@
       "File": "Library/PackageCache/com.agava.webutility@32d39130ea/Runtime/csc.rsp"
     },
     {
-      "File": "Library/PackageCache/com.agava.yandexgames@c127b54d3c/Runtime/csc.rsp"
+      "File": "Library/PackageCache/com.agava.yandexgames@6c1dcfeb19/Runtime/csc.rsp"
     },
     {
       "File": "Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/csc.rsp"

@@ -23,11 +23,6 @@ public class Leaderboard : MonoBehaviour
 #endif
     }
 
-    public void Test()
-    {
-        _leaderboardView.Test();
-    }
-
     public void Fill()
     {
         _leaderboardPlayers.Clear();

@@ -8,11 +8,6 @@ public class ViewLeaderboard : MonoBehaviour
 
     private List<ElementPlayer> _spawnedElements = new();
 
-    public void Test()
-    {
-        Instantiate(_leaderboardElementPrefab, _containet);
-    }
-
     public void ConstructLeaderboard(List<DataPlayer> leaderboardPlayer)
     {
         ClearLeaderboard();

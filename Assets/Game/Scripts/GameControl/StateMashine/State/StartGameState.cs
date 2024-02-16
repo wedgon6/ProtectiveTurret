@@ -14,8 +14,7 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             base.Enter(player);
             _player.Initialize();
             Debug.Log("Старт");
-            Debug.Log(string.IsNullOrEmpty(_saveAndLoadSytem.SaveData));
-            if (string.IsNullOrEmpty(_saveAndLoadSytem.SaveData) == false)
+            if (_saveAndLoadSytem.TryGetSave())
             {
                 Debug.Log("Привет из ифа");
 

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SaveAndLoadSytem : MonoBehaviour
 {
+    private const string DataKey = "PlayerData";
+
     [SerializeField] private Player _player;
     [SerializeField] private Shoop _shoop;
 
@@ -11,6 +13,18 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public string SaveData => _cloudSaveData;
 
+    public bool TryGetSave()
+    {
+        if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey))
+        {
+            _cloudSaveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKey);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    } 
 
     public void SetCloudSaveData()
     {
@@ -21,6 +35,8 @@ public class SaveAndLoadSytem : MonoBehaviour
         Debug.Log(string.IsNullOrEmpty(_cloudSaveData));
         Debug.Log(_cloudSaveData);
 #if UNITY_WEBGL && !UNITY_EDITOR
+        Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKey, _cloudSaveData);
+        Agava.YandexGames.Utility.PlayerPrefs.Save();
         PlayerAccount.SetCloudSaveData(_cloudSaveData);
 #endif
     }

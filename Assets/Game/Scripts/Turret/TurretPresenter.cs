@@ -42,12 +42,12 @@ public class TurretPresenter : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerLevel.OnLvlUp += OnPlayerLvlUp;
+        _playerLevel.OnPlayerLvlChenget += OnPlayerLvlUp;
     }
 
     private void OnDisable()
     {
-        _playerLevel.OnLvlUp -= OnPlayerLvlUp;
+        _playerLevel.OnPlayerLvlChenget -= OnPlayerLvlUp;
     }
 
     private void OnPlayerLvlUp()

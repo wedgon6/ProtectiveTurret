@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 50
   _stateMachine: {fileID: 6357899980816131369}
-  _revard: 30000
+  _revard: 50
   _countScore: 3
   _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
   _tagEnemy: Fast

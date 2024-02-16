@@ -9,12 +9,14 @@ public class EnemySpawner : MonoBehaviour
     private const int MidWaveIndex = 7;
     private const int HardWaveIndex = 11;
     private const int WaveLenght = 5;
+    private const float EasyWaveDelay = 1.1f;
+    private const float MidWaveDelay = 0.9f;
+    private const float HardWaveDelay = 0.7f;
 
     [SerializeField] private RedLine _target;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private Player _player;
     [SerializeField] private EnemiesList _enemiesPrefab;
-    [SerializeField] private float _delay;
 
     [SerializeField] private PoolEnemy _poolStandartEnemy;
     [SerializeField] private PoolEnemy _poolFastEnemy;
@@ -24,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
     private int _currentWaveNumber = 0;
     private int _countWaves;
     private float _timeAfterLastSpawn;
+    private float _delay;
     private int _spawned;
     private Coroutine _corontine;
     private List<IPoolObject> _createdEnemies = new List<IPoolObject>();
@@ -178,7 +181,6 @@ public class EnemySpawner : MonoBehaviour
     private void SetWave(int index)
     {
         _currentWave = _enemyWaves[index];
-        Debug.Log(index);
     }
 
     private void NextWave()
@@ -194,6 +196,7 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 2;
             SetWaves(_countWaves, EasyWaveIndex);
+            _delay = EasyWaveDelay;
             return;
         }
 
@@ -201,6 +204,7 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 3;
             SetWaves(_countWaves, MidWaveIndex);
+            _delay = MidWaveDelay;
             return;
         }
 
@@ -208,6 +212,7 @@ public class EnemySpawner : MonoBehaviour
         {
             _countWaves = 4;
             SetWaves(_countWaves, HardWaveIndex);
+            _delay = HardWaveDelay;
             return;
         }
     }
