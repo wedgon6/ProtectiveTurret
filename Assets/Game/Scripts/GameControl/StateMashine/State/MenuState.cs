@@ -16,7 +16,7 @@ public class MenuState : GameState
     public override void Enter(Player player)
     {
         base.Enter(player);
-        Debug.Log("Μενώ");
+        Debug.Log("Json save");
         Debug.Log(string.IsNullOrEmpty(_saveAndLoadSytem.SaveData));
         _menuUI.gameObject.SetActive(true);
         _turretPresenter.TrySetTurret();

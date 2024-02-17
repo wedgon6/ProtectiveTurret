@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Agava.YandexGames;
+using UnityEngine;
 
 namespace Assets.Game.Scripts.GameControl.StateMashine.State
 {
@@ -12,11 +13,15 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         public override void Enter(Player player)
         {
             base.Enter(player);
+#if UNITY_WEBGL && !UNITY_EDITOR
+            YandexGamesSdk.GameReady();
+#endif
             _player.Initialize();
             Debug.Log("Старт");
+            Debug.Log("Проверка наличия сохранений");
             if (_saveAndLoadSytem.TryGetSave())
             {
-                Debug.Log("Привет из ифа");
+                Debug.Log("Сохранения есть");
 
                 _saveAndLoadSytem.GetCloudSaveData();
 

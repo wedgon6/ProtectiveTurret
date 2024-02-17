@@ -15,13 +15,16 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public bool TryGetSave()
     {
+        Debug.Log("Save check");
         if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey))
         {
             _cloudSaveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKey);
+            Debug.Log("True");
             return true;
         }
         else
         {
+            Debug.Log("False");
             return false;
         }
     } 
@@ -32,12 +35,13 @@ public class SaveAndLoadSytem : MonoBehaviour
         _gameInfo.GetPlayerData();
        _cloudSaveData = JsonUtility.ToJson(_gameInfo);
         Debug.Log("Засэйвил");
-        Debug.Log(string.IsNullOrEmpty(_cloudSaveData));
-        Debug.Log(_cloudSaveData);
+
 #if UNITY_WEBGL && !UNITY_EDITOR
         Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKey, _cloudSaveData);
         Agava.YandexGames.Utility.PlayerPrefs.Save();
         PlayerAccount.SetCloudSaveData(_cloudSaveData);
+        Debug.Log("Проверка ключа ---" + Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey));
+        Debug.Log(_cloudSaveData);
 #endif
     }
 
@@ -50,7 +54,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     private void OnSuccessCallback(string json)
     {
-        Debug.Log("Вызва колбэк");
+        Debug.Log("Вызов колбэк");
         _gameInfo = JsonUtility.FromJson<GameInfo>(_cloudSaveData);
         _player.SetPlayerData(_gameInfo.PlayerLvl, _gameInfo.PlayerMoney, _gameInfo.CurrentExperiancePlayer, _gameInfo.PlayerMoveSpeed, _gameInfo.PlayerScore);
         _shoop.SetAbillities(_gameInfo.PlayerAbillities);
