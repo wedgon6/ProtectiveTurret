@@ -11,6 +11,8 @@ public sealed class Localization : MonoBehaviour
     private const string RussianCode = "ru";
     private const string TurkishCode = "tr";
 
+    [SerializeField] private LeanLocalization _leanLocalization;
+
     public void ChangeLanguage(string languageCode)
     {
         //string language = languageCode switch
@@ -36,7 +38,7 @@ public sealed class Localization : MonoBehaviour
                 break;
         }
 
+        _leanLocalization.SetCurrentLanguage(language);
         Debug.Log("Chenge language" + language);
-        LeanLocalization.SetCurrentLanguageAll(language);
     }
 }

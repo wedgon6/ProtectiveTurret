@@ -3742,7 +3742,6 @@ MonoBehaviour:
     _indexsStandartEnemy: 0000000001000000020000000300000004000000
     _indexsFastEnemy: 05000000060000000700000008000000
     _indexsBigEnemy: 090000000a000000
-  _delay: 0.7
   _poolStandartEnemy: {fileID: 1001777548}
   _poolFastEnemy: {fileID: 1279041269}
   _poolBigEnemy: {fileID: 1481756115}
@@ -7545,8 +7544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924fd2972016192408650d01525be39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
-  _maxMoveSpeed: 6
+  _moveSpeed: 2.7
+  _maxMoveSpeed: 2.7
   _camera: {fileID: 282434600}
 --- !u!54 &1883925406
 Rigidbody:

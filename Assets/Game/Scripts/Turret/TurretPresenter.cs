@@ -72,7 +72,6 @@ public class TurretPresenter : MonoBehaviour
         {
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
-            Debug.Log("Подписался на стрельбу");
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
             return;
         }

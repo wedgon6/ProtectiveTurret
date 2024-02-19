@@ -55,7 +55,7 @@ public class SizeClipUI : MonoBehaviour
     private IEnumerator RechargeAnimation()
     {
         _reloadImage.DOFillAmount(1, _clip.CoolDonw).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(_clip.CoolDonw);
         _reloadImage.fillAmount = 0f;
     }
 }
