@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SDKInitialize : MonoBehaviour
 {
-    [SerializeField] private Localization _localization;
-
 #if UNITY_WEBGL && !UNITY_EDITOR
    private void Awake()
     {
@@ -20,7 +18,6 @@ public class SDKInitialize : MonoBehaviour
 
     private void OnInitialized()
     {
-        _localization.ChangeLanguage(YandexGamesSdk.Environment.i18n.lang);
         Agava.YandexGames.Utility.PlayerPrefs.Load();
         SceneManager.LoadScene("BaseScene");
     }

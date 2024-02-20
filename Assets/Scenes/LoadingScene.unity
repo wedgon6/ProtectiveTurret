@@ -460,8 +460,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2092769909}
   - component: {fileID: 2092769908}
-  - component: {fileID: 2092769910}
-  - component: {fileID: 2092769911}
   m_Layer: 0
   m_Name: SDK
   m_TagString: Untagged
@@ -481,7 +479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd624c835a1c8e44938de607b33a77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localization: {fileID: 2092769910}
 --- !u!4 &2092769909
 Transform:
   m_ObjectHideFlags: 0
@@ -500,36 +497,6 @@ Transform:
   - {fileID: 1671106466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2092769910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092769907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b6c8e979dccf742af6b8aa2e9b841c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leanLocalization: {fileID: 2092769911}
---- !u!114 &2092769911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092769907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLanguage: Russian
-  detectLanguage: 1
-  defaultLanguage: 
-  saveLoad: 1
-  prefabs: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

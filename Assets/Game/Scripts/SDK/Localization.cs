@@ -1,3 +1,4 @@
+using Agava.YandexGames;
 using Lean.Localization;
 using UnityEngine;
 
@@ -13,17 +14,15 @@ public sealed class Localization : MonoBehaviour
 
     [SerializeField] private LeanLocalization _leanLocalization;
 
-    public void ChangeLanguage(string languageCode)
+    private void Awake()
     {
-        //string language = languageCode switch
-        //{
-        //    EnglishCode => Language.en.ToString(),
-        //    RussianCode => Language.ru.ToString(),
-        //    TurkishCode => Language.tr.ToString(),
-        //    _ => Language.en.ToString()
-        //};
+       ChangeLanguage();
+    }
 
-        string language = English;
+    private void ChangeLanguage()
+    {
+        string languageCode = YandexGamesSdk.Environment.i18n.lang;
+        string language = null;
 
         switch (languageCode)
         {
