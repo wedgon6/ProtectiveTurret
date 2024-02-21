@@ -15,7 +15,10 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public bool TryGetSave()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         Debug.Log("Save check");
+        Debug.Log(_cloudSaveData);
+#endif
         if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey))
         {
             _cloudSaveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKey);
@@ -27,7 +30,7 @@ public class SaveAndLoadSytem : MonoBehaviour
             Debug.Log("False");
             return false;
         }
-    } 
+    }
 
     public void SetCloudSaveData()
     {

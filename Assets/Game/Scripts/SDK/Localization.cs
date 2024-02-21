@@ -16,7 +16,9 @@ public sealed class Localization : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
        ChangeLanguage();
+#endif
     }
 
     private void ChangeLanguage()

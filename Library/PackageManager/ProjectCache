@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638436971319144262
+      ticks: 638441317180420680
     m_Hash: 3380814448
   m_LockFileStatus:
     m_FilePath: "D:/\u043F\u0440\u043E\u0435\u043A\u0442\u044B/ProtectiveTurret/Packages/packages-lock.json"
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638436971319663990
+      ticks: 638441317180757731
     m_Hash: 2180118407
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -1364,6 +1364,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1378,6 +1379,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.8

@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 
 public class MenuState : GameState
@@ -34,6 +35,8 @@ public class MenuState : GameState
 
 
         _saveAndLoadSytem.SetCloudSaveData();
+        bool check = Agava.YandexGames.Utility.PlayerPrefs.HasKey("PlayerData");
+        Debug.Log(check + "Проверка ключа после сохранения");
 
 
         base.Exit();
