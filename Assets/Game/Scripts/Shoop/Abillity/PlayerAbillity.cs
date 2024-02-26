@@ -20,10 +20,20 @@ public abstract class PlayerAbillity : MonoBehaviour
     public Action OnPriceChenget;
     public Action OnLvlChenget;
 
-    public void Initialize(int currentPrice = 1, int currentLvL = 1)
+    public void Initialize(int currentLvL = 1)
     {
         _currentPrice = _startPrice;
         _currentLvl = currentLvL;
+        OnPriceChenget?.Invoke();
+        OnLvlChenget?.Invoke();
+    }
+
+    public void GetCloudData(int currentLvl, int currentPrice)
+    {
+        _currentLvl = currentLvl;
+        _currentPrice = currentPrice;
+        OnPriceChenget?.Invoke();
+        OnLvlChenget?.Invoke();
     }
 
     public abstract void Buy(Player player);

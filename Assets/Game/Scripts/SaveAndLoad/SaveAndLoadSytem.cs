@@ -34,7 +34,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public void SetCloudSaveData()
     {
-        _gameInfo = new GameInfo(_player,_shoop.Abillities);
+        _gameInfo = new GameInfo(_player, _shoop);
         _gameInfo.GetPlayerData();
        _cloudSaveData = JsonUtility.ToJson(_gameInfo);
         Debug.Log("Засэйвил");
@@ -49,11 +49,11 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public void GetCloudSaveData()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
         Debug.Log("Вызов GetSave");
+#if UNITY_WEBGL && !UNITY_EDITOR
         _gameInfo = JsonUtility.FromJson<GameInfo>(_cloudSaveData);
         _player.SetPlayerData(_gameInfo.PlayerLvl, _gameInfo.PlayerMoney, _gameInfo.CurrentExperiancePlayer, _gameInfo.PlayerMoveSpeed, _gameInfo.PlayerScore);
-        _shoop.SetAbillities(_gameInfo.PlayerAbillities);
+        _shoop.SetAbillitiesData(_gameInfo.AbilitiesLvl, _gameInfo.AbilitiesPrise);
 #endif
     }
 }

@@ -18,7 +18,24 @@ public class SDKInitialize : MonoBehaviour
 
     private void OnInitialized()
     {
-        Agava.YandexGames.Utility.PlayerPrefs.Load();
+        if (PlayerAccount.IsAuthorized)
+        {
+            Agava.YandexGames.Utility.PlayerPrefs.Load(OnSuccessColback, OnErrorColbak);
+        }
+        else
+        {
+            SceneManager.LoadScene("BaseScene");
+        }
+    }
+
+    private void OnSuccessColback()
+    {
+        SceneManager.LoadScene("BaseScene");
+    }
+
+    private void OnErrorColbak(string error)
+    {
+        Debug.Log("ErrorColback" + error);
         SceneManager.LoadScene("BaseScene");
     }
 #else
