@@ -9,6 +9,9 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         [SerializeField] private Shoop _shoop;
         [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
         [SerializeField] private MenuTransition _menuTransition;
+        [SerializeField] private TutorialTransition _tutorialTransition;
+
+        private bool _isFirstStart;
 
         public override void Enter(Player player)
         {
@@ -24,11 +27,20 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
                 Debug.Log("Сохранения есть");
 
                 _saveAndLoadSytem.GetCloudSaveData();
+                _isFirstStart = false;
 
+            }
+            else
+            {
+                _isFirstStart = true;
             }
 
             _shoop.InitializeShop();
-            _menuTransition.ReturnToMeny();
+
+            if (_isFirstStart)
+                _tutorialTransition.StartTutorial();
+            else
+                _menuTransition.ReturnToMeny();
         }
 
         public override void Exit()
@@ -38,7 +50,6 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
 
         private void Update()
         {
-            
         }
     }
 }

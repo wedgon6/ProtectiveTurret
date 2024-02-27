@@ -9,7 +9,7 @@ public class DialogueView : MonoBehaviour
 
     public void Render(DialoguePhrase phrase)
     {
-        _lable.text = phrase.Phease;
+        _lable.text = phrase.Phease.text;
         _icon.sprite = phrase.Icon;
     }
 

@@ -83,10 +83,10 @@
     <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\AmmoCountAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\LeaderBoardButton.cs" />
-    <Compile Include="Assets\Game\Scripts\GameControl\Tutorial\Dialogue.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameTransition.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\Leaderboard.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\EnemyWave.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\Tutorial\DialoguePresenter.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\PoolBullet.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Game\Scripts\Player\Move\MovementPlayer.cs" />
@@ -105,14 +105,15 @@
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\Language.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_1.cs" />
-    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Shoop.cs" />
+    <Compile Include="Assets\Game\Scripts\Enemy\State Machine\EnemyState\DyingState.cs" />
     <Compile Include="Assets\Game\Art\Particle\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Game\Scripts\SDK\TestFocus.cs" />
     <Compile Include="Assets\Game\Scripts\Shoop\Abillity\MoveSpeedAbillity.cs" />
     <Compile Include="Assets\Game\Scripts\UI\LoseGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretAudioSourse.cs" />
     <Compile Include="Assets\Game\Scripts\PoolSystem\IPoolObject.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\TutorialState.cs" />
     <Compile Include="Assets\Game\Scripts\UI\SettingsPanel.cs" />
     <Compile Include="Assets\Game\Scripts\Turret\TurretLvl_4.cs" />
     <Compile Include="Assets\Game\Scripts\Enemy\TypeEnemy\FastEnemy.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Assets\Game\Scripts\SDK\Leaderboard\DataPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\GameStateMashine.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\State\StartGameState.cs" />
+    <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\TutorialTransition.cs" />
     <Compile Include="Assets\Game\Scripts\UI\CloseButton.cs" />
     <Compile Include="Assets\Game\Scripts\UI\WinGamePanel.cs" />
     <Compile Include="Assets\Game\Scripts\GameControl\StateMashine\Transition\WinTransition.cs" />

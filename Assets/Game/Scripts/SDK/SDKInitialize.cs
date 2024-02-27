@@ -35,7 +35,7 @@ public class SDKInitialize : MonoBehaviour
 
     private void OnErrorColbak(string error)
     {
-        Debug.Log("ErrorColback" + error);
+        Debug.Log("ErrorColback");
         SceneManager.LoadScene("BaseScene");
     }
 #else

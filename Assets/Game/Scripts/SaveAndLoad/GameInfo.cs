@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class GameInfo
@@ -12,8 +13,8 @@ public class GameInfo
     public int CurrentExperiancePlayer;
     public float PlayerMoveSpeed;
     public int PlayerScore;
-    public List<int> AbilitiesLvl;
-    public List<int> AbilitiesPrise;
+    public List<int> AbilitiesLvl = new List<int>();
+    public List<int> AbilitiesPrise = new List<int>();
 
     public GameInfo(Player player, Shoop shoop)
     {
@@ -32,6 +33,7 @@ public class GameInfo
         for (int i = 0; i < _shoop.Abillities.Count; i++)
         {
             AbilitiesLvl.Add(_shoop.Abillities[i].CurrentLvl);
+            Debug.Log(i);
         }
         
         for (int i = 0; i < _shoop.Abillities.Count; i++)
