@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TurretPresenter : MonoBehaviour
@@ -17,10 +17,24 @@ public class TurretPresenter : MonoBehaviour
     private int _baseAmmouSize = 20;
     private int _ammouSizeRise = 15;
 
+    public Action OnDataChenged;
+
+    public int CurrentIndexTurret => _indexTurret;
+    public int CurrentAmmoSize => _baseAmmouSize;
+    public float CurrentReloadTime => _baseReloadTime;
+
+    public void SetCloudData(int index, int ammoSize, float reloadTime)
+    {
+        _indexTurret = index;
+        _baseAmmouSize = ammoSize;
+        _baseReloadTime = reloadTime;
+    }
+
     public void AddAmmouTurret()
     {
         _baseAmmouSize += _ammouSizeRise;
         _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
+        OnDataChenged?.Invoke();
     }
 
     public void ReduceCooldownReload()
@@ -30,6 +44,7 @@ public class TurretPresenter : MonoBehaviour
 
         _baseReloadTime -= _decreaseReload;
         _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
+        OnDataChenged?.Invoke();
     }
 
     public void TrySetTurret()
@@ -62,6 +77,7 @@ public class TurretPresenter : MonoBehaviour
             {
                 _indexTurret++;
                 InitializePlayerTurret();
+                OnDataChenged?.Invoke();
             }
         }
     }

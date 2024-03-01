@@ -138,7 +138,7 @@ public class BaseTurret : MonoBehaviour
                 for (int j = 0; j < _shootPoints.Length; j++)
                 {
 
-                    if (_currentCoutBullet == 0)
+                    if (_currentCoutBullet <= 0)
                     {
                         CorountineStart(Recharge());
                     }

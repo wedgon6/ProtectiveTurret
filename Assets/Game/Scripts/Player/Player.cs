@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementPlayer))]
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     private BaseTurret _turret;
     private int _currentMoney;
     private MovementPlayer _movement;
+
+    public Action OnDataChenged;
 
     public BaseTurret CurrentTurret => _turret;
     public int CurrentMoney => _currentMoney;
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
     public void ReduceMoney(int money)
     {
         _money.ReduceMoney(money);
+        OnDataChenged?.Invoke();
     }
 
     public void RotationTurret(float rotationY)
@@ -72,6 +76,7 @@ public class Player : MonoBehaviour
     public void SetMovmentMode(bool canMove)
     {
         _movement.SetModeMovmen(canMove);
+        OnDataChenged?.Invoke();
     }
 
     public void ResetTurret()

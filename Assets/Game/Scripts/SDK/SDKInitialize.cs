@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SDKInitialize : MonoBehaviour
 {
-#if UNITY_WEBGL && !UNITY_EDITOR
    private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
@@ -38,10 +37,4 @@ public class SDKInitialize : MonoBehaviour
         Debug.Log("ErrorColback");
         SceneManager.LoadScene("BaseScene");
     }
-#else
-    private void Start()
-    {
-        SceneManager.LoadScene("BaseScene");
-    }
-#endif
 }

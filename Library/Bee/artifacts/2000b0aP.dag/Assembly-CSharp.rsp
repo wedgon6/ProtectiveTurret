@@ -351,7 +351,6 @@
 "Assets/Game/Scripts/GameControl/StateMashine/Transition/WinTransition.cs"
 "Assets/Game/Scripts/GameControl/Tutorial/DialoguePhrase.cs"
 "Assets/Game/Scripts/GameControl/Tutorial/DialoguePresenter.cs"
-"Assets/Game/Scripts/GameControl/Tutorial/DialogueView.cs"
 "Assets/Game/Scripts/GameControl/WaveProgressBar.cs"
 "Assets/Game/Scripts/Map/Barrier.cs"
 "Assets/Game/Scripts/Map/RedLine.cs"

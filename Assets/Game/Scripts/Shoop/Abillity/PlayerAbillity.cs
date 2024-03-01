@@ -1,9 +1,10 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public abstract class PlayerAbillity : MonoBehaviour
 {
-    [SerializeField] private string _lable;
+    [SerializeField] private TMP_Text _lable;
     [SerializeField] private Sprite _icon;
     [SerializeField] protected float _multiplier;
     [SerializeField] private int _startPrice;
@@ -12,7 +13,7 @@ public abstract class PlayerAbillity : MonoBehaviour
     
     protected int _currentPrice;
 
-    public string Lable => _lable;
+    public string Lable => _lable.text;
     public Sprite Icon => _icon;
     public int Price => _currentPrice;
     public int CurrentLvl => _currentLvl;

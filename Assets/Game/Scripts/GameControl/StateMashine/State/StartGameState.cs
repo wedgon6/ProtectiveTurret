@@ -20,12 +20,9 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             YandexGamesSdk.GameReady();
 #endif
             _player.Initialize();
-            Debug.Log("Старт");
-            Debug.Log("Проверка наличия сохранений");
+
             if (_saveAndLoadSytem.TryGetSave())
             {
-                Debug.Log("Сохранения есть");
-
                 _saveAndLoadSytem.GetCloudSaveData();
                 _isFirstStart = false;
 

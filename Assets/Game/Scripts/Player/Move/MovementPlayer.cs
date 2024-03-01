@@ -20,13 +20,13 @@ public class MovementPlayer : MonoBehaviour
     public void SetMoveSpeed(float moveSpeed)
     {
         _moveSpeed = moveSpeed;
-        _maxMoveSpeed = _moveSpeed * 2;
+        _maxMoveSpeed = _moveSpeed;
     }
 
     public void AddMoveSpeed()
     {
-        _moveSpeed += 1.2f;
-        _maxMoveSpeed += 1.2f;
+        _moveSpeed += 0.4f;
+        _maxMoveSpeed += 0.4f;
     }
 
     public void SetModeMovmen(bool canMove)

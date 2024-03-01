@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_text
-      value: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F"
+      value: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438"
       objectReference: {fileID: 0}
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_fontSize
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: ReloadSpeed
-  FallbackText: 
+  FallbackText: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F"
 --- !u!1 &4875221787732309974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8883883083398815303, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
@@ -168,7 +168,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429817f3bcf0c00409bf17d2e3387708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lable: Reload Speed
+  _lable: {fileID: 6164885548862432907}
   _icon: {fileID: 21300000, guid: b305fc609f0639f49a339b06400f3673, type: 3}
   _multiplier: 1.2
   _startPrice: 150
+--- !u!114 &6164885548862432907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+  m_PrefabInstance: {fileID: 4098734134691752337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779337512756687290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,12 @@ public class Shoop : MonoBehaviour
 
     public void SetAbillitiesData(List<int> abilitiesLvl, List<int> abilitiesPrise)
     {
+        if (abilitiesLvl == null || abilitiesPrise == null)
+            return;
+
+        if (abilitiesLvl.Count == 0 || abilitiesPrise.Count == 0)
+            return;
+
         for (int i = 0; i < _abillities.Count; i++)
         {
             _abillities[i].GetCloudData(abilitiesLvl[i], abilitiesPrise[i]);

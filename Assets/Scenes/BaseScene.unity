@@ -2092,6 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1883925412}
   _shoop: {fileID: 1131702284}
+  _turretPresenter: {fileID: 1189180570}
 --- !u!114 &402492452
 MonoBehaviour:
   m_ObjectHideFlags: 0
