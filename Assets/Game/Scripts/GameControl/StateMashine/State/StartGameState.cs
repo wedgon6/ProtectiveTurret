@@ -15,11 +15,12 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
 
         public override void Enter(Player player)
         {
-            base.Enter(player);
 #if UNITY_WEBGL && !UNITY_EDITOR
             YandexGamesSdk.GameReady();
 #endif
+            base.Enter(player);
             _player.Initialize();
+            _shoop.InitializeShop();
 
             if (_saveAndLoadSytem.TryGetSave())
             {
@@ -31,8 +32,6 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             {
                 _isFirstStart = true;
             }
-
-            _shoop.InitializeShop();
 
             if (_isFirstStart)
                 _tutorialTransition.StartTutorial();

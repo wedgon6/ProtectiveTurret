@@ -17,8 +17,6 @@ public class MenuState : GameState
     public override void Enter(Player player)
     {
         base.Enter(player);
-        Debug.Log("Json save");
-        Debug.Log(string.IsNullOrEmpty(_saveAndLoadSytem.SaveData));
         _menuUI.gameObject.SetActive(true);
         _turretPresenter.TrySetTurret();
         _player.SetMovmentMode(false);
@@ -33,11 +31,7 @@ public class MenuState : GameState
         _menuUI.gameObject.SetActive(false);
         _player.RotationTurret(0);
 
-
         _saveAndLoadSytem.SetCloudSaveData();
-        bool check = Agava.YandexGames.Utility.PlayerPrefs.HasKey("PlayerData");
-        Debug.Log(check + "Проверка ключа после сохранения");
-
 
         base.Exit();
     }
