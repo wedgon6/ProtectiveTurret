@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1350
     height: 669
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 431}
   m_MaxSize: {x: 10000, y: 10000}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 40
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -628,7 +628,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Game/Scripts/SDK
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -636,15 +636,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Game/Scripts/SDK
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "D:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\ProtectiveTurret"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1113}
-    m_SelectedIDs: f0640000
-    m_LastClickedID: 25840
+    scrollPos: {x: 0, y: 623}
+    m_SelectedIDs: 84640000
+    m_LastClickedID: 25732
     m_ExpandedIDs: 000000005464000056640000586400005a6400005c6400005e64000060640000626400006464000066640000686400006a6400006c6400006e64000070640000726400007464000076640000786400007a6400007c6400007e64000080640000826400008464000086640000886400008a6400008c6400008e64000090640000926400009464000096640000986400009a6400009c6400009e640000a0640000a2640000a4640000a6640000a8640000aa640000ac640000ae640000b0640000b2640000b4640000b6640000b8640000ba640000bc640000be640000c0640000c2640000c4640000c6640000c8640000ca640000cc640000ce640000d0640000d2640000d4640000d6640000d8640000da640000dc640000de640000e0640000e2640000e4640000e6640000e8640000ea640000ec640000ee640000f0640000f2640000f46400003a65000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -766,9 +766,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b2650000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 5098ffffeab6ffff28bdffff78bdffff38c1ffff46c1ffff18c2ffff84f9ffff0efbffff
+      m_SelectedIDs: f6bc0000
+      m_LastClickedID: 48374
+      m_ExpandedIDs: c042ffff1043ffffd046ffffde46ffff5e47ffff0e52ffff3656ffff1e65ffff546bffffa46bffff646fffff726fffffea6fffff2474ffffe27bffff3e7dffff5088ffff0690ffffb093ffff3c99ffff789fffffc89fffff88a3ffff96a3ffff06a4ffffb0bdfffffac3ffff4ac4ffff0ac8ffff18c8ffff4acbffffeccbffff3eefffff80f5ffffd0f5ffff8cf9ffff96f9ffff0efbfffffe860000cc8800000a9e0000e89f0000fc9f000090a00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1148,9 +1148,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 430.25583, y: 176.61394, z: -1.2417859}
+    m_Target: {x: 416.30896, y: 142.8697, z: -2.0438042}
     speed: 2
-    m_Value: {x: 430.25583, y: 176.61394, z: -1.2417859}
+    m_Value: {x: 416.30896, y: 142.8697, z: -2.0438042}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1200,9 +1200,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 293.01407
+    m_Target: 308.56528
     speed: 2
-    m_Value: 293.01407
+    m_Value: 308.56528
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -47,9 +47,6 @@ public class SaveAndLoadSytem : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKey, _cloudSaveData);
         Agava.YandexGames.Utility.PlayerPrefs.Save();
-       
-        Debug.Log("Проверка ключа ---" + Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey));
-        Debug.Log(_cloudSaveData);
 #endif
     }
 
