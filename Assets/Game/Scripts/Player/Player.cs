@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
     public void SetMovmentMode(bool canMove)
     {
         _movement.SetModeMovmen(canMove);
-        OnDataChenged?.Invoke();
     }
 
     public void ResetTurret()
@@ -90,6 +89,7 @@ public class Player : MonoBehaviour
     public void BoostMoveSpeed()
     {
         _movement.AddMoveSpeed();
+        OnDataChenged?.Invoke();
     }
 
     public void AddAmmouSize()

@@ -86,6 +86,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     private void OnGameDataChenged()
     {
+        Debug.Log("ֲûחמג טח סמבûעטÿ");
         SetCloudSaveData();
     }
 }

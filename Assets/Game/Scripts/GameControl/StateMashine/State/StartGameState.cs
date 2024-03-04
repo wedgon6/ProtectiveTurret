@@ -19,6 +19,7 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             YandexGamesSdk.GameReady();
 #endif
             base.Enter(player);
+            Debug.Log("EnterStaetState");
             _player.Initialize();
             _shoop.InitializeShop();
 

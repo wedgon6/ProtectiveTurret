@@ -19,12 +19,11 @@ public class BattleState : GameState
 
     public override void Exit()
     {
-        _advertisementPresenter.ShowInterstitialAd();
-
+        Debug.Log("Сохранение после завершения боя");
         _saveAndLoadSytem.SetCloudSaveData();
-
-        base.Exit();
         _progressBar.gameObject.SetActive(false);
+        _advertisementPresenter.ShowInterstitialAd();
+        base.Exit();
     }
 
     private void Update()
