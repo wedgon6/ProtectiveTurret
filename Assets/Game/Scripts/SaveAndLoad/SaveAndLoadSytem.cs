@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class SaveAndLoadSytem : MonoBehaviour
 {
-    private const string DataKey = "PlayerData";
+    private const string DataKey = "PlayerDataTest1";
 
     [SerializeField] private Player _player;
+    [SerializeField] private PlayerLevel _level;
     [SerializeField] private Shoop _shoop;
     [SerializeField] private TurretPresenter _turretPresenter;
 
@@ -61,13 +62,13 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.OnDataChenged += OnGameDataChenged;
+        _level.OnDataChenged += OnGameDataChenged;
         _turretPresenter.OnDataChenged += OnGameDataChenged;
     }
 
     private void OnDisable()
     {
-        _player.OnDataChenged -= OnGameDataChenged;
+        _level.OnDataChenged -= OnGameDataChenged;
         _turretPresenter.OnDataChenged -= OnGameDataChenged;
     }
 

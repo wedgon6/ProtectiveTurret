@@ -34,7 +34,6 @@ public class TurretPresenter : MonoBehaviour
     {
         _baseAmmouSize += _ammouSizeRise;
         _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
-        OnDataChenged?.Invoke();
     }
 
     public void ReduceCooldownReload()
@@ -44,7 +43,6 @@ public class TurretPresenter : MonoBehaviour
 
         _baseReloadTime -= _decreaseReload;
         _player.CurrentTurret.SetTurretParameters(_baseAmmouSize, _baseReloadTime);
-        OnDataChenged?.Invoke();
     }
 
     public void TrySetTurret()
