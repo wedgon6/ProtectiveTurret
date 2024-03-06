@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMoney _money;
     [SerializeField] private Transform _turretPosition;
-    [SerializeField] private SizeClipUI _sizeClip;
+    [SerializeField] private SizeAmmoView _sizeClip;
     [SerializeField] private PlayerScore _playerScore;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private PlayerLevel _playerLevel;

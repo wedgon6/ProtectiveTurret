@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SizeClipUI : MonoBehaviour
+public class SizeAmmoView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
     [SerializeField] private Image _reloadImage;

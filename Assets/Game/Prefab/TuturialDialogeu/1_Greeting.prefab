@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d7181f36a308c4d930523a8696f44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 1a432c65908a3024fae8a3e2dc45aa75, type: 3}
+  _icon: {fileID: 21300000, guid: c2212d2d809abdf4986dda1efbf94d71, type: 3}
   _phease: {fileID: 5241429885167879182}
 --- !u!222 &-3416135802965888949
 CanvasRenderer:

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MoneuViev : MonoBehaviour
+public class MoneuView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _currentMoney;
     [SerializeField] private PlayerMoney _player;

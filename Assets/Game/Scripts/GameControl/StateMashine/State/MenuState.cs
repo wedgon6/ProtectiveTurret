@@ -1,4 +1,3 @@
-using System.Data;
 using UnityEngine;
 
 public class MenuState : GameState
@@ -13,11 +12,20 @@ public class MenuState : GameState
     [SerializeField] private Leaderboard _leaderboard;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
+    [SerializeField] private SizeAmmoView _sizeAmmo;
+    [SerializeField] private MoneuView _moneuView;
+    [SerializeField] private GameObject _settingsButton;
+
+    private bool _isMenuUiActive = false;
 
     public override void Enter(Player player)
     {
         base.Enter(player);
         _menuUI.gameObject.SetActive(true);
+
+        if (_isMenuUiActive == false)
+            ActivatePlayerView();
+
         _turretPresenter.TrySetTurret();
         _player.SetMovmentMode(false);
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
@@ -34,6 +42,14 @@ public class MenuState : GameState
         _saveAndLoadSytem.SetCloudSaveData();
 
         base.Exit();
+    }
+
+    private void ActivatePlayerView()
+    {
+        _sizeAmmo.gameObject.SetActive(true);
+        _moneuView.gameObject.SetActive(true);
+        _settingsButton.SetActive(true);
+        _isMenuUiActive = true;
     }
 
     private void Update()
