@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CloseButton : MonoBehaviour
 {
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private GameObject _leaderbardPanel;
+    [SerializeField] private GameObject _setingsPanel;
 
     public void ClosePanel()
     {
-        _panel.SetActive(false);
+        _setingsPanel.SetActive(true);
+        _leaderbardPanel.SetActive(false);
     }
 }
