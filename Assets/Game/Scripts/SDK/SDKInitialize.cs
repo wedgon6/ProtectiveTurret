@@ -1,10 +1,11 @@
 using Agava.YandexGames;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SDKInitialize : MonoBehaviour
 {
+    [SerializeField] private LoadindPlayScene _loadindScene;
+
    private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
@@ -23,18 +24,18 @@ public class SDKInitialize : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("BaseScene");
+            _loadindScene.StartLoadScene();
         }
     }
 
     private void OnSuccessColback()
     {
-        SceneManager.LoadScene("BaseScene");
+        _loadindScene.StartLoadScene();
     }
 
     private void OnErrorColbak(string error)
     {
         Debug.Log("ErrorColback");
-        SceneManager.LoadScene("BaseScene");
+        _loadindScene.StartLoadScene();
     }
 }

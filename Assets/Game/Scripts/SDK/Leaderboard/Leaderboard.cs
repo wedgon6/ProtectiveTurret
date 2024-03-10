@@ -10,7 +10,7 @@ public class Leaderboard : MonoBehaviour
 
     [SerializeField] private ViewLeaderboard _leaderboardView;
 
-    private readonly List<DataPlayer> _leaderboardPlayers = new();
+    private readonly List<DataPlayer> _leaderboardPlayers = new List<DataPlayer>();
 
     public void SetPlayer(int score)
     {
@@ -26,6 +26,7 @@ public class Leaderboard : MonoBehaviour
     public void Fill()
     {
         _leaderboardPlayers.Clear();
+        Debug.Log("ClearPlayer Data");
 
         if (PlayerAccount.IsAuthorized == false)
             return;

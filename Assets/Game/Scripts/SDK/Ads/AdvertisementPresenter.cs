@@ -4,7 +4,7 @@ using Agava.YandexGames;
 public class AdvertisementPresenter : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private VolumeChange _volumeChange;
     [SerializeField] private int _revard = 500;
 
     public void ShowRewardAd() =>
@@ -33,7 +33,9 @@ public class AdvertisementPresenter : MonoBehaviour
 
     private void OnCloseCallBack()
     {
-        AudioListener.volume = 1f;
+        if (_volumeChange.IsAudioPlay)
+            AudioListener.volume = 1f;
+
         Time.timeScale = 1f;
     }
 

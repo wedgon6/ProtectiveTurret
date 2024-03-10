@@ -6,7 +6,7 @@ public class ViewLeaderboard : MonoBehaviour
     [SerializeField] private Transform _containet;
     [SerializeField] private ElementPlayer _leaderboardElementPrefab;
 
-    private List<ElementPlayer> _spawnedElements = new();
+    private List<ElementPlayer> _spawnedElements = new List<ElementPlayer>();
 
     public void ConstructLeaderboard(List<DataPlayer> leaderboardPlayer)
     {
@@ -25,7 +25,8 @@ public class ViewLeaderboard : MonoBehaviour
     {
         foreach (var element in _spawnedElements)
         {
-            Destroy(element);
+            Destroy(element.gameObject);
+            Debug.Log("Destroy elemet leaderboard");
         }
 
         _spawnedElements = new List<ElementPlayer>();

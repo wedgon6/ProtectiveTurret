@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Agava.YandexGames;
 
 public class GameStateMashine : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class GameStateMashine : MonoBehaviour
     private GameState _currentState;
 
     public GameState CurrentState => _currentState;
+
+    private void Awake()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            YandexGamesSdk.GameReady();
+#endif
+    }
 
     private void Start()
     {

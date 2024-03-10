@@ -1,5 +1,4 @@
-﻿using Agava.YandexGames;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Game.Scripts.GameControl.StateMashine.State
 {
@@ -15,9 +14,6 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
 
         public override void Enter(Player player)
         {
-#if UNITY_WEBGL && !UNITY_EDITOR
-            YandexGamesSdk.GameReady();
-#endif
             base.Enter(player);
             Debug.Log("EnterStaetState");
             _player.Initialize();

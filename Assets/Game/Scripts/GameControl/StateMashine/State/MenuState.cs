@@ -12,15 +12,14 @@ public class MenuState : GameState
     [SerializeField] private Leaderboard _leaderboard;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
-    [SerializeField] private SizeAmmoView _sizeAmmo;
-    [SerializeField] private MoneuView _moneuView;
-    [SerializeField] private GameObject _settingsButton;
+    [SerializeField] private UserView _userView;
 
     private bool _isMenuUiActive = false;
 
     public override void Enter(Player player)
     {
         base.Enter(player);
+        _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(true);
 
         if (_isMenuUiActive == false)
@@ -46,9 +45,7 @@ public class MenuState : GameState
 
     private void ActivatePlayerView()
     {
-        _sizeAmmo.gameObject.SetActive(true);
-        _moneuView.gameObject.SetActive(true);
-        _settingsButton.SetActive(true);
+        _userView.gameObject.SetActive(true);
         _isMenuUiActive = true;
     }
 

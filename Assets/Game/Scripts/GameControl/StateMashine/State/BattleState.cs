@@ -6,7 +6,6 @@ public class BattleState : GameState
     [SerializeField] private Player _player;
     [SerializeField] private WaveProgressBar _progressBar;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
-    [SerializeField] private AdvertisementPresenter _advertisementPresenter;
 
     public override void Enter(Player player)
     {
@@ -22,7 +21,6 @@ public class BattleState : GameState
         Debug.Log("Сохранение после завершения боя");
         _saveAndLoadSytem.SetCloudSaveData();
         _progressBar.gameObject.SetActive(false);
-        _advertisementPresenter.ShowInterstitialAd();
         base.Exit();
     }
 
