@@ -8,6 +8,7 @@ public class LoseState : GameState
     public override void Enter(Player player)
     {
         _loseGamePanel.gameObject.SetActive(true);
+        _spawner.PutEnemyToPool();
         base.Enter(player);
         Time.timeScale = 0;
     }
@@ -15,7 +16,6 @@ public class LoseState : GameState
     public override void Exit()
     {
         base.Exit();
-        _spawner.PutEnemyToPool();
         _loseGamePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }

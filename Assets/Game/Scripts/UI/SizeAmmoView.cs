@@ -30,6 +30,12 @@ public class SizeAmmoView : MonoBehaviour
         _clip.OnRechargeAmmou += OnRecharge;
     }
 
+    private void OnEnable()
+    {
+        _clip.OnClipSizeChanged += OnAmountChanged;
+        _clip.OnRechargeAmmou += OnRecharge;
+    }
+
     private void OnDisable()
     {
         if(_clip != null)

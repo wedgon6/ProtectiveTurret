@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class RedLine : MonoBehaviour
 {
-    public Action onLooseGame;
+    public Action OnLooseGame;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
-            onLooseGame?.Invoke();
+            OnLooseGame?.Invoke();
         }
 
     }

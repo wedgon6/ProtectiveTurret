@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     private bool _isDead;
     private EnemySpawner _spawner;
 
+
     public RedLine Target => _target;
     public Player Player => _player;
     public EnemySpawner Spawner => _spawner;
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour, IPoolObject
         _player = player;
         _spawner = spawner;
     }
+
 
     public void TakeDamage(float damage)
     {
