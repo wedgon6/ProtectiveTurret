@@ -277,3 +277,4 @@ MonoBehaviour:
   _countScore: 5
   _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
   _tagEnemy: Big
+  _deadParticle: {fileID: 172590, guid: 93c383a7bb6b65547bc569e7d7f10507, type: 3}

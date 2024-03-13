@@ -241,3 +241,4 @@ MonoBehaviour:
   _countScore: 3
   _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
   _tagEnemy: Fast
+  _deadParticle: {fileID: 166328, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}

@@ -1782,6 +1782,7 @@ MonoBehaviour:
   _countScore: 1
   _backlight: {fileID: 197318, guid: 335932186a5e6c14b93279994d4837ca, type: 3}
   _tagEnemy: Standart
+  _deadParticle: {fileID: 133150, guid: 76ea784c73256a744b24cba813a687e3, type: 3}
 --- !u!1 &4066225401008547693
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class MovementPlayer : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _maxMoveSpeed;
     [SerializeField] private Camera _camera;
+    [SerializeField] private GameObject _leftSparks;
+    [SerializeField] private GameObject _rightSparks;
 
     private PlayerInput _playerInputSystem;
     private Vector3 _direction;
@@ -79,6 +81,8 @@ public class MovementPlayer : MonoBehaviour
 
         if (horizontalVelocity.sqrMagnitude > _maxMoveSpeed * _maxMoveSpeed)
             _rigidbody.velocity = horizontalVelocity.normalized * _maxMoveSpeed + Vector3.up * _rigidbody.velocity.y;
+
+        ShowFriction(horizontalVelocity.x);
     }
 
     private Vector3 GetCameraRight(Camera camera)
@@ -95,5 +99,26 @@ public class MovementPlayer : MonoBehaviour
         right.y = 0;
 
         return right.normalized;
+    }
+
+    private void ShowFriction(float direction)
+    {
+        if (direction == 0)
+        {
+            _leftSparks.SetActive(false);
+            _rightSparks.SetActive(false);
+        }
+
+        if(direction < 0)
+        {
+            _leftSparks.SetActive(false);
+            _rightSparks.SetActive(true);
+        }
+
+        if(direction > 0)
+        {
+            _leftSparks.SetActive(true);
+            _rightSparks.SetActive(false);
+        }
     }
 }

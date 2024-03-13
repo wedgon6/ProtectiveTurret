@@ -10,7 +10,7 @@ public class BaseTurret : MonoBehaviour
     protected const float SearchRadius = 20f;
     protected const float SpeedBullet = 15f;
 
-    [SerializeField] protected Transform[] _shootPoints;
+    [SerializeField] protected ShootPoint[] _shootPoints;
     [SerializeField] protected Bullet _bullet;
     [SerializeField] protected PoolBullet _poolBullet;
 
@@ -101,25 +101,26 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    protected virtual void InstantiateBullet(int shootPoint, Enemy target)
+    protected virtual void InstantiateBullet(int shootPointIndex, Enemy target)
     {
         Bullet bullet;
 
         if(_poolBullet.TryPoolObject(out IPoolObject pollBullet))
         {
             bullet = pollBullet as Bullet;
-            bullet.transform.position = _shootPoints[shootPoint].position;
+            bullet.transform.position = _shootPoints[shootPointIndex].transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.gameObject.SetActive(true);
         }
         else
         {
-            bullet = Instantiate(_bullet, _shootPoints[shootPoint].position, transform.rotation);
+            bullet = Instantiate(_bullet, _shootPoints[shootPointIndex].transform.position, transform.rotation);
         }
 
         bullet.Initialize(SpeedBullet, _poolBullet, target);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * SpeedBullet, ForceMode.VelocityChange);
         _animator.SetTrigger("Shoot");
+        _shootPoints[shootPointIndex].PlayParticle();
         _currentCoutBullet--;
         OnClipSizeChanged?.Invoke();
         OnShot?.Invoke();

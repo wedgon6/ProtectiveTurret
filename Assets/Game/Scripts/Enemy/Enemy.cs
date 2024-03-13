@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private int _countScore;
     [SerializeField] private GameObject _backlight;
     [SerializeField] private string _tagEnemy;
+    [SerializeField] private GameObject _deadParticle;
 
     private RedLine _target;
     private PoolEnemy _poolEnemy;
@@ -61,6 +62,13 @@ public class Enemy : MonoBehaviour, IPoolObject
     public void GetCrosshairs()
     {
         _backlight.SetActive(true);
+    }
+
+    public void Dead()
+    {
+        Instantiate(_deadParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), 
+            Quaternion.identity);
+        ReturnToPool();
     }
 
     public void ReturnToPool()
