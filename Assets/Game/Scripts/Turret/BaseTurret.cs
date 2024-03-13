@@ -73,7 +73,7 @@ public class BaseTurret : MonoBehaviour
         }
         else
         {
-            _currentTarget = _enemies.OrderByDescending(distance => distance.Key).First().Value;
+            _currentTarget = _enemies.OrderBy(distance => distance.Key).First().Value;
             _currentTarget.GetCrosshairs();
             CorountineStart(Shooting());
         }
@@ -129,7 +129,7 @@ public class BaseTurret : MonoBehaviour
     protected virtual IEnumerator Shooting()
     {
         int curretPoint = 0;
-
+        
         while(curretPoint <= _shootPoints.Length)
         {
             yield return new WaitForSeconds(_delayShot);
@@ -187,6 +187,7 @@ public class BaseTurret : MonoBehaviour
         else
             return true;
     }
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();

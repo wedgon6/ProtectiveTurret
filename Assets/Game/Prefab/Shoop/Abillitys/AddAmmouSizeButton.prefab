@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_fontSize
-      value: 20.25
+      value: 27.35
       objectReference: {fileID: 0}
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_VerticalAlignment
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8883883083077886024, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8883883083398815303, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_Name
@@ -119,6 +119,70 @@ PrefabInstance:
     - target: {fileID: 8883883083398815320, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083398815321, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083398815321, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300052, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+    - target: {fileID: 8883883083398815321, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083398815321, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293337, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8.9526
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293337, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.57253265
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300052, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Color.g
+      value: 0.98333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083405293338, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083480542291, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.948
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083480542291, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000061035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083480542291, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.3289986
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083480542291, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5338374537282966022, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}

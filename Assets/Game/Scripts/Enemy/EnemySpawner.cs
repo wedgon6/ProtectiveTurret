@@ -42,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void PutEnemyToPool()
     {
+        _currentWave = null;
+
         if (_createdEnemies.Count > 0)
         {
             foreach (var enemy in _createdEnemies)
@@ -49,8 +51,6 @@ public class EnemySpawner : MonoBehaviour
                 enemy.ReturnToPool();
             }
         }
-
-        _currentWave = null;
     }
 
     public void RestSpawner()

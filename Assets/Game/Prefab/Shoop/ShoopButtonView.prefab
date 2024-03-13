@@ -578,15 +578,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.63529414, b: 0.75686276, a: 0.54509807}
+  m_Color: {r: 0.25490198, g: 0.63529414, b: 0.75686276, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300032, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300052, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2
 --- !u!114 &5338374537282966022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,8 +796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2677417, y: 0.8737682}
   m_AnchorMax: {x: 0.70900005, y: 1}
-  m_AnchoredPosition: {x: 0.649971, y: -0.4991}
-  m_SizeDelta: {x: 1.3, y: 8.8057}
+  m_AnchoredPosition: {x: 0.649971, y: -2.4509964}
+  m_SizeDelta: {x: 1.3, y: 4.902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8883883083405293339
 CanvasRenderer:
@@ -820,15 +820,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.63529414, b: 0.7647059, a: 1}
+  m_Color: {r: 1, g: 0.99607843, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300032, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300052, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!1 &8883883083480542290
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,8 +872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2677417, y: 0.38453642}
   m_AnchorMax: {x: 0.73600006, y: 0.8504636}
-  m_AnchoredPosition: {x: -3.329, y: 3.3895}
-  m_SizeDelta: {x: 4.947998, y: 6.7789993}
+  m_AnchoredPosition: {x: -3.3289986, y: 0}
+  m_SizeDelta: {x: 4.948, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8883883083480542294
 CanvasRenderer:

@@ -22,6 +22,5 @@ public class LoseState : GameState
 
     private void Update()
     {
-        
     }
 }

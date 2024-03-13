@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     public void GetCrosshairs()
     {
         _backlight.SetActive(true);
+        Debug.Log("¬ключи выдеение");
     }
 
     public void Dead()

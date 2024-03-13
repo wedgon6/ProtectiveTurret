@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,6 +42,7 @@ public class MovementPlayer : MonoBehaviour
         {
             _playerInputSystem.Disable();
             _isMoving = false;
+            ShowFriction(0f);
         }
     }
 

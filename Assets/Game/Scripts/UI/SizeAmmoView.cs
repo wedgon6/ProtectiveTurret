@@ -34,6 +34,7 @@ public class SizeAmmoView : MonoBehaviour
     {
         _clip.OnClipSizeChanged += OnAmountChanged;
         _clip.OnRechargeAmmou += OnRecharge;
+        _reloadImage.fillAmount = 0f;
     }
 
     private void OnDisable()
@@ -43,6 +44,8 @@ public class SizeAmmoView : MonoBehaviour
             _clip.OnClipSizeChanged -= OnAmountChanged;
             _clip.OnRechargeAmmou -= OnRecharge;
         }
+
+        _reloadImage.fillAmount = 0f;
     }
 
     private void OnAmountChanged()
