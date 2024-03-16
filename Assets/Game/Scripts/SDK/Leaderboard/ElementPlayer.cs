@@ -9,8 +9,8 @@ public class ElementPlayer : MonoBehaviour
 
     public void Initialize(string name, int rank, int score)
     {
-        _playerName.text = name;
         _playerRank.text = rank.ToString();
+        _playerName.text = name;
         _playerScore.text = score.ToString();
     }
 }

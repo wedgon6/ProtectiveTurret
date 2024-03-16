@@ -11,6 +11,7 @@ public class PlayerLvlProgressBar : MonoBehaviour
     private void OnEnable()
     {
         _playerLvlValue.text = _playerLvlProgress.CurrentPlayerLvl.ToString();
+        OnPlayerLvlProgressChenget(_playerLvlProgress.CurrentExperience,_playerLvlProgress.ExperienceToNextLvl);
         _playerLvlProgress.OnPlayerExpirianceChanget += OnPlayerLvlProgressChenget;
         _playerLvlProgress.SetLvLPlayer += OnPlayerLvlUp;
         _playerLvlProgress.OnPlayerLvlChenget += OnPlayerLvlUp;

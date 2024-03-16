@@ -15,6 +15,9 @@ public class Leaderboard : MonoBehaviour
     public void SetPlayer(int score)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
+        if (PlayerAccount.IsAuthorized == false)
+            return;
+
         Agava.YandexGames.Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
         {
             if (result.score < score)
@@ -46,7 +49,7 @@ public class Leaderboard : MonoBehaviour
 
                 _leaderboardPlayers.Add(new DataPlayer(name, rank, score));
             }
-
+            Debug.Log(_leaderboardPlayers.Count+"___LeanerboardPlayerCount");
             _leaderboardView.ConstructLeaderboard(_leaderboardPlayers);
         });
     }

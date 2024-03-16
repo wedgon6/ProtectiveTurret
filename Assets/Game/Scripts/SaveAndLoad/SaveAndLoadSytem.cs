@@ -29,7 +29,6 @@ public class SaveAndLoadSytem : MonoBehaviour
                 return false;
             }
 
-
             Debug.Log("Строка НЕ пустая");
             return IsCorrectData();
         }
@@ -85,9 +84,5 @@ public class SaveAndLoadSytem : MonoBehaviour
         return true;
     }
 
-    private void OnGameDataChenged()
-    {
-        Debug.Log("Вызов из события");
-        SetCloudSaveData();
-    }
+    private void OnGameDataChenged() => SetCloudSaveData();
 }

@@ -28,7 +28,6 @@ public class MenuState : GameState
         _turretPresenter.TrySetTurret();
         _player.SetMovmentMode(false);
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
-        _player.RotationTurret(150);
         _leaderboard.SetPlayer(_player.CurrentScore);
     }
 
@@ -36,7 +35,6 @@ public class MenuState : GameState
     {
         _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(false);
-        _player.RotationTurret(0);
 
         _saveAndLoadSytem.SetCloudSaveData();
 

@@ -84,6 +84,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
+    - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -163,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5947628613198415449, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 800640644, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
     - {fileID: 3342115805831069881, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
@@ -213,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoints:
   - {fileID: 7743801279577190096}
-  _bullet: {fileID: 6573033793096541921, guid: f9217ff16eb2985469df087ebdf769b5, type: 3}
+  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
   _poolBullet: {fileID: -6614943964508633847}
 --- !u!4 &7743801279577190096 stripped
 Transform:

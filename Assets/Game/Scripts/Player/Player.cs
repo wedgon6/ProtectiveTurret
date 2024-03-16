@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementPlayer))]
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private PlayerLevel _playerLevel;
     [SerializeField] private TurretAudioSourse _turretAudio;
+    [SerializeField] private ParticleSystem _deadEffect;
 
     private BaseTurret _turret;
     private int _currentMoney;
@@ -65,14 +67,19 @@ public class Player : MonoBehaviour
         _money.ReduceMoney(money);
     }
 
-    public void RotationTurret(float rotationY)
-    {
-        _turretPosition.rotation = Quaternion.Euler(0, rotationY, 0);
-    }
-
     public void SetMovmentMode(bool canMove)
     {
         _movement.SetModeMovmen(canMove);
+    }
+
+    public void LoseGame(bool activStatus)
+    {
+        _turret.gameObject.SetActive(activStatus);
+        _turret.transform.rotation = _turretPosition.rotation;
+        _movement.SetModeMovmen(activStatus);
+
+        if (activStatus == false)
+            _deadEffect.Play();
     }
 
     public void ResetTurret()
