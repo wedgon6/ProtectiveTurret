@@ -24,12 +24,8 @@ public class SaveAndLoadSytem : MonoBehaviour
             _cloudSaveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKey);
 
             if (string.IsNullOrEmpty(_cloudSaveData))
-            {
-                Debug.Log("Строка пустая");
                 return false;
-            }
 
-            Debug.Log("Строка НЕ пустая");
             return IsCorrectData();
         }
         else
@@ -52,8 +48,6 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public void GetCloudSaveData()
     {
-        Debug.Log(_cloudSaveData+ "Гет сэйв");
-        
         _player.SetPlayerData(_gameInfo.PlayerLvl, _gameInfo.PlayerMoney, _gameInfo.CurrentExperiancePlayer, _gameInfo.PlayerMoveSpeed, _gameInfo.PlayerScore);
         _shoop.SetAbillitiesData(_gameInfo.AbilitiesLvl, _gameInfo.AbilitiesPrise);
         _turretPresenter.SetCloudData(_gameInfo.IndexTurret,_gameInfo.AmmoSize,_gameInfo.ReloadTime);

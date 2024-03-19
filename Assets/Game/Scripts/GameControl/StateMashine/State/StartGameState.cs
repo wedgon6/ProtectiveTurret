@@ -15,7 +15,6 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         public override void Enter(Player player)
         {
             base.Enter(player);
-            Debug.Log("EnterStaetState");
             _player.Initialize();
             _shoop.InitializeShop();
 

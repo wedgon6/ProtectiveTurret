@@ -26,13 +26,9 @@ public class PlayerLvlProgressBar : MonoBehaviour
 
     private void OnPlayerLvlProgressChenget(int currentValue, int totalValue)
     {
-        Debug.Log("Set Expiriance");
         float amount = (float)currentValue / (float)totalValue;
         _bar.value = amount;
     }
 
-    private void OnPlayerLvlUp()
-    {
-        _playerLvlValue.text = _playerLvlProgress.CurrentPlayerLvl.ToString();
-    }
+    private void OnPlayerLvlUp() => _playerLvlValue.text = _playerLvlProgress.CurrentPlayerLvl.ToString();
 }

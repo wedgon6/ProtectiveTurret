@@ -18,7 +18,6 @@ public class BattleState : GameState
 
     public override void Exit()
     {
-        Debug.Log("Сохранение после завершения боя");
         _saveAndLoadSytem.SetCloudSaveData();
         _battleStatePanel.gameObject.SetActive(false);
         base.Exit();

@@ -20,9 +20,15 @@ public class LeaderBoardButton : MonoBehaviour
     private void OpenLeaderboard()
     {
         if (PlayerAccount.IsAuthorized)
+        {
             PlayerAccount.RequestPersonalProfileDataPermission();
+            Debug.Log("Request Data");
+        }
         
         if (PlayerAccount.IsAuthorized == false)
+        {
             PlayerAccount.Authorize();
+            Debug.Log("Authorize Player");
+        }
     }
 }
