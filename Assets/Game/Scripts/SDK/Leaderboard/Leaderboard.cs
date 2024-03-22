@@ -1,15 +1,13 @@
 using Agava.YandexGames;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Leaderboard : MonoBehaviour
 {
     private const string EnglishCode = "en";
     private const string RussianCode = "ru";
     private const string TurkishCode = "tr";
-    private const string AnonymousRu = "??????";
+    private const string AnonymousRu = "Аноним";
     private const string AnonymousEn = "Anonymous";
     private const string AnonymousTr = "Anonim";
     private const string LeaderboardName = "Leaderboard";
@@ -44,19 +42,27 @@ public class Leaderboard : MonoBehaviour
 
     public void SetPlayer(int score)
     {
+        Debug.Log("SetScore");
 #if UNITY_WEBGL && !UNITY_EDITOR
-        if (PlayerAccount.IsAuthorized == false)
+        if (PlayerAccount.IsAuthorized == false) 
+        { 
+            
+            Debug.Log("Player = not authorized!!!!!");
             return;
-
+        }
+        Debug.Log("Player = authorized");
         Agava.YandexGames.Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
         {
+            Debug.Log(result + "--GetEntry result");
+            if(result == null)
+                Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
+
             if (result.score < score)
                 Agava.YandexGames.Leaderboard.SetScore(LeaderboardName, score);
             Debug.Log($"Result score = {result.score}/ Player Score = {score}");
         });
 #endif
     }
-
     public void Fill()
     {
         _leaderboardPlayers.Clear();

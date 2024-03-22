@@ -13,7 +13,6 @@ public class MenuState : GameState
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
     [SerializeField] private UserView _userView;
-
     private bool _isMenuUiActive = false;
 
     public override void Enter(Player player)

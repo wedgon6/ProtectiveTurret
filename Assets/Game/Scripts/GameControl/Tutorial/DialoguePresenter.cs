@@ -32,6 +32,7 @@ public class DialoguePresenter : MonoBehaviour
         for (int i = 0; i < _dialoguePhrases.Count; i++)
         {
             _isContinueDialog = false;
+            _dialoguePhrases[i].UpdateLocalization();
             _lable.text = _dialoguePhrases[i].Phease.text;
             _icon.sprite = _dialoguePhrases[i].Icon;
 

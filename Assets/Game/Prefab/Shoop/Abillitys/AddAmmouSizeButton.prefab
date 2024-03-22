@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_text
-      value: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043E\u0431\u043E\u0439\u043C\u044B"
+      value: Cephane Boyutu
       objectReference: {fileID: 0}
     - target: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_fontSize
@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8883883083404785022, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_text
+      value: Seviye
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883883083404785022, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 8883883083405293337, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
       propertyPath: m_SizeDelta.y
       value: 8.9526
@@ -214,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: AmmouSize
-  FallbackText: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043E\u0431\u043E\u0439\u043C\u044B"
+  FallbackText: Ammou Size
 --- !u!1 &4875221787732309974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8883883083398815303, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
@@ -236,6 +244,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 1057fd4418df82f489138bb222db4801, type: 3}
   _multiplier: 1.5
   _startPrice: 120
+  _localized: {fileID: 130829352919756793}
 --- !u!114 &6164885548862432907 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7885717481366720282, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
