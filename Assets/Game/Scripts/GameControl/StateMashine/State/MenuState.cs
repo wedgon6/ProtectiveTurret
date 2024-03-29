@@ -10,7 +10,6 @@ public class MenuState : GameState
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private Leaderboard _leaderboard;
-    [SerializeField] private AdvertisementPresenter _advertisementPresenter;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
     [SerializeField] private UserView _userView;
     private bool _isMenuUiActive = false;
@@ -18,7 +17,6 @@ public class MenuState : GameState
     public override void Enter(Player player)
     {
         base.Enter(player);
-        _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(true);
 
         if (_isMenuUiActive == false)
@@ -32,7 +30,6 @@ public class MenuState : GameState
 
     public override void Exit()
     {
-        _advertisementPresenter.ShowInterstitialAd();
         _menuUI.gameObject.SetActive(false);
 
         _saveAndLoadSytem.SetCloudSaveData();

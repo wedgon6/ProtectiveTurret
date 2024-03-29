@@ -5,15 +5,12 @@ public class LeaderBoardButton : MonoBehaviour
 {
     [SerializeField] private Leaderboard _leaderboard;
     [SerializeField] private GameObject _leaderboardPanel;
+    [SerializeField] private AuthorizationPanel _authorizationPanel;
 
     public void OpenLeaderboardView()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         OpenLeaderboard();
-#endif
-        _leaderboardPanel.SetActive(true);
-#if UNITY_WEBGL && !UNITY_EDITOR
-        _leaderboard.Fill();
 #endif
     }
 
@@ -23,11 +20,13 @@ public class LeaderBoardButton : MonoBehaviour
         {
             PlayerAccount.RequestPersonalProfileDataPermission();
             Debug.Log("Request Data");
+            _leaderboardPanel.SetActive(true);
+            _leaderboard.Fill();
         }
         
         if (PlayerAccount.IsAuthorized == false)
         {
-            PlayerAccount.Authorize();
+            _authorizationPanel.gameObject.SetActive(true);
             Debug.Log("Authorize Player");
         }
     }
