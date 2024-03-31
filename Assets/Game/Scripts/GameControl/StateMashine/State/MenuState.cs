@@ -32,7 +32,7 @@ public class MenuState : GameState
     {
         _menuUI.gameObject.SetActive(false);
 
-        _saveAndLoadSytem.SetCloudSaveData();
+        _saveAndLoadSytem.SetSaveData();
 
         base.Exit();
     }

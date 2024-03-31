@@ -6,6 +6,7 @@ public class AdvertisementPresenter : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private VolumeChange _volumeChange;
     [SerializeField] private int _revard = 500;
+    [SerializeField] private SaveAndLoadSytem _save;
 
     public void ShowRewardAd() =>
         VideoAd.Show(OnOpenCallBack, OnRewardedCallback, OnCloseCallBack);
@@ -42,5 +43,6 @@ public class AdvertisementPresenter : MonoBehaviour
     private void OnRewardedCallback()
     {
         _player.AddMoney(_revard);
+        _save.SetSaveData();
     }
 }

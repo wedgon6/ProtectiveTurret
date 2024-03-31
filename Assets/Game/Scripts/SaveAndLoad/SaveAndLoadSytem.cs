@@ -1,11 +1,10 @@
 using Agava.YandexGames;
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveAndLoadSytem : MonoBehaviour
 {
-    private const string DataKey = "PlayerDataTest1";
+    private const string DataKeyCloud = "PlayerDataTest1";
+    private const string DataKeyLocal = "PlayerDataLocal";
 
     [SerializeField] private Player _player;
     [SerializeField] private PlayerLevel _level;
@@ -13,37 +12,49 @@ public class SaveAndLoadSytem : MonoBehaviour
     [SerializeField] private TurretPresenter _turretPresenter;
 
     private GameInfo _gameInfo;
-    private string _cloudSaveData;
+    private string _saveData;
 
-    public string SaveData => _cloudSaveData;
+    public string SaveData => _saveData;
 
     public bool TryGetSave()
     {
-        if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKey))
+        if (PlayerAccount.IsAuthorized)
         {
-            _cloudSaveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKey);
-
-            if (string.IsNullOrEmpty(_cloudSaveData))
+            if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKeyCloud))
+                _saveData = Agava.YandexGames.Utility.PlayerPrefs.GetString(DataKeyCloud);
+            else
                 return false;
+        }
 
-            return IsCorrectData();
-        }
-        else
+        if(PlayerAccount.IsAuthorized == false)
         {
-            return false;
+            if(PlayerPrefs.HasKey(DataKeyLocal))
+                _saveData = PlayerPrefs.GetString(DataKeyLocal);
+            else
+                return false;
         }
+
+        return IsCorrectData();
     }
 
-    public void SetCloudSaveData()
+    public void SetSaveData()
     {
         _gameInfo = new GameInfo(_player, _shoop, _turretPresenter);
         _gameInfo.GetPlayerData();
-       _cloudSaveData = JsonUtility.ToJson(_gameInfo);
-        Debug.Log(_cloudSaveData);
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKey, _cloudSaveData);
-        Agava.YandexGames.Utility.PlayerPrefs.Save();
-#endif
+        _saveData = JsonUtility.ToJson(_gameInfo);
+
+        if (PlayerAccount.IsAuthorized)
+        {
+    #if UNITY_WEBGL && !UNITY_EDITOR
+            Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKeyCloud, _saveData);
+            Agava.YandexGames.Utility.PlayerPrefs.Save();
+    #endif
+        }
+        else
+        {
+            PlayerPrefs.SetString(DataKeyLocal, _saveData);
+            PlayerPrefs.Save();
+        }
     }
 
     public void GetCloudSaveData()
@@ -67,7 +78,10 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     private bool IsCorrectData()
     {
-        _gameInfo = JsonUtility.FromJson<GameInfo>(_cloudSaveData);
+        if (string.IsNullOrEmpty(_saveData))
+            return false;
+
+        _gameInfo = JsonUtility.FromJson<GameInfo>(_saveData);
 
         if(_gameInfo.PlayerLvl <= 0)
             return false;
@@ -78,5 +92,5 @@ public class SaveAndLoadSytem : MonoBehaviour
         return true;
     }
 
-    private void OnGameDataChenged() => SetCloudSaveData();
+    private void OnGameDataChenged() => SetSaveData();
 }

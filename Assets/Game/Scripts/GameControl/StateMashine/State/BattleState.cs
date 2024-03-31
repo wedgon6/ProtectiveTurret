@@ -18,7 +18,7 @@ public class BattleState : GameState
 
     public override void Exit()
     {
-        _saveAndLoadSytem.SetCloudSaveData();
+        _saveAndLoadSytem.SetSaveData();
         _battleStatePanel.gameObject.SetActive(false);
         base.Exit();
     }
