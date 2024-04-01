@@ -6,6 +6,7 @@ public class AuthorizationPanel : MonoBehaviour
 {
     [SerializeField] private Button _authorizationButton;
     [SerializeField] private Button _closeButton;
+    [SerializeField] private Leaderboard _leaderboard;
 
     private void OnEnable()
     {
@@ -21,11 +22,20 @@ public class AuthorizationPanel : MonoBehaviour
 
     private void OnAuthorization()
     {
-        PlayerAccount.Authorize();
+        PlayerAccount.Authorize(onRequestDataPermission);
     }
 
     private void OnClose()
     {
+        gameObject.SetActive(false);
+    }
+
+    private void onRequestDataPermission()
+    {
+        if (PlayerAccount.IsAuthorized)
+            PlayerAccount.RequestPersonalProfileDataPermission();
+
+        _leaderboard.Fill();
         gameObject.SetActive(false);
     }
 }

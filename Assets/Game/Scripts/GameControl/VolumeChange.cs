@@ -6,10 +6,17 @@ public class VolumeChange : MonoBehaviour
     [SerializeField] private Image _controlButton;
     [SerializeField] private Sprite _onAudioIcon;
     [SerializeField] private Sprite _offAudioIcon;
+    [SerializeField] private AudioSource _audioSource;
 
     private bool _isAudioPlay = true;
 
     public bool IsAudioPlay => _isAudioPlay;
+
+    private void Awake()
+    {
+        if (_isAudioPlay)
+            _audioSource.Play();
+    }
 
     public void ChengeAudioPlay()
     {
