@@ -9,6 +9,7 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
         [SerializeField] private MenuTransition _menuTransition;
         [SerializeField] private TutorialTransition _tutorialTransition;
+        [SerializeField] private VolumeChange _volumeChange;
 
         private bool _isFirstStart;
 
@@ -17,6 +18,7 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             base.Enter(player);
             _player.Initialize();
             _shoop.InitializeShop();
+            _volumeChange.StartPlayMusic(); 
 
             if (_saveAndLoadSytem.TryGetSave())
             {

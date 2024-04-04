@@ -26,9 +26,6 @@ public class AdvertisementPresenter : MonoBehaviour
 
     private void OnCloseCallBack(bool canShow)
     {
-        if (!canShow)
-            return;
-
         OnCloseCallBack();
     }
 

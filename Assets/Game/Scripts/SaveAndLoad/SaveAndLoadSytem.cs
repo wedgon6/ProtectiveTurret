@@ -18,6 +18,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     public bool TryGetSave()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         if (PlayerAccount.IsAuthorized)
         {
             if (Agava.YandexGames.Utility.PlayerPrefs.HasKey(DataKeyCloud))
@@ -35,6 +36,8 @@ public class SaveAndLoadSytem : MonoBehaviour
         }
 
         return IsCorrectData();
+#endif
+        return false;
     }
 
     public void SetSaveData()
@@ -45,10 +48,10 @@ public class SaveAndLoadSytem : MonoBehaviour
 
         if (PlayerAccount.IsAuthorized)
         {
-    #if UNITY_WEBGL && !UNITY_EDITOR
+#if UNITY_WEBGL && !UNITY_EDITOR
             Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKeyCloud, _saveData);
             Agava.YandexGames.Utility.PlayerPrefs.Save();
-    #endif
+#endif
         }
         else
         {

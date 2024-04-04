@@ -12,10 +12,14 @@ public class VolumeChange : MonoBehaviour
 
     public bool IsAudioPlay => _isAudioPlay;
 
-    private void Awake()
+   public void StartPlayMusic()
     {
-        if (_isAudioPlay)
-            _audioSource.Play();
+        _audioSource.Play();
+        _audioSource.volume = 1f;
+        AudioListener.volume = 1f;
+        _audioSource.playOnAwake = true;
+        Debug.Log("PlayMusic");
+        Debug.Log($"{_audioSource.volume} -  _audioSource.volume//{AudioListener.volume} - AudioListener.volume");
     }
 
     public void ChengeAudioPlay()
