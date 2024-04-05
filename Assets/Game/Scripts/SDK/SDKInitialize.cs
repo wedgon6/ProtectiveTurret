@@ -7,9 +7,9 @@ public class SDKInitialize : MonoBehaviour
     [SerializeField] private LoadindPlayScene _loadindScene;
 
    private void Awake()
-    {
+   {
         YandexGamesSdk.CallbackLogging = true;
-    }
+   }
 
     private IEnumerator Start()
     {
@@ -28,14 +28,7 @@ public class SDKInitialize : MonoBehaviour
         }
     }
 
-    private void OnSuccessColback()
-    {
-        _loadindScene.StartLoadScene();
-    }
+    private void OnSuccessColback() => _loadindScene.StartLoadScene();
 
-    private void OnErrorColbak(string error)
-    {
-        Debug.Log("ErrorColback");
-        _loadindScene.StartLoadScene();
-    }
+    private void OnErrorColbak(string error) => _loadindScene.StartLoadScene();
 }

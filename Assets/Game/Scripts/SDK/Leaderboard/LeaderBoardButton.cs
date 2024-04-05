@@ -19,15 +19,11 @@ public class LeaderBoardButton : MonoBehaviour
         if (PlayerAccount.IsAuthorized)
         {
             PlayerAccount.RequestPersonalProfileDataPermission();
-            Debug.Log("Request Data");
             _leaderboardPanel.SetActive(true);
             _leaderboard.Fill();
         }
         
         if (PlayerAccount.IsAuthorized == false)
-        {
             _authorizationPanel.gameObject.SetActive(true);
-            Debug.Log("Authorize Player");
-        }
     }
 }

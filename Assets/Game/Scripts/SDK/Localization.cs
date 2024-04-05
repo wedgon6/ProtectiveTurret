@@ -40,6 +40,5 @@ public sealed class Localization : MonoBehaviour
         }
 
         _leanLocalization.SetCurrentLanguage(language);
-        Debug.Log("Chenge language" + language);
     }
 }

@@ -5,7 +5,6 @@ public class EnemiesList
 {
     private const int EasyWaveIndex = 3;
     private const int MidWaveIndex = 7;
-    private const int HardWaveIndex = 11;
 
     [SerializeField] private Enemy _standartEnemy;
     [SerializeField] private Enemy _fastEnemy;

@@ -18,8 +18,6 @@ public class VolumeChange : MonoBehaviour
         _audioSource.volume = 1f;
         AudioListener.volume = 1f;
         _audioSource.playOnAwake = true;
-        Debug.Log("PlayMusic");
-        Debug.Log($"{_audioSource.volume} -  _audioSource.volume//{AudioListener.volume} - AudioListener.volume");
     }
 
     public void ChengeAudioPlay()

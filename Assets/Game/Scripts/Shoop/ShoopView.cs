@@ -1,4 +1,3 @@
-using Lean.Localization;
 using System;
 using TMPro;
 using UnityEngine;
