@@ -18,4 +18,17 @@ public class PoolEnemy : MonoBehaviour, IPooling
         var enemy =  poolObject as Enemy;
         _enemiesInPool.Add(enemy);
     }
+
+    public void InstantiatePoolObject(IPoolObject poolObject)
+    {
+        poolObject.PoolReturned += PoolObject;
+    }
+
+    private void OnDisable()
+    {
+        foreach (var pollObject in _enemiesInPool)
+        {
+            pollObject.PoolReturned -= PoolObject;
+        }
+    }
 }

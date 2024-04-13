@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementPlayer))]
@@ -14,11 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] private TurretAudioSourse _turretAudio;
     [SerializeField] private ParticleSystem _deadEffect;
 
-    private BaseTurret _turret;
+    private Turret _turret;
     private int _currentMoney;
     private MovementPlayer _movement;
 
-    public BaseTurret CurrentTurret => _turret;
+    public Turret CurrentTurret => _turret;
     public int CurrentMoney => _currentMoney;
     public int CurrentLvl => _playerLevel.CurrentPlayerLvl;
     public int CurrenExpereance => _playerLevel.CurrentExperience;
@@ -28,7 +26,7 @@ public class Player : MonoBehaviour
     public void Initialize()
     {
         _currentMoney = _money.CurrentMoney;
-        _money.OnChengetMoney += OnMoneyChenged;
+        _money.MoneyChanged += OnMoneyChenged;
         _movement = GetComponent<MovementPlayer>();
     }
 
@@ -40,7 +38,7 @@ public class Player : MonoBehaviour
         _playerScore.SetScoreData(currentScore);
     }
 
-    public void InitializeTurret(BaseTurret turret, int ammouSize, float cooldownReload)
+    public void InitializeTurret(Turret turret, int ammouSize, float cooldownReload)
     {
         if(_turret != null)
             Destroy(_turret.gameObject);

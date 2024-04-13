@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 30
   _stateMachine: {fileID: -2904775066482072312}
-  _revard: 20
+  _revard: 20000
   _countScore: 1
   _backlight: {fileID: 2860826041637481766}
   _deadParticle: {fileID: 133150, guid: 76ea784c73256a744b24cba813a687e3, type: 3}

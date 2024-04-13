@@ -22,8 +22,4 @@ public class LoseState : GameState
         _loseGamePanel.gameObject.SetActive(false);
         _player.LoseGame(true);
     }
-
-    private void Update()
-    {
-    }
 }

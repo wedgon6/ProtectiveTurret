@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,12 +13,12 @@ public class MoneuView : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.OnChengetMoney += OnAmountChanged;
+        _player.MoneyChanged += OnAmountChanged;
     }
 
     private void OnDisable()
     {
-        _player.OnChengetMoney -= OnAmountChanged;
+        _player.MoneyChanged -= OnAmountChanged;
     }
 
     private void OnAmountChanged()

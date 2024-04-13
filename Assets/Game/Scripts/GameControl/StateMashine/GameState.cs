@@ -17,8 +17,20 @@ public abstract class GameState : MonoBehaviour
             foreach (var transition in _transitions)
             {
                 transition.enabled = true;
-                transition.Init();
             }
+        }
+    }
+
+    public virtual void Exit()
+    {
+        if (enabled == true)
+        {
+            foreach (var transition in _transitions)
+            {
+                transition.enabled = false;
+            }
+
+            enabled = false;
         }
     }
 
@@ -35,20 +47,8 @@ public abstract class GameState : MonoBehaviour
         return null;
     }
 
-    public virtual void Exit()
-    {
-        if (enabled == true)
-        {
-            foreach (var transition in _transitions)
-            {
-                transition.enabled = false;
-            }
-
-            enabled = false;
-        }
-    }
-
     private void Awake()
     {
+        enabled = false;
     }
 }

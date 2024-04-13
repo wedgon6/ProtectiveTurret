@@ -32,8 +32,8 @@ public class EnemySpawner : MonoBehaviour
     private List<IPoolObject> _createdEnemies = new List<IPoolObject>();
     private List<EnemyWave> _enemyWaves = new List<EnemyWave>();
 
-    public Action OnEnemyDead;
-    public Action OnSpawnerReset;
+    public event Action OnEnemyDead;
+    public event Action OnSpawnerReset;
 
     public void EnemyDead()
     {
@@ -133,19 +133,22 @@ public class EnemySpawner : MonoBehaviour
     {
         if (enemy.TryGetComponent(out StandartEnemy standartEnemy))
         {
-            enemy.Initialize(_target, _poolStandartEnemy, _player, this);
+            enemy.Initialize(_target, _player, this);
+            _poolStandartEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
         if (enemy.TryGetComponent(out FastEnemy fastEnemy))
         {
-            enemy.Initialize(_target, _poolFastEnemy, _player, this);
+            enemy.Initialize(_target, _player, this);
+            _poolFastEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
         if (enemy.TryGetComponent(out BigEnemy bigEnemy))
         {
-            enemy.Initialize(_target, _poolBigEnemy, _player, this);
+            enemy.Initialize(_target, _player, this);
+            _poolBigEnemy.InstantiatePoolObject(enemy);
             return;
         }
     }

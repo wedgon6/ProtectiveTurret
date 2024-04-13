@@ -395,10 +395,10 @@ PrefabInstance:
       addedObject: {fileID: -916222029792970966}
     - targetCorrespondingSourceObject: {fileID: 1000012105359850, guid: 16e71322676cb6840a252ad4f7fc2d26, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -82094213261765387}
+      addedObject: {fileID: 4038795617612723343}
     - targetCorrespondingSourceObject: {fileID: 1000012105359850, guid: 16e71322676cb6840a252ad4f7fc2d26, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4038795617612723343}
+      addedObject: {fileID: 4026116315763314252}
   m_SourcePrefab: {fileID: 100100000, guid: 16e71322676cb6840a252ad4f7fc2d26, type: 3}
 --- !u!4 &7247392063806190356 stripped
 Transform:
@@ -427,25 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-82094213261765387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250321317959915150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7cae4a67a3dc5d4aa25b145d3caa017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootPoints:
-  - {fileID: 9016255121002677805}
-  - {fileID: 6649451580645969604}
-  - {fileID: 805711408830861607}
-  - {fileID: 772099909915952506}
-  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
-  _poolBullet: {fileID: -916222029792970966}
 --- !u!54 &4038795617612723343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -473,6 +454,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4026116315763314252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250321317959915150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9741c1d31a4ad4e9b9a288c2a8fbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoints:
+  - {fileID: 9016255121002677805}
+  - {fileID: 6649451580645969604}
+  - {fileID: 805711408830861607}
+  - {fileID: 772099909915952506}
+  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
+  _poolBullet: {fileID: -916222029792970966}
+  _delayShot: 0.25
 --- !u!1001 &8074013522970787415
 PrefabInstance:
   m_ObjectHideFlags: 0

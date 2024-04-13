@@ -46,18 +46,18 @@ public class SaveAndLoadSytem : MonoBehaviour
         _gameInfo.GetPlayerData();
         _saveData = JsonUtility.ToJson(_gameInfo);
 
+#if UNITY_WEBGL && !UNITY_EDITOR
         if (PlayerAccount.IsAuthorized)
         {
-#if UNITY_WEBGL && !UNITY_EDITOR
             Agava.YandexGames.Utility.PlayerPrefs.SetString(DataKeyCloud, _saveData);
             Agava.YandexGames.Utility.PlayerPrefs.Save();
-#endif
         }
         else
         {
             PlayerPrefs.SetString(DataKeyLocal, _saveData);
             PlayerPrefs.Save();
         }
+#endif
     }
 
     public void GetCloudSaveData()
@@ -69,14 +69,14 @@ public class SaveAndLoadSytem : MonoBehaviour
 
     private void OnEnable()
     {
-        _level.OnDataChenged += OnGameDataChenged;
-        _turretPresenter.OnDataChenged += OnGameDataChenged;
+        _level.DataChanged += OnGameDataChenged;
+        _turretPresenter.DataChanged += OnGameDataChenged;
     }
 
     private void OnDisable()
     {
-        _level.OnDataChenged -= OnGameDataChenged;
-        _turretPresenter.OnDataChenged -= OnGameDataChenged;
+        _level.DataChanged -= OnGameDataChenged;
+        _turretPresenter.DataChanged -= OnGameDataChenged;
     }
 
     private bool IsCorrectData()

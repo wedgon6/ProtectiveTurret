@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialState : GameState
@@ -17,9 +15,5 @@ public class TutorialState : GameState
     {
         _dialogue.gameObject.SetActive(false);
         base.Exit();
-    }
-
-    private void Update()
-    {
     }
 }

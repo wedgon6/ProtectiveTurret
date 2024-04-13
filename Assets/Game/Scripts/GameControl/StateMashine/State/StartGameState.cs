@@ -9,7 +9,7 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
         [SerializeField] private MenuTransition _menuTransition;
         [SerializeField] private TutorialTransition _tutorialTransition;
-        [SerializeField] private VolumeChange _volumeChange;
+        [SerializeField] private AudioHandler _volumeChange;
 
         private bool _isFirstStart;
 
@@ -40,10 +40,6 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
         public override void Exit()
         {
             base.Exit();
-        }
-
-        private void Update()
-        {
         }
     }
 }

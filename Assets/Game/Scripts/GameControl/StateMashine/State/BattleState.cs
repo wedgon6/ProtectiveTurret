@@ -22,8 +22,4 @@ public class BattleState : GameState
         _battleStatePanel.gameObject.SetActive(false);
         base.Exit();
     }
-
-    private void Update()
-    {
-    }
 }

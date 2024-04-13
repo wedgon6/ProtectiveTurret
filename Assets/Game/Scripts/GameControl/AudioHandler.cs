@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VolumeChange : MonoBehaviour
+public class AudioHandler : MonoBehaviour
 {
     [SerializeField] private Image _controlButton;
     [SerializeField] private Sprite _onAudioIcon;

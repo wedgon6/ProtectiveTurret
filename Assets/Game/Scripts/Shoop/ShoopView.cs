@@ -13,7 +13,7 @@ public class ShoopView : MonoBehaviour
 
     private PlayerAbillity _abillity;
 
-    public Action<PlayerAbillity, ShoopView> OnSellButtonClick;
+    public event Action<PlayerAbillity, ShoopView> SellButtonClicked;
 
     public void Render(PlayerAbillity abillity)
     {
@@ -23,8 +23,8 @@ public class ShoopView : MonoBehaviour
         _price.text = abillity.Price.ToString();
         _icon.sprite = abillity.Icon;
         _currentLvl.text = abillity.CurrentLvl.ToString();
-        _abillity.OnPriceChenget += OnPriceChenged;
-        _abillity.OnLvlChenget += OnLvlAbillityChenged;
+        _abillity.PriceChanged += OnPriceChenged;
+        _abillity.LvlChanged += OnLvlAbillityChenged;
     }
 
     private void OnEnable()
@@ -49,6 +49,6 @@ public class ShoopView : MonoBehaviour
 
     private void OnButtonClick()
     {
-        OnSellButtonClick?.Invoke(_abillity, this);
+        SellButtonClicked?.Invoke(_abillity, this);
     }
 }

@@ -7,12 +7,12 @@ public class LoseTransition : GameTransition
     private void OnEnable()
     {
         NeedTransit = false;
-        _redLine.OnLooseGame += OnNeedTransition;
+        _redLine.GameLoosed += OnNeedTransition;
     }
 
     private void OnDisable()
     {
-        _redLine.OnLooseGame -= OnNeedTransition;
+        _redLine.GameLoosed -= OnNeedTransition;
     }
 
     private void OnNeedTransition()

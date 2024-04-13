@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bar: {fileID: 175336049}
-  _enemyPresenter: {fileID: 1189180569}
+  _enemyCounter: {fileID: 1189180569}
 --- !u!1 &175782781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,10 +2786,10 @@ GameObject:
   - component: {fileID: 402492449}
   - component: {fileID: 402492448}
   - component: {fileID: 402492450}
-  - component: {fileID: 402492451}
   - component: {fileID: 402492452}
   - component: {fileID: 402492454}
   - component: {fileID: 402492453}
+  - component: {fileID: 402492451}
   m_Layer: 0
   m_Name: GameStateMashine
   m_TagString: Untagged
@@ -2905,7 +2905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 402492449}
-  _enemyPresenter: {fileID: 1189180569}
+  _enemyCounter: {fileID: 1189180569}
 --- !u!114 &402492448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6433,9 +6433,9 @@ MonoBehaviour:
     _standartEnemy: {fileID: 5815604418124086089, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
     _fastEnemy: {fileID: -4979026921783704034, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
     _bigEnemy: {fileID: -6739722090190204700, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
-    _indexsStandartEnemy: 0000000001000000020000000300000004000000
-    _indexsFastEnemy: 05000000060000000700000008000000
-    _indexsBigEnemy: 090000000a000000
+    _maxIndexStandartEnemy: 5
+    _maxIndexFastEnemy: 8
+    _maxIndexBigEnemy: 11
   _poolStandartEnemy: {fileID: 1001777548}
   _poolFastEnemy: {fileID: 1279041269}
   _poolBigEnemy: {fileID: 1481756115}
@@ -7721,7 +7721,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189180565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283b0957773752540bcf22ea3b5a8aab, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e187fb1d00e374ca36ad3d97a94078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1001777546}
@@ -7738,11 +7738,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseTurrets:
-  - {fileID: 7743801278584831193, guid: b659a44e96caadc46ba354f80250037d, type: 3}
-  - {fileID: -6799280094918002331, guid: 04082846642ca9f4095ffb599d69d9f2, type: 3}
-  - {fileID: -82094213261765387, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
-  - {fileID: 5164470084744398080, guid: 44bffb244df80be47829db83614af334, type: 3}
-  - {fileID: 2766257175778820848, guid: 294f5c5c1bf8a99409b211be98f25e59, type: 3}
+  - {fileID: -512252288170216116, guid: b659a44e96caadc46ba354f80250037d, type: 3}
+  - {fileID: 1240895610019722474, guid: 04082846642ca9f4095ffb599d69d9f2, type: 3}
+  - {fileID: 4026116315763314252, guid: 876c391a062029b4d8b832d939c8085e, type: 3}
+  - {fileID: 7481451158845719369, guid: 44bffb244df80be47829db83614af334, type: 3}
+  - {fileID: 8204503244937370266, guid: 294f5c5c1bf8a99409b211be98f25e59, type: 3}
   _playerLevel: {fileID: 1883925415}
   _player: {fileID: 1883925412}
 --- !u!114 &1189180571

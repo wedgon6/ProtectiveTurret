@@ -13,32 +13,32 @@ public class PlayerLevel : MonoBehaviour
     public int CurrentExperience => _currentExperience;
     public int CurrentPlayerLvl => _currentPlayerLvl;
 
-    public Action<int, int> OnPlayerExpirianceChanget;
-    public Action OnPlayerLvlChenget;
-    public Action OnDataChenged;
-    public Action SetLvLPlayer;
+    public event Action<int, int> PlayerExpirianceChanged;
+    public event Action PlayerLvlChanged;
+    public event Action DataChanged;
+    public event Action LvLPlayerSet;
 
     public void SetData(int currentLvl, int currentExperiance)
     {
         _currentPlayerLvl = currentLvl;
         _currentExperience = currentExperiance;
-        OnPlayerExpirianceChanget?.Invoke(_currentExperience, ExperienceToNextLvlup);
-        SetLvLPlayer?.Invoke();
+        PlayerExpirianceChanged?.Invoke(_currentExperience, ExperienceToNextLvlup);
+        LvLPlayerSet?.Invoke();
     }
 
     public void AddExperience()
     {
         _currentExperience++;
-        OnPlayerExpirianceChanget?.Invoke(_currentExperience,ExperienceToNextLvlup);
+        PlayerExpirianceChanged?.Invoke(_currentExperience,ExperienceToNextLvlup);
 
         if(_currentExperience == ExperienceToNextLvlup)
         {
             _currentExperience = 0;
             _currentPlayerLvl++;
-            OnPlayerExpirianceChanget?.Invoke(_currentExperience, ExperienceToNextLvlup);
-            OnPlayerLvlChenget?.Invoke();
+            PlayerExpirianceChanged?.Invoke(_currentExperience, ExperienceToNextLvlup);
+            PlayerLvlChanged?.Invoke();
         }
 
-        OnDataChenged?.Invoke();
+        DataChanged?.Invoke();
     }
 }

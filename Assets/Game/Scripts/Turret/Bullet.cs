@@ -1,27 +1,20 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolObject
 {
     [SerializeField] private float _damage;
 
-    private float _speedBullet;
     private Rigidbody _rigidbody;
-    private PoolBullet _poolBullet;
-    protected Enemy _enemy;
 
-    public void Initialize(float speedBullet, PoolBullet poolBullet, Enemy target)
-    {
-        _speedBullet = speedBullet;
-        _poolBullet = poolBullet;
-        _enemy = target;
-    }
+    public event Action<IPoolObject> PoolReturned;
 
     public void ReturnToPool()
     {
         gameObject.SetActive(false);
-        _poolBullet.PoolObject(this);
         _rigidbody.velocity = Vector3.zero;
         transform.position = Vector3.zero;
+        PoolReturned?.Invoke(this);
     }
 
     private void Awake()
@@ -36,13 +29,7 @@ public class Bullet : MonoBehaviour, IPoolObject
             enemy.TakeDamage(_damage);
             ReturnToPool();
         }
-
-        if(collision.collider.TryGetComponent(out Barrier barrier))
-        {
-            ReturnToPool();
-        }
-
-        if (collision.collider.TryGetComponent(out Terrain terrain))
+        else if(collision.collider.TryGetComponent(out Barrier barrier) || collision.collider.TryGetComponent(out Terrain terrain))
         {
             ReturnToPool();
         }

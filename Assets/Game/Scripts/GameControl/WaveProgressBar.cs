@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class WaveProgressBar : MonoBehaviour
 {
     [SerializeField] private Slider _bar;
-    [SerializeField] private EnemyPresenter _enemyPresenter;
+    [SerializeField] private EnemyCounter _enemyCounter;
 
     private void OnEnable()
     {
-        _enemyPresenter.OnEnemyDie += OnEnemiesDeadCountChenget;
+        _enemyCounter.EnemiesDied += OnEnemiesDeadCountChenget;
     }
 
     private void OnDisable()
     {
-        _enemyPresenter.OnEnemyDie -= OnEnemiesDeadCountChenget;
+        _enemyCounter.EnemiesDied -= OnEnemiesDeadCountChenget;
     }
 
     private void OnEnemiesDeadCountChenget(int deadEnemise, int totalCountEnemise)

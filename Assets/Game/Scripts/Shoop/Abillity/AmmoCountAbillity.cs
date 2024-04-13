@@ -7,7 +7,6 @@ public class AmmoCountAbillity : PlayerAbillity
         player.AddAmmouSize();
         _currentPrice = (int)Math.Round(_currentPrice * _multiplier, 0);
         _currentLvl++;
-        OnPriceChenget?.Invoke();
-        OnLvlChenget?.Invoke();
+        base.Buy(player);
     }
 }

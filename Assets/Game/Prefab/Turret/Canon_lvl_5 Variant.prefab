@@ -159,10 +159,10 @@ PrefabInstance:
       addedObject: {fileID: 7157173930388789043}
     - targetCorrespondingSourceObject: {fileID: 1000010156534366, guid: ff744fa1e43cd5747a6732d0189a5a52, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2766257175778820848}
+      addedObject: {fileID: 74726326537609862}
     - targetCorrespondingSourceObject: {fileID: 1000010156534366, guid: ff744fa1e43cd5747a6732d0189a5a52, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 74726326537609862}
+      addedObject: {fileID: 8204503244937370266}
   m_SourcePrefab: {fileID: 100100000, guid: ff744fa1e43cd5747a6732d0189a5a52, type: 3}
 --- !u!4 &1721087944124032234 stripped
 Transform:
@@ -186,23 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2766257175778820848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724650102514648274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bccbc87792fb73345807ad1df5ef9c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootPoints:
-  - {fileID: 7324127149622532331}
-  - {fileID: 4344354706509040722}
-  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
-  _poolBullet: {fileID: 7157173930388789043}
 --- !u!54 &74726326537609862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -230,6 +213,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &8204503244937370266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724650102514648274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9741c1d31a4ad4e9b9a288c2a8fbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoints:
+  - {fileID: 7324127149622532331}
+  - {fileID: 4344354706509040722}
+  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
+  _poolBullet: {fileID: 7157173930388789043}
+  _delayShot: 0.15
 --- !u!1001 &1725275646233209555
 PrefabInstance:
   m_ObjectHideFlags: 0

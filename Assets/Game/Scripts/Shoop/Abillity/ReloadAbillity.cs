@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 public class ReloadAbillity : PlayerAbillity
 {
@@ -8,7 +7,6 @@ public class ReloadAbillity : PlayerAbillity
         player.DiscountCooldownReload();
         _currentPrice = (int)Math.Round(_currentPrice * _multiplier, 0);
         _currentLvl++;
-        OnPriceChenget?.Invoke();
-        OnLvlChenget?.Invoke();
+        base.Buy(player);
     }
 }

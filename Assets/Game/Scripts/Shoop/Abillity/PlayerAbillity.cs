@@ -19,25 +19,29 @@ public abstract class PlayerAbillity : MonoBehaviour
     public int Price => _currentPrice;
     public int CurrentLvl => _currentLvl;
 
-    public Action OnPriceChenget;
-    public Action OnLvlChenget;
+    public event Action PriceChanged;
+    public event Action LvlChanged;
 
     public void Initialize(int currentLvL = 1)
     {
         _localized.UpdateTranslation(LeanLocalization.GetTranslation(_localized.TranslationName));
         _currentPrice = _startPrice;
         _currentLvl = currentLvL;
-        OnPriceChenget?.Invoke();
-        OnLvlChenget?.Invoke();
+        PriceChanged?.Invoke();
+        LvlChanged?.Invoke();
     }
 
     public void GetCloudData(int currentLvl, int currentPrice)
     {
         _currentLvl = currentLvl;
         _currentPrice = currentPrice;
-        OnPriceChenget?.Invoke();
-        OnLvlChenget?.Invoke();
+        PriceChanged?.Invoke();
+        LvlChanged?.Invoke();
     }
 
-    public abstract void Buy(Player player);
+    public virtual void Buy(Player player)
+    {
+        PriceChanged?.Invoke();
+        LvlChanged?.Invoke();
+    }
 }

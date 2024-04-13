@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class TurretPresenter : MonoBehaviour
 {
-    [SerializeField] private List<BaseTurret> _baseTurrets;
+    [SerializeField] private List<Turret> _baseTurrets;
     [SerializeField] private PlayerLevel _playerLevel;
     [SerializeField] private Player _player;
 
     private bool _isHaveTurret = false;
     private int _indexTurret = 0;
-    private BaseTurret _currentTurret;
+    private Turret _currentTurret;
 
     private float _baseReloadTime = 4f;
     private float _decreaseReload = 0.16f;
     private int _baseAmmouSize = 20;
     private int _ammouSizeRise = 15;
 
-    public Action OnDataChenged;
+    public event Action DataChanged;
 
     public int CurrentIndexTurret => _indexTurret;
     public int CurrentAmmoSize => _baseAmmouSize;
@@ -55,12 +55,12 @@ public class TurretPresenter : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerLevel.OnPlayerLvlChenget += OnPlayerLvlUp;
+        _playerLevel.PlayerLvlChanged += OnPlayerLvlUp;
     }
 
     private void OnDisable()
     {
-        _playerLevel.OnPlayerLvlChenget -= OnPlayerLvlUp;
+        _playerLevel.PlayerLvlChanged -= OnPlayerLvlUp;
     }
 
     private void OnPlayerLvlUp()
@@ -75,7 +75,7 @@ public class TurretPresenter : MonoBehaviour
             {
                 _indexTurret++;
                 InitializePlayerTurret();
-                OnDataChenged?.Invoke();
+                DataChanged?.Invoke();
             }
         }
     }
@@ -87,17 +87,16 @@ public class TurretPresenter : MonoBehaviour
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
-            return;
         }
-
-        if (_indexTurret >= _baseTurrets.Count)
+        else if (_indexTurret >= _baseTurrets.Count)
         {
             _currentTurret = _baseTurrets[_baseTurrets.Count-1];
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
-            return;
         }
-
-        _currentTurret = _baseTurrets[_indexTurret];
-        _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
+        else
+        {
+            _currentTurret = _baseTurrets[_indexTurret];
+            _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
+        }
     }
 }

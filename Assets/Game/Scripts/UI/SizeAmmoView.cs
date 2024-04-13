@@ -9,10 +9,10 @@ public class SizeAmmoView : MonoBehaviour
     [SerializeField] private TMP_Text _amountBullet;
     [SerializeField] private Image _reloadImage;
     
-    private BaseTurret _clip;
+    private Turret _clip;
     private Coroutine _rechargeCoroutine;
 
-    public void SetTurret(BaseTurret turret)
+    public void SetTurret(Turret turret)
     {
         if(_clip == null)
         {
@@ -20,20 +20,20 @@ public class SizeAmmoView : MonoBehaviour
         }
         else
         {
-            _clip.OnClipSizeChanged -= OnAmountChanged;
-            _clip.OnRechargeAmmou -= OnRecharge;
+            _clip.ClipSizeChanged -= OnAmountChanged;
+            _clip.AmmouRecharging -= OnRecharge;
             _clip = null;
             _clip = turret;
         }
 
-        _clip.OnClipSizeChanged += OnAmountChanged;
-        _clip.OnRechargeAmmou += OnRecharge;
+        _clip.ClipSizeChanged += OnAmountChanged;
+        _clip.AmmouRecharging += OnRecharge;
     }
 
     private void OnEnable()
     {
-        _clip.OnClipSizeChanged += OnAmountChanged;
-        _clip.OnRechargeAmmou += OnRecharge;
+        _clip.ClipSizeChanged += OnAmountChanged;
+        _clip.AmmouRecharging += OnRecharge;
         _reloadImage.fillAmount = 0f;
     }
 
@@ -41,8 +41,8 @@ public class SizeAmmoView : MonoBehaviour
     {
         if(_clip != null)
         {
-            _clip.OnClipSizeChanged -= OnAmountChanged;
-            _clip.OnRechargeAmmou -= OnRecharge;
+            _clip.ClipSizeChanged -= OnAmountChanged;
+            _clip.AmmouRecharging -= OnRecharge;
         }
 
         _reloadImage.fillAmount = 0f;

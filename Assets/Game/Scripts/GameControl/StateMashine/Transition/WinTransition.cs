@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class WinTransition : GameTransition
 {
-    [SerializeField] private EnemyPresenter _enemyPresenter;
+    [SerializeField] private EnemyCounter _enemyCounter;
 
     private void OnEnable()
     {
-        _enemyPresenter.OnAllEnemiesDie += OnNeedTransition;
+        _enemyCounter.AllEnemiesDied += OnNeedTransition;
         NeedTransit = false;
     }
 
     private void OnDisable()
     {
-        _enemyPresenter.OnAllEnemiesDie -= OnNeedTransition;
+        _enemyCounter.AllEnemiesDied -= OnNeedTransition;
     }
 
     private void OnNeedTransition()

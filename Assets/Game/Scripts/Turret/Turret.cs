@@ -5,29 +5,29 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class BaseTurret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     protected const float SearchRadius = 20f;
     protected const float SpeedBullet = 15f;
 
-    [SerializeField] protected ShootPoint[] _shootPoints;
-    [SerializeField] protected Bullet _bullet;
-    [SerializeField] protected PoolBullet _poolBullet;
+    [SerializeField] private ShootPoint[] _shootPoints;
+    [SerializeField] private Bullet _bullet;
+    [SerializeField] private PoolBullet _poolBullet;
+    [SerializeField] private float _delayShot = 0.25f;
 
     private Dictionary<float, Enemy> _enemies = new Dictionary<float, Enemy>();
-    
-    protected Enemy _currentTarget;
-    protected Coroutine _corontine;
-    protected Animator _animator;
 
-    protected int _ammouSize;
-    protected int _currentCoutBullet;
-    protected float _cooldownReload;
-    protected float _delayShot = 0.25f;
+    private Enemy _currentTarget;
+    private Coroutine _corontine;
+    private Animator _animator;
 
-    public Action OnClipSizeChanged;
-    public Action OnShot;
-    public Action OnRechargeAmmou;
+    private int _ammouSize;
+    private int _currentCoutBullet;
+    private float _cooldownReload;
+
+    public event Action ClipSizeChanged;
+    public event Action Shoted;
+    public event Action AmmouRecharging;
 
     public int CurrentCountBullet => _currentCoutBullet;
     public float CoolDonw => _cooldownReload;
@@ -41,7 +41,7 @@ public class BaseTurret : MonoBehaviour
     public void RechargeTurret()
     {
         _currentCoutBullet = _ammouSize;
-        OnClipSizeChanged?.Invoke();
+        ClipSizeChanged?.Invoke();
     }
 
     public void DestroyTurret()
@@ -49,7 +49,17 @@ public class BaseTurret : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected virtual void FindTarget()
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    private void FixedUpdate()
+    {
+        ShootingControl();
+    }
+
+    private void FindTarget()
     {
         _enemies.Clear();
         _currentTarget = null;
@@ -79,7 +89,7 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    protected virtual void LookAtEnemy()
+    private void LookAtEnemy()
     {
         Vector3 lookDir = _currentTarget.transform.position - transform.position;
         lookDir.y = 0;
@@ -87,7 +97,7 @@ public class BaseTurret : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
     }
 
-    protected virtual void ShootingControl()
+    private void ShootingControl()
     {
         if (HaveEnemy())
         {
@@ -101,7 +111,7 @@ public class BaseTurret : MonoBehaviour
         }
     }
 
-    protected virtual void InstantiateBullet(int shootPointIndex, Enemy target)
+    private void InstantiateBullet(int shootPointIndex, Enemy target)
     {
         Bullet bullet;
 
@@ -115,18 +125,18 @@ public class BaseTurret : MonoBehaviour
         else
         {
             bullet = Instantiate(_bullet, _shootPoints[shootPointIndex].transform.position, transform.rotation);
+            _poolBullet.InstantiatePoolObject(bullet);
         }
 
-        bullet.Initialize(SpeedBullet, _poolBullet, target);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * SpeedBullet, ForceMode.VelocityChange);
         _animator.SetTrigger("Shoot");
         _shootPoints[shootPointIndex].PlayParticle();
         _currentCoutBullet--;
-        OnClipSizeChanged?.Invoke();
-        OnShot?.Invoke();
+        ClipSizeChanged?.Invoke();
+        Shoted?.Invoke();
     }
 
-    protected virtual IEnumerator Shooting()
+    private IEnumerator Shooting()
     {
         int curretPoint = 0;
         
@@ -159,12 +169,12 @@ public class BaseTurret : MonoBehaviour
         curretPoint = 0;
     }
 
-    protected virtual IEnumerator Recharge()
+    private IEnumerator Recharge()
     {
-        OnRechargeAmmou?.Invoke();
+        AmmouRecharging?.Invoke();
         yield return new WaitForSeconds(_cooldownReload);
         _currentCoutBullet = _ammouSize;
-        OnClipSizeChanged?.Invoke();
+        ClipSizeChanged?.Invoke();
 
         if (HaveEnemy())
             CorountineStart(Shooting());
@@ -172,7 +182,7 @@ public class BaseTurret : MonoBehaviour
             FindTarget();
     }
 
-    protected virtual void CorountineStart(IEnumerator corontine)
+    private void CorountineStart(IEnumerator corontine)
     {
         if (_corontine != null)
             StopCoroutine(_corontine);
@@ -186,15 +196,5 @@ public class BaseTurret : MonoBehaviour
             return false;
         else
             return true;
-    }
-
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
-    private void FixedUpdate()
-    {
-        ShootingControl();
     }
 }

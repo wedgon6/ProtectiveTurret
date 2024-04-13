@@ -1,15 +1,15 @@
 using System;
 using UnityEngine;
 
-public class EnemyPresenter : MonoBehaviour
+public class EnemyCounter : MonoBehaviour
 {
     [SerializeField] private EnemySpawner _spawner;
 
     private int _countEnemy;
     private int _deadEnemiesCount;
 
-    public Action OnAllEnemiesDie;
-    public Action<int,int> OnEnemyDie;  
+    public event Action AllEnemiesDied;
+    public event Action<int,int> EnemiesDied;  
 
     private void OnEnable()
     {
@@ -26,16 +26,16 @@ public class EnemyPresenter : MonoBehaviour
     private void OnEnemyDead()
     {
         _deadEnemiesCount++;
-        OnEnemyDie?.Invoke(_deadEnemiesCount, _countEnemy);
+        EnemiesDied?.Invoke(_deadEnemiesCount, _countEnemy);
 
         if (_deadEnemiesCount == _countEnemy)
-            OnAllEnemiesDie?.Invoke();
+            AllEnemiesDied?.Invoke();
     }
 
     private void OnResetWave()
     {
         _countEnemy = _spawner.GetEnemyCount();
         _deadEnemiesCount = 0;
-        OnEnemyDie.Invoke(_deadEnemiesCount, _countEnemy);
+        EnemiesDied.Invoke(_deadEnemiesCount, _countEnemy);
     }
 }

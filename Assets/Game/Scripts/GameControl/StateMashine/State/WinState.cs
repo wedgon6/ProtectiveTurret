@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WinState : GameState
@@ -18,10 +16,5 @@ public class WinState : GameState
         _advertisementPresenter.ShowInterstitialAd();
         base.Exit();
         _winGamePanel.gameObject.SetActive(false);
-    }
-
-    private void Update()
-    {
-        
     }
 }

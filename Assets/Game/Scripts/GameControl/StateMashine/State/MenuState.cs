@@ -12,6 +12,7 @@ public class MenuState : GameState
     [SerializeField] private Leaderboard _leaderboard;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
     [SerializeField] private UserView _userView;
+
     private bool _isMenuUiActive = false;
 
     public override void Enter(Player player)
@@ -25,15 +26,17 @@ public class MenuState : GameState
         _turretPresenter.TrySetTurret();
         _player.SetMovmentMode(false);
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
+#if UNITY_WEBGL && !UNITY_EDITOR
         _leaderboard.SetPlayer(_player.CurrentScore);
+#endif
     }
 
     public override void Exit()
     {
         _menuUI.gameObject.SetActive(false);
-
+#if UNITY_WEBGL && !UNITY_EDITOR
         _saveAndLoadSytem.SetSaveData();
-
+#endif
         base.Exit();
     }
 
@@ -41,9 +44,5 @@ public class MenuState : GameState
     {
         _userView.gameObject.SetActive(true);
         _isMenuUiActive = true;
-    }
-
-    private void Update()
-    {
     }
 }

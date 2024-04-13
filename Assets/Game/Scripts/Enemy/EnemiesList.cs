@@ -10,9 +10,9 @@ public class EnemiesList
     [SerializeField] private Enemy _fastEnemy;
     [SerializeField] private Enemy _bigEnemy;
 
-    [SerializeField] private int[] _indexsStandartEnemy = {0, 1, 2, 3, 4, 5};
-    [SerializeField] private int[] _indexsFastEnemy = { 6, 7, 8, };
-    [SerializeField] private int[] _indexsBigEnemy = {9, 10};
+    [SerializeField] private int _maxIndexStandartEnemy = 5;
+    [SerializeField] private int _maxIndexFastEnemy = 9;
+    [SerializeField] private int _maxIndexBigEnemy = 11;
 
     public EnemiesList(Enemy standartEnemy, Enemy fastEnemy, Enemy bigEnemy)
     {
@@ -25,59 +25,33 @@ public class EnemiesList
     public Enemy FastEnemy => _fastEnemy;
     public Enemy BigEnemy => _bigEnemy;
 
-
     public Enemy GetEnemy(int complexityWave)
     {
-        Enemy enemy;
         int enemyIndex;
 
         if (complexityWave <= EasyWaveIndex)
         {
-            enemyIndex = Random.Range(0, 5);
-
-            foreach (var index in _indexsStandartEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _standartEnemy;
-            }
+            return _standartEnemy;
         }
-        else if(complexityWave > EasyWaveIndex && complexityWave <= MidWaveIndex)
+        else if (complexityWave > EasyWaveIndex && complexityWave <= MidWaveIndex)
         {
-            enemyIndex = Random.Range(0, 9);
+            enemyIndex = Random.Range(0, _maxIndexFastEnemy);
 
-            foreach (var index in _indexsStandartEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _standartEnemy;
-            }
-
-            foreach (var index in _indexsFastEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _fastEnemy;
-            }
+            if (enemyIndex > _maxIndexStandartEnemy)
+                return _fastEnemy;
+            else
+                return _standartEnemy;
         }
-        else if(complexityWave > MidWaveIndex)
+        else if (complexityWave > MidWaveIndex)
         {
-            enemyIndex = Random.Range(0, 11);
+            enemyIndex = Random.Range(0, _maxIndexBigEnemy);
 
-            foreach (var index in _indexsStandartEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _standartEnemy;
-            }
-
-            foreach (var index in _indexsFastEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _fastEnemy;
-            }   
-            
-            foreach (var index in _indexsBigEnemy)
-            {
-                if (index == enemyIndex)
-                    return enemy = _bigEnemy;
-            }
+            if (enemyIndex > _maxIndexFastEnemy)
+                return _bigEnemy;
+            else if (enemyIndex <= _maxIndexFastEnemy && enemyIndex > _maxIndexStandartEnemy)
+                return _fastEnemy;
+            else
+                return _standartEnemy;
         }
 
         return null;

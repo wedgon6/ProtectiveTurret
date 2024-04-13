@@ -388,13 +388,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000010153274142, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5164470084744398080}
-    - targetCorrespondingSourceObject: {fileID: 1000010153274142, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4539125387415332143}
     - targetCorrespondingSourceObject: {fileID: 1000010153274142, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1909786713236412741}
+    - targetCorrespondingSourceObject: {fileID: 1000010153274142, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7481451158845719369}
   m_SourcePrefab: {fileID: 100100000, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
 --- !u!4 &5842503409981123488 stripped
 Transform:
@@ -406,25 +406,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000010153274142, guid: 2652172d138981b4abc806ea8ec36564, type: 3}
   m_PrefabInstance: {fileID: 5844133107364365812}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5164470084744398080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5843708150430609130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3bea82b6b60ac41996e7cb5cb3e844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootPoints:
-  - {fileID: 8411510536417044192}
-  - {fileID: 7380935768842576339}
-  - {fileID: 8846919583828986659}
-  - {fileID: 1920779305296431271}
-  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
-  _poolBullet: {fileID: 4539125387415332143}
 --- !u!114 &4539125387415332143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +445,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 16
   m_CollisionDetection: 0
+--- !u!114 &7481451158845719369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843708150430609130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9741c1d31a4ad4e9b9a288c2a8fbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoints:
+  - {fileID: 8411510536417044192}
+  - {fileID: 7380935768842576339}
+  - {fileID: 8846919583828986659}
+  - {fileID: 1920779305296431271}
+  _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
+  _poolBullet: {fileID: 4539125387415332143}
+  _delayShot: 0.2
 --- !u!1001 &8605483433322534544
 PrefabInstance:
   m_ObjectHideFlags: 0

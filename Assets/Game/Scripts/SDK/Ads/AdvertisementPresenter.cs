@@ -4,7 +4,7 @@ using Agava.YandexGames;
 public class AdvertisementPresenter : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private VolumeChange _volumeChange;
+    [SerializeField] private AudioHandler _volumeChange;
     [SerializeField] private int _revard = 500;
     [SerializeField] private SaveAndLoadSytem _save;
 

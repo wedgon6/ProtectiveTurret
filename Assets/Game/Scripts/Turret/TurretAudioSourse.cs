@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +6,9 @@ public class TurretAudioSourse : MonoBehaviour
     [SerializeField] private List<AudioSource> _shootSounds;
 
     private int _indexSound = 0;
-    private BaseTurret _baseTurret;
+    private Turret _baseTurret;
 
-    public void SetTurret(BaseTurret turret)
+    public void SetTurret(Turret turret)
     {
         if (_baseTurret == null)
         {
@@ -17,19 +16,19 @@ public class TurretAudioSourse : MonoBehaviour
         }
         else
         {
-            _baseTurret.OnShot -= OnPlayShotSound;
+            _baseTurret.Shoted -= OnPlayShotSound;
             _baseTurret = null;
             _baseTurret = turret;
         }
 
-        _baseTurret.OnShot += OnPlayShotSound;
+        _baseTurret.Shoted += OnPlayShotSound;
     }
 
     private void OnDisable()
     {
         if (_baseTurret != null)
         {
-            _baseTurret.OnShot -= OnPlayShotSound;
+            _baseTurret.Shoted -= OnPlayShotSound;
         }
     }
 

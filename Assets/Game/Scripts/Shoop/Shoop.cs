@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,7 +36,7 @@ public class Shoop : MonoBehaviour
     private void AddItem(PlayerAbillity abillity)
     {
         var view = Instantiate(_template, _itemContainer.transform);
-        view.OnSellButtonClick += OnSellButtonClick;
+        view.SellButtonClicked += OnSellButtonClick;
         view.Render(abillity);
     }
 

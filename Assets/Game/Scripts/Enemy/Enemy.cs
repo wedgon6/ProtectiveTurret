@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IPoolObject
@@ -10,12 +11,12 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private GameObject _deadParticle;
 
     private RedLine _target;
-    private PoolEnemy _poolEnemy;
     private float _health;
     private Player _player;
     private bool _isDead;
     private EnemySpawner _spawner;
 
+    public event Action<IPoolObject> PoolReturned;
 
     public RedLine Target => _target;
     public Player Player => _player;
@@ -25,15 +26,13 @@ public class Enemy : MonoBehaviour, IPoolObject
     public int CountScore => _countScore;
     public bool IsDead => _isDead;
 
-    public void Initialize(RedLine target, PoolEnemy poolEnemy, Player player, EnemySpawner spawner)
+    public void Initialize(RedLine target, Player player, EnemySpawner spawner)
     {
         _target = target;
-        _poolEnemy = poolEnemy;
         _health = _maxHealth;
         _player = player;
         _spawner = spawner;
     }
-
 
     public void TakeDamage(float damage)
     {
@@ -67,7 +66,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     {
         gameObject.SetActive(false);
         _backlight.SetActive(false);
-        _poolEnemy.PoolObject(this);
+        PoolReturned?.Invoke(this);
         _health = _maxHealth;
         _isDead = false;
     }
