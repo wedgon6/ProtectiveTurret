@@ -12,7 +12,7 @@ public class AudioHandler : MonoBehaviour
 
     public bool IsAudioPlay => _isAudioPlay;
 
-   public void StartPlayMusic()
+    public void StartPlayMusic()
     {
         _audioSource.Play();
         _audioSource.volume = 1f;
@@ -24,13 +24,13 @@ public class AudioHandler : MonoBehaviour
     {
         _isAudioPlay = !_isAudioPlay;
 
-        if(_isAudioPlay == true)
+        if (_isAudioPlay == true)
         {
             AudioListener.volume = 1f;
             _controlButton.sprite = _onAudioIcon;
         }
 
-        if(_isAudioPlay == false)
+        if (_isAudioPlay == false)
         {
             AudioListener.volume = 0f;
             _controlButton.sprite = _offAudioIcon;

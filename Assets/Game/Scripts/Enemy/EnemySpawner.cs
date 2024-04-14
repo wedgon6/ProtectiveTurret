@@ -106,7 +106,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void InitializeEnemy()
     {
-
         int currentSpawnPont = UnityEngine.Random.Range(0, _spawnPoint.Length);
         Enemy enemy = _currentWave.GetNextEnemy();
 
@@ -122,8 +121,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            enemy = Instantiate(enemy, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation,
-            _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
+            enemy = Instantiate(enemy, _spawnPoint[currentSpawnPont].position, _spawnPoint[currentSpawnPont].rotation, _spawnPoint[currentSpawnPont]).GetComponent<Enemy>();
             InitializeEnemy(enemy);
             _createdEnemies.Add(enemy);
         }
@@ -131,21 +129,21 @@ public class EnemySpawner : MonoBehaviour
 
     private void InitializeEnemy(Enemy enemy)
     {
-        if (enemy.TryGetComponent(out StandartEnemy standartEnemy))
+        if (enemy.TryGetComponent(out Enemy standartEnemy))
         {
             enemy.Initialize(_target, _player, this);
             _poolStandartEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
-        if (enemy.TryGetComponent(out FastEnemy fastEnemy))
+        if (enemy.TryGetComponent(out Enemy fastEnemy))
         {
             enemy.Initialize(_target, _player, this);
             _poolFastEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
-        if (enemy.TryGetComponent(out BigEnemy bigEnemy))
+        if (enemy.TryGetComponent(out Enemy bigEnemy))
         {
             enemy.Initialize(_target, _player, this);
             _poolBigEnemy.InstantiatePoolObject(enemy);
@@ -158,19 +156,19 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = enemyType as Enemy;
         poolEnemy = null;
 
-        if (enemy.TryGetComponent(out StandartEnemy standartEnemy))
+        if (enemy.TypeEnemy == TypeEnemy.Standart.ToString())
         {
             if (_poolStandartEnemy.TryPoolObject(out IPoolObject enemyPool))
                 poolEnemy = enemyPool as Enemy;
         }
 
-        if (enemy.TryGetComponent(out FastEnemy fastEnemy))
+        if (enemy.TypeEnemy == TypeEnemy.Fast.ToString())
         {
             if (_poolFastEnemy.TryPoolObject(out IPoolObject enemyPool))
                 poolEnemy = enemyPool as Enemy;
         }
 
-        if (enemy.TryGetComponent(out BigEnemy bigEnemy))
+        if (enemy.TypeEnemy == TypeEnemy.Big.ToString())
         {
             if (_poolBigEnemy.TryPoolObject(out IPoolObject enemyPool))
                 poolEnemy = enemyPool as Enemy;
@@ -192,8 +190,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SetWaveComplexity()
     {
-
-        if(_player.CurrentLvl <= EasyWaveIndex)
+        if (_player.CurrentLvl <= EasyWaveIndex)
         {
             _countWaves = 2;
             SetWaves(_countWaves, EasyWaveIndex);
@@ -201,7 +198,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        if(_player.CurrentLvl > EasyWaveIndex && _player.CurrentLvl <= MidWaveIndex)
+        if (_player.CurrentLvl > EasyWaveIndex && _player.CurrentLvl <= MidWaveIndex)
         {
             _countWaves = 3;
             SetWaves(_countWaves, MidWaveIndex);
@@ -224,7 +221,6 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < countWave; i++)
         {
-
             for (int j = 0; j < WaveLenght; j++)
             {
                 enemies.Add(_enemiesPrefab.GetEnemy(complexityWave));

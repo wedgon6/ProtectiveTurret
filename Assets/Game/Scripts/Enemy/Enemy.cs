@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private int _countScore;
     [SerializeField] private GameObject _backlight;
     [SerializeField] private GameObject _deadParticle;
+    [SerializeField] private TypeEnemy _typeEnemy;
 
     private RedLine _target;
     private float _health;
@@ -17,7 +18,6 @@ public class Enemy : MonoBehaviour, IPoolObject
     private EnemySpawner _spawner;
 
     public event Action<IPoolObject> PoolReturned;
-
     public RedLine Target => _target;
     public Player Player => _player;
     public EnemySpawner Spawner => _spawner;
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     public int Revard => _revard;
     public int CountScore => _countScore;
     public bool IsDead => _isDead;
+    public string TypeEnemy => _typeEnemy.ToString();
 
     public void Initialize(RedLine target, Player player, EnemySpawner spawner)
     {
@@ -57,8 +58,7 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     public void Dead()
     {
-        Instantiate(_deadParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), 
-            Quaternion.identity);
+        Instantiate(_deadParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         ReturnToPool();
     }
 

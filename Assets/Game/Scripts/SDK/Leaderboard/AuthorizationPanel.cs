@@ -22,7 +22,7 @@ public class AuthorizationPanel : MonoBehaviour
 
     private void OnAuthorization()
     {
-        PlayerAccount.Authorize(onRequestDataPermission);
+        PlayerAccount.Authorize(OnRequestDataPermission);
     }
 
     private void OnClose()
@@ -30,7 +30,7 @@ public class AuthorizationPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void onRequestDataPermission()
+    private void OnRequestDataPermission()
     {
         if (PlayerAccount.IsAuthorized)
             PlayerAccount.RequestPersonalProfileDataPermission();

@@ -5,7 +5,7 @@ public abstract class GameState : MonoBehaviour
 {
     [SerializeField] private List<GameTransition> _transitions;
 
-    protected Player Player;
+    private Player Player;
 
     public virtual void Enter(Player player)
     {

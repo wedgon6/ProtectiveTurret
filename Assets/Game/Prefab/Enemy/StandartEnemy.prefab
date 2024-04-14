@@ -1592,7 +1592,7 @@ GameObject:
   - component: {fileID: 4481766721524800508}
   - component: {fileID: 2632999975679311926}
   - component: {fileID: 2318008779594443870}
-  - component: {fileID: 5815604418124086089}
+  - component: {fileID: 380796430303778144}
   m_Layer: 0
   m_Name: StandartEnemy
   m_TagString: Untagged
@@ -1764,7 +1764,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5815604418124086089
+--- !u!114 &380796430303778144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4066225401008547691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3459d20bdeedcb946bf686451e317a42, type: 3}
+  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 30
@@ -1782,6 +1782,7 @@ MonoBehaviour:
   _countScore: 1
   _backlight: {fileID: 2860826041637481766}
   _deadParticle: {fileID: 133150, guid: 76ea784c73256a744b24cba813a687e3, type: 3}
+  _typeEnemy: 0
 --- !u!1 &4066225401008547693
 GameObject:
   m_ObjectHideFlags: 0

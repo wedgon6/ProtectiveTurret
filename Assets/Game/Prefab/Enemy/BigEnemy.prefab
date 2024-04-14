@@ -130,7 +130,7 @@ PrefabInstance:
       addedObject: {fileID: 7358923653883138065}
     - targetCorrespondingSourceObject: {fileID: 100090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6739722090190204700}
+      addedObject: {fileID: 2281184264422136211}
   m_SourcePrefab: {fileID: 100100000, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}
 --- !u!1 &757908868768017620 stripped
 GameObject:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 423995215545336823}
---- !u!114 &-6739722090190204700
+--- !u!114 &2281184264422136211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,16 +271,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 757908868768017620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab94806a748c384aadc3ba58d129aa7, type: 3}
+  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
+  _maxHealth: 200
   _stateMachine: {fileID: 6072563417528465466}
   _revard: 100
   _countScore: 5
   _backlight: {fileID: 5278115539753852586}
-  _tagEnemy: Big
   _deadParticle: {fileID: 172590, guid: 93c383a7bb6b65547bc569e7d7f10507, type: 3}
+  _typeEnemy: 2
 --- !u!4 &757908868768379124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400090, guid: bb8d48a41aaaba44aabd37acd087205c, type: 3}

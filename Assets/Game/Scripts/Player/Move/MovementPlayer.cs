@@ -103,12 +103,12 @@ public class MovementPlayer : MonoBehaviour
 
     private void ShowFriction(float direction)
     {
-        if(direction < 0)
+        if (direction < 0)
         {
             _leftSparks.SetActive(false);
             _rightSparks.SetActive(true);
         }
-        else if(direction > 0)
+        else if (direction > 0)
         {
             _leftSparks.SetActive(true);
             _rightSparks.SetActive(false);

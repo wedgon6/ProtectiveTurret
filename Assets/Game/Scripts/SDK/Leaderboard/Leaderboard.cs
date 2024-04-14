@@ -1,5 +1,5 @@
-using Agava.YandexGames;
 using System.Collections.Generic;
+using Agava.YandexGames;
 using UnityEngine;
 
 public class Leaderboard : MonoBehaviour
@@ -56,6 +56,7 @@ public class Leaderboard : MonoBehaviour
         });
 #endif
     }
+
     public void Fill()
     {
         _leaderboardPlayers.Clear();
@@ -63,7 +64,7 @@ public class Leaderboard : MonoBehaviour
         if (PlayerAccount.IsAuthorized == false)
             return;
 
-        Agava.YandexGames.Leaderboard.GetEntries(LeaderboardName, result  =>
+        Agava.YandexGames.Leaderboard.GetEntries(LeaderboardName, result =>
         {
             foreach (var entry in result.entries)
             {

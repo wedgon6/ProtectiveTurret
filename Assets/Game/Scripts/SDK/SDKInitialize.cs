@@ -1,15 +1,15 @@
-using Agava.YandexGames;
 using System.Collections;
+using Agava.YandexGames;
 using UnityEngine;
 
 public class SDKInitialize : MonoBehaviour
 {
     [SerializeField] private LoadindPlayScene _loadindScene;
 
-   private void Awake()
-   {
+    private void Awake()
+    {
         YandexGamesSdk.CallbackLogging = true;
-   }
+    }
 
     private IEnumerator Start()
     {

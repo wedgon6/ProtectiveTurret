@@ -29,7 +29,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
         if(PlayerAccount.IsAuthorized == false)
         {
-            if(PlayerPrefs.HasKey(DataKeyLocal))
+            if (PlayerPrefs.HasKey(DataKeyLocal))
                 _saveData = PlayerPrefs.GetString(DataKeyLocal);
             else
                 return false;
@@ -64,7 +64,7 @@ public class SaveAndLoadSytem : MonoBehaviour
     {
         _player.SetPlayerData(_gameInfo.PlayerLvl, _gameInfo.PlayerMoney, _gameInfo.CurrentExperiancePlayer, _gameInfo.PlayerMoveSpeed, _gameInfo.PlayerScore);
         _shoop.SetAbillitiesData(_gameInfo.AbilitiesLvl, _gameInfo.AbilitiesPrise);
-        _turretPresenter.SetCloudData(_gameInfo.IndexTurret,_gameInfo.AmmoSize,_gameInfo.ReloadTime);
+        _turretPresenter.SetCloudData(_gameInfo.IndexTurret, _gameInfo.AmmoSize, _gameInfo.ReloadTime);
     }
 
     private void OnEnable()
@@ -86,7 +86,7 @@ public class SaveAndLoadSytem : MonoBehaviour
 
         _gameInfo = JsonUtility.FromJson<GameInfo>(_saveData);
 
-        if(_gameInfo.PlayerLvl <= 0)
+        if (_gameInfo.PlayerLvl <= 0)
             return false;
 
         if (_gameInfo.AbilitiesLvl.Count == 0 || _gameInfo.AbilitiesPrise.Count == 0)

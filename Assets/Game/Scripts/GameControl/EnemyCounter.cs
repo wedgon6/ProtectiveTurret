@@ -9,7 +9,7 @@ public class EnemyCounter : MonoBehaviour
     private int _deadEnemiesCount;
 
     public event Action AllEnemiesDied;
-    public event Action<int,int> EnemiesDied;  
+    public event Action<int, int> EnemiesDied; 
 
     private void OnEnable()
     {

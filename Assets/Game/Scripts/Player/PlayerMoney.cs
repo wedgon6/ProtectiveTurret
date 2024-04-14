@@ -5,8 +5,9 @@ public class PlayerMoney : MonoBehaviour
 {
     private int _currentMoney = 0;
 
-    public int CurrentMoney => _currentMoney;
     public event Action MoneyChanged;
+    
+    public int CurrentMoney => _currentMoney;
 
     public void SetMoney(int currentMoneu)
     {
@@ -16,7 +17,7 @@ public class PlayerMoney : MonoBehaviour
 
     public void AddMoney(int money)
     {
-        if(money < 0)
+        if (money < 0)
             return;
 
         _currentMoney += money;

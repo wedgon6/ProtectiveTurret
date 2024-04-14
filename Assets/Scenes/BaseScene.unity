@@ -6430,9 +6430,9 @@ MonoBehaviour:
   - {fileID: 93494434}
   _player: {fileID: 1883925412}
   _enemiesPrefab:
-    _standartEnemy: {fileID: 5815604418124086089, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
-    _fastEnemy: {fileID: -4979026921783704034, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
-    _bigEnemy: {fileID: -6739722090190204700, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
+    _standartEnemy: {fileID: 380796430303778144, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
+    _fastEnemy: {fileID: 1557800830768509032, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
+    _bigEnemy: {fileID: 2281184264422136211, guid: ac6daaa99099d3a4eb6b7c0fcd9e8691, type: 3}
     _maxIndexStandartEnemy: 5
     _maxIndexFastEnemy: 8
     _maxIndexBigEnemy: 11

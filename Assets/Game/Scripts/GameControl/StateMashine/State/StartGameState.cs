@@ -18,13 +18,12 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
             base.Enter(player);
             _player.Initialize();
             _shoop.InitializeShop();
-            _volumeChange.StartPlayMusic(); 
+            _volumeChange.StartPlayMusic();
 
             if (_saveAndLoadSytem.TryGetSave())
             {
                 _saveAndLoadSytem.GetCloudSaveData();
                 _isFirstStart = false;
-
             }
             else
             {

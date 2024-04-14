@@ -1,4 +1,4 @@
-public interface IPooling 
+public interface IPooling
 {
     public void InstantiatePoolObject(IPoolObject poolObject);
     public bool TryPoolObject(out IPoolObject result);

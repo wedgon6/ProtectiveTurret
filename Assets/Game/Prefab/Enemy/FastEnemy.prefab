@@ -94,7 +94,7 @@ PrefabInstance:
       addedObject: {fileID: 257770585867714650}
     - targetCorrespondingSourceObject: {fileID: 100116, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4979026921783704034}
+      addedObject: {fileID: 1557800830768509032}
   m_SourcePrefab: {fileID: 100100000, guid: e5836d050fdb354479bcd0d285bf2f22, type: 3}
 --- !u!4 &3121570223316108183 stripped
 Transform:
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
---- !u!114 &-4979026921783704034
+--- !u!114 &1557800830768509032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3121570223316409967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6250e29422dd9ed4c821934cc8905a09, type: 3}
+  m_Script: {fileID: 11500000, guid: 95750ab89ad231145917ec2b386fcfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 50
@@ -248,8 +248,8 @@ MonoBehaviour:
   _revard: 50
   _countScore: 3
   _backlight: {fileID: 3256979516242732801}
-  _tagEnemy: Fast
   _deadParticle: {fileID: 166328, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+  _typeEnemy: 1
 --- !u!1001 &3256979516242535879
 PrefabInstance:
   m_ObjectHideFlags: 0

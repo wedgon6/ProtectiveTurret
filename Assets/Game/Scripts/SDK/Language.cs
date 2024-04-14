@@ -1,6 +1,6 @@
 ﻿internal enum Language
 {
-    en,
-    ru,
-    tr,
+    En,
+    Ru,
+    Tr,
 }

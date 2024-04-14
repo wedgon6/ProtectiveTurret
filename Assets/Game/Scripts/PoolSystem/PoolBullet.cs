@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoolBullet : MonoBehaviour, IPooling
 {
-    private List<Bullet> _bulletsInPool = new List<Bullet>(); 
+    private List<Bullet> _bulletsInPool = new List<Bullet>();
 
     public void InstantiatePoolObject(IPoolObject poolObject)
     {

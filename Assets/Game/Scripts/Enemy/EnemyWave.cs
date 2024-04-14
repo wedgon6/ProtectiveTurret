@@ -20,7 +20,7 @@ public class EnemyWave
 
         _currentIndex++;
 
-        if (_currentIndex > _template.Count-1)
+        if (_currentIndex > _template.Count - 1)
             return null;
 
         return _template[_currentIndex];

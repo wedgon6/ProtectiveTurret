@@ -15,7 +15,7 @@ public class PoolEnemy : MonoBehaviour, IPooling
 
     public void PoolObject(IPoolObject poolObject)
     {
-        var enemy =  poolObject as Enemy;
+        var enemy = poolObject as Enemy;
         _enemiesInPool.Add(enemy);
     }
 

@@ -1,5 +1,5 @@
-using UnityEngine;
 using Agava.YandexGames;
+using UnityEngine;
 
 public class GameStateMashine : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class GameStateMashine : MonoBehaviour
 
     private void Start()
     {
-        Reset(_firstState);
+        EnterState(_firstState);
     }
 
     private void Update()
@@ -37,7 +37,7 @@ public class GameStateMashine : MonoBehaviour
         }
     }
 
-    private void Reset(GameState startState)
+    private void EnterState(GameState startState)
     {
         _currentState = startState;
 

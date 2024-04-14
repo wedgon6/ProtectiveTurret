@@ -2,21 +2,21 @@ using System;
 using UnityEngine;
 
 public class PlayerLevel : MonoBehaviour
-{ 
+{
     private const int ExperienceToNextLvlup = 3;
     private const int StartPalerLvl = 1;
 
     private int _currentPlayerLvl = StartPalerLvl;
     private int _currentExperience = 0;
 
-    public int ExperienceToNextLvl => ExperienceToNextLvlup;
-    public int CurrentExperience => _currentExperience;
-    public int CurrentPlayerLvl => _currentPlayerLvl;
-
     public event Action<int, int> PlayerExpirianceChanged;
     public event Action PlayerLvlChanged;
     public event Action DataChanged;
     public event Action LvLPlayerSet;
+
+    public int ExperienceToNextLvl => ExperienceToNextLvlup;
+    public int CurrentExperience => _currentExperience;
+    public int CurrentPlayerLvl => _currentPlayerLvl;
 
     public void SetData(int currentLvl, int currentExperiance)
     {
@@ -31,7 +31,7 @@ public class PlayerLevel : MonoBehaviour
         _currentExperience++;
         PlayerExpirianceChanged?.Invoke(_currentExperience,ExperienceToNextLvlup);
 
-        if(_currentExperience == ExperienceToNextLvlup)
+        if (_currentExperience == ExperienceToNextLvlup)
         {
             _currentExperience = 0;
             _currentPlayerLvl++;
