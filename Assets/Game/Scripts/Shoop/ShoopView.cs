@@ -22,7 +22,7 @@ public class ShoopView : MonoBehaviour
         _lable.text = abillity.Lable;
         _price.text = abillity.Price.ToString();
         _icon.sprite = abillity.Icon;
-        _currentLvl.text = abillity.CurrentLvl.ToString();
+        _currentLvl.text = abillity.CurrentLvlAbillity.ToString();
         _abillity.PriceChanged += OnPriceChenged;
         _abillity.LvlChanged += OnLvlAbillityChenged;
     }
@@ -44,7 +44,7 @@ public class ShoopView : MonoBehaviour
 
     private void OnLvlAbillityChenged()
     {
-        _currentLvl.text = _abillity.CurrentLvl.ToString();
+        _currentLvl.text = _abillity.CurrentLvlAbillity.ToString();
     }
 
     private void OnButtonClick()

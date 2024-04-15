@@ -115,7 +115,7 @@ public class Turret : MonoBehaviour
     {
         Bullet bullet;
 
-        if(_poolBullet.TryPoolObject(out IPoolObject pollBullet))
+        if (_poolBullet.TryPoolObject(out IPoolObject pollBullet))
         {
             bullet = pollBullet as Bullet;
             bullet.transform.position = _shootPoints[shootPointIndex].transform.position;
@@ -140,7 +140,7 @@ public class Turret : MonoBehaviour
     {
         int curretPoint = 0;
         
-        while(curretPoint <= _shootPoints.Length)
+        while (curretPoint <= _shootPoints.Length)
         {
             yield return new WaitForSeconds(_delayShot);
 
@@ -148,7 +148,6 @@ public class Turret : MonoBehaviour
             {
                 for (int j = 0; j < _shootPoints.Length; j++)
                 {
-
                     if (_currentCoutBullet <= 0)
                     {
                         CorountineStart(Recharge());

@@ -5,7 +5,8 @@ public class Shoop : MonoBehaviour
 {
     [SerializeField] private List<PlayerAbillity> _abillities;
     [SerializeField] private Player _player;
-    [SerializeField] private PlayerLevel _playerLvl;  
+    [SerializeField] private PlayerMoney _moneyPlayer;
+    [SerializeField] private PlayerLevel _playerLvl;
     [SerializeField] private ShoopView _template;
     [SerializeField] private GameObject _itemContainer;
 
@@ -47,12 +48,12 @@ public class Shoop : MonoBehaviour
 
     private void TrySellAbillity(PlayerAbillity abillity, ShoopView view)
     {
-        if (abillity.Price > _player.CurrentMoney)
+        if (abillity.Price > _moneyPlayer.CurrentMoney)
             return;
 
-        if (abillity.Price <= _player.CurrentMoney)
+        if (abillity.Price <= _moneyPlayer.CurrentMoney)
         {
-            _player.ReduceMoney(abillity.Price);
+            _moneyPlayer.ReduceMoney(abillity.Price);
             abillity.Buy(_player);
             _playerLvl.AddExperience();
         }

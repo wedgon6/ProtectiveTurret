@@ -13,13 +13,15 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     private RedLine _target;
     private float _health;
-    private Player _player;
     private bool _isDead;
     private EnemySpawner _spawner;
+    private PlayerScore _playerScore;
+    private PlayerMoney _playerMoney;
 
     public event Action<IPoolObject> PoolReturned;
     public RedLine Target => _target;
-    public Player Player => _player;
+    public PlayerScore PlayerScore => _playerScore;
+    public PlayerMoney PlayerMoney => _playerMoney;
     public EnemySpawner Spawner => _spawner;
     public float Health => _health;
     public int Revard => _revard;
@@ -27,12 +29,13 @@ public class Enemy : MonoBehaviour, IPoolObject
     public bool IsDead => _isDead;
     public string TypeEnemy => _typeEnemy.ToString();
 
-    public void Initialize(RedLine target, Player player, EnemySpawner spawner)
+    public void Initialize(RedLine target, EnemySpawner spawner, PlayerScore playerScore, PlayerMoney playerMoney)
     {
         _target = target;
         _health = _maxHealth;
-        _player = player;
         _spawner = spawner;
+        _playerScore = playerScore;
+        _playerMoney = playerMoney;
     }
 
     public void TakeDamage(float damage)

@@ -24,12 +24,12 @@ public class Bullet : MonoBehaviour, IPoolObject
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.TryGetComponent(out Enemy enemy))
+        if (collision.collider.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
             ReturnToPool();
         }
-        else if(collision.collider.TryGetComponent(out Barrier barrier) || collision.collider.TryGetComponent(out Terrain terrain))
+        else if (collision.collider.TryGetComponent(out Barrier barrier) || collision.collider.TryGetComponent(out Terrain terrain))
         {
             ReturnToPool();
         }

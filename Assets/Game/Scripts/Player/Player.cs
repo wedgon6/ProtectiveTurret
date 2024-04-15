@@ -13,11 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem _deadEffect;
 
     private Turret _turret;
-    private int _currentMoney;
     private MovementPlayer _movement;
 
     public Turret CurrentTurret => _turret;
-    public int CurrentMoney => _currentMoney;
+    public int CurrentMoney => _money.CurrentMoney;
     public int CurrentLvl => _playerLevel.CurrentPlayerLvl;
     public int CurrenExpereance => _playerLevel.CurrentExperience;
     public int CurrentScore => _playerScore.CurrentScore;
@@ -25,8 +24,6 @@ public class Player : MonoBehaviour
 
     public void Initialize()
     {
-        _currentMoney = _money.CurrentMoney;
-        _money.MoneyChanged += OnMoneyChenged;
         _movement = GetComponent<MovementPlayer>();
     }
 
@@ -50,31 +47,10 @@ public class Player : MonoBehaviour
         _turret.RechargeTurret();
     }
 
-    public void AddMoney(int money)
-    {
-        _money.AddMoney(money);
-    }
-
-    public void AddScore(int score)
-    {
-        _playerScore.AddScore(score);
-    }
-
-    public void ReduceMoney(int money)
-    {
-        _money.ReduceMoney(money);
-    }
-
-    public void SetMovmentMode(bool canMove)
-    {
-        _movement.SetModeMovmen(canMove);
-    }
-
-    public void LoseGame(bool activStatus)
+    public void PlayerDeathEffect(bool activStatus)
     {
         _turret.gameObject.SetActive(activStatus);
         _turret.transform.rotation = _turretPosition.rotation;
-        _movement.SetModeMovmen(activStatus);
 
         if (activStatus == false)
             _deadEffect.Play();
@@ -101,10 +77,5 @@ public class Player : MonoBehaviour
     public void DiscountCooldownReload()
     {
         _turretPresenter.ReduceCooldownReload();
-    }
-
-    private void OnMoneyChenged()
-    {
-        _currentMoney = _money.CurrentMoney;
     }
 }

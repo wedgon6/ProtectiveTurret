@@ -65,7 +65,7 @@ public class TurretPresenter : MonoBehaviour
 
     private void OnPlayerLvlUp()
     {
-        if(_playerLevel.CurrentPlayerLvl % 2 == 0)
+        if (_playerLevel.CurrentPlayerLvl % 2 == 0)
         {
             if (_indexTurret > _baseTurrets.Count)
             {
@@ -82,7 +82,7 @@ public class TurretPresenter : MonoBehaviour
 
     private void InitializePlayerTurret()
     {
-        if(_playerLevel.CurrentPlayerLvl == 1)
+        if (_playerLevel.CurrentPlayerLvl == 1)
         {
             _currentTurret = _baseTurrets[0];
             _isHaveTurret = true;
@@ -90,7 +90,7 @@ public class TurretPresenter : MonoBehaviour
         }
         else if (_indexTurret >= _baseTurrets.Count)
         {
-            _currentTurret = _baseTurrets[_baseTurrets.Count-1];
+            _currentTurret = _baseTurrets[_baseTurrets.Count - 1];
             _player.InitializeTurret(_currentTurret, _baseAmmouSize, _baseReloadTime);
         }
         else

@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private RedLine _target;
     [SerializeField] private Transform[] _spawnPoint;
     [SerializeField] private Player _player;
+    [SerializeField] private PlayerScore _playerScore;
+    [SerializeField] private PlayerMoney _playerMoney;
     [SerializeField] private EnemiesList _enemiesPrefab;
 
     [SerializeField] private PoolEnemy _poolStandartEnemy;
@@ -131,21 +133,21 @@ public class EnemySpawner : MonoBehaviour
     {
         if (enemy.TryGetComponent(out Enemy standartEnemy))
         {
-            enemy.Initialize(_target, _player, this);
+            enemy.Initialize(_target, this, _playerScore, _playerMoney);
             _poolStandartEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
         if (enemy.TryGetComponent(out Enemy fastEnemy))
         {
-            enemy.Initialize(_target, _player, this);
+            enemy.Initialize(_target, this, _playerScore, _playerMoney);
             _poolFastEnemy.InstantiatePoolObject(enemy);
             return;
         }
 
         if (enemy.TryGetComponent(out Enemy bigEnemy))
         {
-            enemy.Initialize(_target, _player, this);
+            enemy.Initialize(_target, this, _playerScore, _playerMoney);
             _poolBigEnemy.InstantiatePoolObject(enemy);
             return;
         }

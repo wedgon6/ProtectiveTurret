@@ -1,5 +1,5 @@
-using DG.Tweening;
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,13 +8,13 @@ public class SizeAmmoView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _amountBullet;
     [SerializeField] private Image _reloadImage;
-    
+
     private Turret _clip;
     private Coroutine _rechargeCoroutine;
 
     public void SetTurret(Turret turret)
     {
-        if(_clip == null)
+        if (_clip == null)
         {
             _clip = turret;
         }
@@ -39,7 +39,7 @@ public class SizeAmmoView : MonoBehaviour
 
     private void OnDisable()
     {
-        if(_clip != null)
+        if (_clip != null)
         {
             _clip.ClipSizeChanged -= OnAmountChanged;
             _clip.AmmouRecharging -= OnRecharge;

@@ -2814,6 +2814,7 @@ MonoBehaviour:
   - {fileID: 402492446}
   _spawner: {fileID: 1001777546}
   _player: {fileID: 1883925412}
+  _movementPlayer: {fileID: 1883925405}
   _battleStatePanel: {fileID: 1512516294}
   _saveAndLoadSytem: {fileID: 402492451}
 --- !u!114 &402492442
@@ -2844,6 +2845,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 402492442}
   _player: {fileID: 1883925412}
+  _movementPlayer: {fileID: 1883925405}
   _menuUI: {fileID: 1056023459}
   _turretPresenter: {fileID: 1189180570}
   _leaderboard: {fileID: 1110654311}
@@ -6429,6 +6431,8 @@ MonoBehaviour:
   - {fileID: 220896458}
   - {fileID: 93494434}
   _player: {fileID: 1883925412}
+  _playerScore: {fileID: 1883925417}
+  _playerMoney: {fileID: 1883925413}
   _enemiesPrefab:
     _standartEnemy: {fileID: 380796430303778144, guid: 444a01dbc651b6e499c16943edc5e865, type: 3}
     _fastEnemy: {fileID: 1557800830768509032, guid: dd3f5391a346ab64b834b3129d16bb2a, type: 3}
@@ -7517,6 +7521,7 @@ MonoBehaviour:
   - {fileID: -4305921965764162190, guid: dc73073ffdfe7a545a1d5f4156845b24, type: 3}
   - {fileID: -382068185702370769, guid: f5cb89186a4207b45831ac4578da2b07, type: 3}
   _player: {fileID: 1883925412}
+  _moneyPlayer: {fileID: 1883925413}
   _playerLvl: {fileID: 1883925415}
   _template: {fileID: 5338374537282966022, guid: c783a3c5897f609438e05d7f31cc4f99, type: 3}
   _itemContainer: {fileID: 1131702279}
@@ -7757,7 +7762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba390f134d16f84b90d049c944c13f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1883925412}
+  _playerMoney: {fileID: 1883925413}
   _volumeChange: {fileID: 282434606}
   _revard: 500
   _save: {fileID: 402492451}

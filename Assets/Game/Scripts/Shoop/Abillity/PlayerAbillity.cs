@@ -1,5 +1,5 @@
-using Lean.Localization;
 using System;
+using Lean.Localization;
 using TMPro;
 using UnityEngine;
 
@@ -7,20 +7,24 @@ public abstract class PlayerAbillity : MonoBehaviour
 {
     [SerializeField] private TMP_Text _lable;
     [SerializeField] private Sprite _icon;
-    [SerializeField] protected float _multiplier;
+    [SerializeField] private float _multiplier;
     [SerializeField] private int _startPrice;
     [SerializeField] private LeanLocalizedTextMeshProUGUI _localized;
 
-    protected int _currentLvl = 1;
-    protected int _currentPrice;
+    private int _currentLvl = 1;
+    private int _currentPrice;
+
+    public event Action PriceChanged;
+    public event Action LvlChanged;
+
+    protected float Multiplier => _multiplier;
+    protected int CurrentLvl => _currentLvl;
+    protected int CurrentPrice => _currentPrice;
 
     public string Lable => _lable.text;
     public Sprite Icon => _icon;
     public int Price => _currentPrice;
-    public int CurrentLvl => _currentLvl;
-
-    public event Action PriceChanged;
-    public event Action LvlChanged;
+    public int CurrentLvlAbillity => _currentLvl;
 
     public void Initialize(int currentLvL = 1)
     {
@@ -41,6 +45,8 @@ public abstract class PlayerAbillity : MonoBehaviour
 
     public virtual void Buy(Player player)
     {
+        _currentPrice = (int)Math.Round(CurrentPrice * Multiplier, 0);
+        _currentLvl++;
         PriceChanged?.Invoke();
         LvlChanged?.Invoke();
     }

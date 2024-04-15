@@ -11,17 +11,21 @@ public abstract class EnemyState : MonoBehaviour
     public Enemy Enemy => _enemy;
 
     protected RedLine Target { get; set; }
+    protected PlayerScore PlayerScore { get; set; }
+    protected PlayerMoney PlayerMoney { get; set; }
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
     }
 
-    public void Enter(RedLine target)
+    public void Enter(RedLine target, PlayerScore playerScore, PlayerMoney playerMoney)
     {
         if (enabled == false)
         {
             Target = target;
+            PlayerScore = playerScore;
+            PlayerMoney = playerMoney;
             enabled = true;
 
             foreach (var transition in _transitions)

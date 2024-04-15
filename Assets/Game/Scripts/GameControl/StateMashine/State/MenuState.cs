@@ -7,6 +7,7 @@ public class MenuState : GameState
     private const float _startPositionZ = 4.96f;
 
     [SerializeField] private Player _player;
+    [SerializeField] private MovementPlayer _movementPlayer;
     [SerializeField] private MenuPanel _menuUI;
     [SerializeField] private TurretPresenter _turretPresenter;
     [SerializeField] private Leaderboard _leaderboard;
@@ -24,7 +25,7 @@ public class MenuState : GameState
             ActivatePlayerView();
 
         _turretPresenter.TrySetTurret();
-        _player.SetMovmentMode(false);
+        _movementPlayer.SetModeMovmen(false);
         _player.transform.position = new Vector3(_startPositionX, _startPositionY, _startPositionZ);
 #if UNITY_WEBGL && !UNITY_EDITOR
         _leaderboard.SetPlayer(_player.CurrentScore);
@@ -37,6 +38,7 @@ public class MenuState : GameState
 #if UNITY_WEBGL && !UNITY_EDITOR
         _saveAndLoadSytem.SetSaveData();
 #endif
+        _movementPlayer.SetModeMovmen(true);
         base.Exit();
     }
 

@@ -4,6 +4,7 @@ public class BattleState : GameState
 {
     [SerializeField] private EnemySpawner _spawner;
     [SerializeField] private Player _player;
+    [SerializeField] private MovementPlayer _movementPlayer;
     [SerializeField] private BattleStatePanel _battleStatePanel;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
 
@@ -12,7 +13,6 @@ public class BattleState : GameState
         _battleStatePanel.gameObject.SetActive(true);
         base.Enter(player);
         _player.ResetTurret();
-        _player.SetMovmentMode(true);
         _spawner.RestSpawner();
     }
 
@@ -20,6 +20,7 @@ public class BattleState : GameState
     {
         _saveAndLoadSytem.SetSaveData();
         _battleStatePanel.gameObject.SetActive(false);
+        _movementPlayer.SetModeMovmen(false);
         base.Exit();
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AdvertisementPresenter : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerMoney _playerMoney;
     [SerializeField] private AudioHandler _volumeChange;
     [SerializeField] private int _revard = 500;
     [SerializeField] private SaveAndLoadSytem _save;
@@ -39,7 +39,7 @@ public class AdvertisementPresenter : MonoBehaviour
 
     private void OnRewardedCallback()
     {
-        _player.AddMoney(_revard);
+        _playerMoney.AddMoney(_revard);
         _save.SetSaveData();
     }
 }

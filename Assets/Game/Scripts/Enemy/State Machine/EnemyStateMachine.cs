@@ -5,10 +5,14 @@ public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private EnemyState _firstState;
 
+    private PlayerMoney _playerMoney;
+    private PlayerScore _playerScore;
     private RedLine _target;
     private EnemyState _currentState;
     private Enemy _enemy;
 
+    public PlayerMoney MoneyPlayer => _playerMoney;
+    public PlayerScore PlayerScore => _playerScore;
     public EnemyState CurrentState => _currentState;
 
     public void ResetStete()
@@ -20,6 +24,8 @@ public class EnemyStateMachine : MonoBehaviour
     {
         _enemy = GetComponent<Enemy>();
         _target = _enemy.Target;
+        _playerScore = _enemy.PlayerScore;
+        _playerMoney = _enemy.PlayerMoney;
         EnterState(_firstState);
     }
 
@@ -44,7 +50,7 @@ public class EnemyStateMachine : MonoBehaviour
 
         if (_currentState != null)
         {
-            _currentState.Enter(_target);
+            _currentState.Enter(_target, _playerScore, _playerMoney);
         }
     }
 
@@ -59,7 +65,7 @@ public class EnemyStateMachine : MonoBehaviour
 
         if (_currentState != null)
         {
-            _currentState.Enter(_target);
+            _currentState.Enter(_target, _playerScore, _playerMoney);
         }
     }
 }

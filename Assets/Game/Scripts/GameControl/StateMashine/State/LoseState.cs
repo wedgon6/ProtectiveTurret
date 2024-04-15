@@ -10,7 +10,7 @@ public class LoseState : GameState
     public override void Enter(Player player)
     {
         _loseGamePanel.gameObject.SetActive(true);
-        _player.LoseGame(false);
+        _player.PlayerDeathEffect(false);
         _spawner.PutEnemyToPool();
         base.Enter(player);
     }
@@ -20,6 +20,6 @@ public class LoseState : GameState
         _advertisementPresenter.ShowInterstitialAd();
         base.Exit();
         _loseGamePanel.gameObject.SetActive(false);
-        _player.LoseGame(true);
+        _player.PlayerDeathEffect(true);
     }
 }
