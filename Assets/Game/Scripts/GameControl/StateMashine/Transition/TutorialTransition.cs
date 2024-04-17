@@ -1,4 +1,4 @@
-public class TutorialTransition : GameTransition
+public class TutorialTransition : Transition
 {
     public void StartTutorial()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WinTransition : GameTransition
+public class WinTransition : Transition
 {
     [SerializeField] private EnemyCounter _enemyCounter;
 

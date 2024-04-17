@@ -13,9 +13,9 @@ namespace Assets.Game.Scripts.GameControl.StateMashine.State
 
         private bool _isFirstStart;
 
-        public override void Enter(Player player)
+        public override void Enter()
         {
-            base.Enter(player);
+            base.Enter();
             _player.Initialize();
             _shoop.InitializeShop();
             _volumeChange.StartPlayMusic();

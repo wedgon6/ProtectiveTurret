@@ -7,12 +7,12 @@ public class LoseState : GameState
     [SerializeField] private Player _player;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
 
-    public override void Enter(Player player)
+    public override void Enter()
     {
         _loseGamePanel.gameObject.SetActive(true);
         _player.PlayerDeathEffect(false);
         _spawner.PutEnemyToPool();
-        base.Enter(player);
+        base.Enter();
     }
 
     public override void Exit()

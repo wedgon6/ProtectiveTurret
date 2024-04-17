@@ -5,10 +5,10 @@ public class WinState : GameState
     [SerializeField] private WinGamePanel _winGamePanel;
     [SerializeField] private AdvertisementPresenter _advertisementPresenter;
 
-    public override void Enter(Player player)
+    public override void Enter()
     {
         _winGamePanel.gameObject.SetActive(true);
-        base.Enter(player);
+        base.Enter();
     }
 
     public override void Exit()

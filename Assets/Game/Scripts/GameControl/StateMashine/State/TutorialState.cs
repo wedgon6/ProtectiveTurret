@@ -4,9 +4,9 @@ public class TutorialState : GameState
 {
     [SerializeField] private DialoguePresenter _dialogue;
 
-    public override void Enter(Player player)
+    public override void Enter()
     {
-        base.Enter(player);
+        base.Enter();
         _dialogue.gameObject.SetActive(true);
         _dialogue.StartDialogue();
     }

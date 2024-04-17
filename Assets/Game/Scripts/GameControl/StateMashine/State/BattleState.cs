@@ -8,10 +8,10 @@ public class BattleState : GameState
     [SerializeField] private BattleStatePanel _battleStatePanel;
     [SerializeField] private SaveAndLoadSytem _saveAndLoadSytem;
 
-    public override void Enter(Player player)
+    public override void Enter()
     {
         _battleStatePanel.gameObject.SetActive(true);
-        base.Enter(player);
+        base.Enter();
         _player.ResetTurret();
         _spawner.RestSpawner();
     }

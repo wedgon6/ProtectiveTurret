@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LoseTransition : GameTransition
+public class LoseTransition : Transition
 {
     [SerializeField] private RedLine _redLine;
 

@@ -16,9 +16,9 @@ public class MenuState : GameState
 
     private bool _isMenuUiActive = false;
 
-    public override void Enter(Player player)
+    public override void Enter()
     {
-        base.Enter(player);
+        base.Enter();
         _menuUI.gameObject.SetActive(true);
 
         if (_isMenuUiActive == false)

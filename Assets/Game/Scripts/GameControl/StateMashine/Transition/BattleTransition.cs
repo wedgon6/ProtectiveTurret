@@ -1,4 +1,4 @@
-public class BattleTransition : GameTransition
+public class BattleTransition : Transition
 {
     public void StartBattle()
     {
