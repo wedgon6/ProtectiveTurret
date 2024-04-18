@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoseGamePanel : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
-    [SerializeField] private Button _restartButton;
+    public class LoseGamePanel : MonoBehaviour
+    {
+        [SerializeField] private Button _restartButton;
+    }
 }

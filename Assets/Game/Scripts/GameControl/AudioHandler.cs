@@ -1,39 +1,42 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioHandler : MonoBehaviour
+namespace ProtectiveTurret.GameControl
 {
-    [SerializeField] private Image _controlButton;
-    [SerializeField] private Sprite _onAudioIcon;
-    [SerializeField] private Sprite _offAudioIcon;
-    [SerializeField] private AudioSource _audioSource;
-
-    private bool _isAudioPlay = true;
-
-    public bool IsAudioPlay => _isAudioPlay;
-
-    public void StartPlayMusic()
+    public class AudioHandler : MonoBehaviour
     {
-        _audioSource.Play();
-        _audioSource.volume = 1f;
-        AudioListener.volume = 1f;
-        _audioSource.playOnAwake = true;
-    }
+        [SerializeField] private Image _controlButton;
+        [SerializeField] private Sprite _onAudioIcon;
+        [SerializeField] private Sprite _offAudioIcon;
+        [SerializeField] private AudioSource _audioSource;
 
-    public void ChengeAudioPlay()
-    {
-        _isAudioPlay = !_isAudioPlay;
+        private bool _isAudioPlay = true;
 
-        if (_isAudioPlay == true)
+        public bool IsAudioPlay => _isAudioPlay;
+
+        public void StartPlayMusic()
         {
+            _audioSource.Play();
+            _audioSource.volume = 1f;
             AudioListener.volume = 1f;
-            _controlButton.sprite = _onAudioIcon;
+            _audioSource.playOnAwake = true;
         }
 
-        if (_isAudioPlay == false)
+        public void ChengeAudioPlay()
         {
-            AudioListener.volume = 0f;
-            _controlButton.sprite = _offAudioIcon;
+            _isAudioPlay = !_isAudioPlay;
+
+            if (_isAudioPlay == true)
+            {
+                AudioListener.volume = 1f;
+                _controlButton.sprite = _onAudioIcon;
+            }
+
+            if (_isAudioPlay == false)
+            {
+                AudioListener.volume = 0f;
+                _controlButton.sprite = _offAudioIcon;
+            }
         }
     }
 }

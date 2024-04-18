@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class BattleStatePanel : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
+    public class BattleStatePanel : MonoBehaviour
+    {
+    }
 }

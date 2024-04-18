@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class MenuPanel : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
+    public class MenuPanel : MonoBehaviour
+    {
+    }
 }

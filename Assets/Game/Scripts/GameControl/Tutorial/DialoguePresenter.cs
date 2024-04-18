@@ -1,49 +1,53 @@
+using ProtectiveTurret.StateMashineScripts;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialoguePresenter : MonoBehaviour
+namespace ProtectiveTurret.GameControl
 {
-    [SerializeField] private List<DialoguePhrase> _dialoguePhrases;
-    [SerializeField] private TMP_Text _lable;
-    [SerializeField] private Image _icon;
-    [SerializeField] private MenuTransition _menuTransition;
-
-    private bool _isContinueDialog = false;
-    private Coroutine _corontine;
-
-    public void ContinueDialog()
+    public class DialoguePresenter : MonoBehaviour
     {
-        _isContinueDialog = true;
-    }
+        [SerializeField] private List<DialoguePhrase> _dialoguePhrases;
+        [SerializeField] private TMP_Text _lable;
+        [SerializeField] private Image _icon;
+        [SerializeField] private MenuTransition _menuTransition;
 
-    public void StartDialogue()
-    {
-        if (_corontine != null)
-            StopCoroutine(_corontine);
+        private bool _isContinueDialog = false;
+        private Coroutine _corontine;
 
-        _corontine = StartCoroutine(RunStudyDialog());
-    }
-
-    private IEnumerator RunStudyDialog()
-    {
-        for (int i = 0; i < _dialoguePhrases.Count; i++)
+        public void ContinueDialog()
         {
-            _isContinueDialog = false;
-            _dialoguePhrases[i].UpdateLocalization();
-            _lable.text = _dialoguePhrases[i].Phease.text;
-            _icon.sprite = _dialoguePhrases[i].Icon;
-
-            yield return new WaitUntil(() => _isContinueDialog);
+            _isContinueDialog = true;
         }
 
-        EndDialogue();
-    }
+        public void StartDialogue()
+        {
+            if (_corontine != null)
+                StopCoroutine(_corontine);
 
-    private void EndDialogue()
-    {
-        _menuTransition.ReturnToMeny();
+            _corontine = StartCoroutine(RunStudyDialog());
+        }
+
+        private IEnumerator RunStudyDialog()
+        {
+            for (int i = 0; i < _dialoguePhrases.Count; i++)
+            {
+                _isContinueDialog = false;
+                _dialoguePhrases[i].UpdateLocalization();
+                _lable.text = _dialoguePhrases[i].Phease.text;
+                _icon.sprite = _dialoguePhrases[i].Icon;
+
+                yield return new WaitUntil(() => _isContinueDialog);
+            }
+
+            EndDialogue();
+        }
+
+        private void EndDialogue()
+        {
+            _menuTransition.ReturnToMeny();
+        }
     }
 }

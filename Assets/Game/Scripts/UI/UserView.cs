@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class UserView : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
+    public class UserView : MonoBehaviour
+    {
+    }
 }

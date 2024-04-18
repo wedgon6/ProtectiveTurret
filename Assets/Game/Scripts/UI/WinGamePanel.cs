@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class WinGamePanel : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
+    public class WinGamePanel : MonoBehaviour
+    {
+    }
 }

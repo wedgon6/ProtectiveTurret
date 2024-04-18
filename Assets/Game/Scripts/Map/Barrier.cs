@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class Barrier : MonoBehaviour
+namespace ProtectiveTurret.Map
 {
+    public class Barrier : MonoBehaviour
+    {
+    }
 }

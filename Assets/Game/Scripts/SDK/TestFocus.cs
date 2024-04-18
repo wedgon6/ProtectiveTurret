@@ -1,41 +1,44 @@
 using Agava.WebUtility;
 using UnityEngine;
 
-public class TestFocus : MonoBehaviour
+namespace ProtectiveTurret.SDK
 {
-    [SerializeField] private AudioSource _audioSource;
-
-    private void OnEnable()
+    public class TestFocus : MonoBehaviour
     {
-        Application.focusChanged += OnInBackgroundChangeApp;
-        WebApplication.InBackgroundChangeEvent += OnInBackgroundChangeWed;
-    }
+        [SerializeField] private AudioSource _audioSource;
 
-    private void OnDisable()
-    {
-        Application.focusChanged -= OnInBackgroundChangeApp;
-        WebApplication.InBackgroundChangeEvent -= OnInBackgroundChangeWed;
-    }
+        private void OnEnable()
+        {
+            Application.focusChanged += OnInBackgroundChangeApp;
+            WebApplication.InBackgroundChangeEvent += OnInBackgroundChangeWed;
+        }
 
-    private void OnInBackgroundChangeApp(bool inApp)
-    {
-        MuteAudio(!inApp);
-        PauseGame(!inApp);
-    }
+        private void OnDisable()
+        {
+            Application.focusChanged -= OnInBackgroundChangeApp;
+            WebApplication.InBackgroundChangeEvent -= OnInBackgroundChangeWed;
+        }
 
-    private void OnInBackgroundChangeWed(bool isBackground)
-    {
-        MuteAudio(isBackground);
-        PauseGame(isBackground);
-    }
+        private void OnInBackgroundChangeApp(bool inApp)
+        {
+            MuteAudio(!inApp);
+            PauseGame(!inApp);
+        }
 
-    private void MuteAudio(bool value)
-    {
-        _audioSource.volume = value ? 0 : 1;
-    }
+        private void OnInBackgroundChangeWed(bool isBackground)
+        {
+            MuteAudio(isBackground);
+            PauseGame(isBackground);
+        }
 
-    private void PauseGame(bool value)
-    {
-        Time.timeScale = value ? 0 : 1;
+        private void MuteAudio(bool value)
+        {
+            _audioSource.volume = value ? 0 : 1;
+        }
+
+        private void PauseGame(bool value)
+        {
+            Time.timeScale = value ? 0 : 1;
+        }
     }
 }

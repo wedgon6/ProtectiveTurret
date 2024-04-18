@@ -92,10 +92,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
-      propertyPath: _poolBullet
-      value: 
-      objectReference: {fileID: -6614943964508633847}
-    - target: {fileID: 800640645, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       propertyPath: _shootSounds.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -184,10 +180,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000013566905100, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6614943964508633847}
+      addedObject: {fileID: -512252288170216116}
     - targetCorrespondingSourceObject: {fileID: 1000013566905100, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -512252288170216116}
+      addedObject: {fileID: 5843983343968034811}
     - targetCorrespondingSourceObject: {fileID: 1787993227, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8450703133356050626}
@@ -197,18 +193,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013566905100, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}
   m_PrefabInstance: {fileID: 7743801279217627740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-6614943964508633847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7742830967665359184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eecc4db15963cb840aae36fc4ee9f207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-512252288170216116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,8 +208,20 @@ MonoBehaviour:
   _shootPoints:
   - {fileID: 8450703133356050626}
   _bullet: {fileID: 3873999306452492835, guid: c04b9d23b30a2914d98584706d3ebd31, type: 3}
-  _poolBullet: {fileID: -6614943964508633847}
+  _poolBullet: {fileID: 5843983343968034811}
   _delayShot: 0.25
+--- !u!114 &5843983343968034811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742830967665359184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f127a5a8ccd747a4d94e4a7577a8acbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7743801279577190096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1787993228, guid: b5ceca2fab4f06f49aa235f4f428275a, type: 3}

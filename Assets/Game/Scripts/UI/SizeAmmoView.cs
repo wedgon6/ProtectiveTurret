@@ -1,70 +1,74 @@
 using System.Collections;
 using DG.Tweening;
+using ProtectiveTurret.TurretScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SizeAmmoView : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
-    [SerializeField] private TMP_Text _amountBullet;
-    [SerializeField] private Image _reloadImage;
-
-    private Turret _clip;
-    private Coroutine _rechargeCoroutine;
-
-    public void SetTurret(Turret turret)
+    public class SizeAmmoView : MonoBehaviour
     {
-        if (_clip == null)
-        {
-            _clip = turret;
-        }
-        else
-        {
-            _clip.ClipSizeChanged -= OnAmountChanged;
-            _clip.AmmouRecharging -= OnRecharge;
-            _clip = null;
-            _clip = turret;
-        }
+        [SerializeField] private TMP_Text _amountBullet;
+        [SerializeField] private Image _reloadImage;
 
-        _clip.ClipSizeChanged += OnAmountChanged;
-        _clip.AmmouRecharging += OnRecharge;
-    }
+        private Turret _clip;
+        private Coroutine _rechargeCoroutine;
 
-    private void OnEnable()
-    {
-        _clip.ClipSizeChanged += OnAmountChanged;
-        _clip.AmmouRecharging += OnRecharge;
-        _reloadImage.fillAmount = 0f;
-    }
-
-    private void OnDisable()
-    {
-        if (_clip != null)
+        public void SetTurret(Turret turret)
         {
-            _clip.ClipSizeChanged -= OnAmountChanged;
-            _clip.AmmouRecharging -= OnRecharge;
+            if (_clip == null)
+            {
+                _clip = turret;
+            }
+            else
+            {
+                _clip.ClipSizeChanged -= OnAmountChanged;
+                _clip.AmmouRecharging -= OnRecharge;
+                _clip = null;
+                _clip = turret;
+            }
+
+            _clip.ClipSizeChanged += OnAmountChanged;
+            _clip.AmmouRecharging += OnRecharge;
         }
 
-        _reloadImage.fillAmount = 0f;
-    }
+        private void OnEnable()
+        {
+            _clip.ClipSizeChanged += OnAmountChanged;
+            _clip.AmmouRecharging += OnRecharge;
+            _reloadImage.fillAmount = 0f;
+        }
 
-    private void OnAmountChanged()
-    {
-        _amountBullet.text = _clip.CurrentCountBullet.ToString();
-    }
+        private void OnDisable()
+        {
+            if (_clip != null)
+            {
+                _clip.ClipSizeChanged -= OnAmountChanged;
+                _clip.AmmouRecharging -= OnRecharge;
+            }
 
-    private void OnRecharge()
-    {
-        if (_rechargeCoroutine != null)
-            StopCoroutine(_rechargeCoroutine);
+            _reloadImage.fillAmount = 0f;
+        }
 
-        _rechargeCoroutine = StartCoroutine(RechargeAnimation());
-    }
+        private void OnAmountChanged()
+        {
+            _amountBullet.text = _clip.CurrentCountBullet.ToString();
+        }
 
-    private IEnumerator RechargeAnimation()
-    {
-        _reloadImage.DOFillAmount(1, _clip.CoolDonw).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(_clip.CoolDonw);
-        _reloadImage.fillAmount = 0f;
+        private void OnRecharge()
+        {
+            if (_rechargeCoroutine != null)
+                StopCoroutine(_rechargeCoroutine);
+
+            _rechargeCoroutine = StartCoroutine(RechargeAnimation());
+        }
+
+        private IEnumerator RechargeAnimation()
+        {
+            _reloadImage.DOFillAmount(1, _clip.CoolDonw).SetEase(Ease.Linear);
+            yield return new WaitForSeconds(_clip.CoolDonw);
+            _reloadImage.fillAmount = 0f;
+        }
     }
 }

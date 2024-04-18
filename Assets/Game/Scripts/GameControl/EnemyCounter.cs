@@ -1,41 +1,45 @@
+using ProtectiveTurret.EnemyScripts;
 using System;
 using UnityEngine;
 
-public class EnemyCounter : MonoBehaviour
+namespace ProtectiveTurret.GameControl
 {
-    [SerializeField] private EnemySpawner _spawner;
-
-    private int _countEnemy;
-    private int _deadEnemiesCount;
-
-    public event Action AllEnemiesDied;
-    public event Action<int, int> EnemiesDied; 
-
-    private void OnEnable()
+    public class EnemyCounter : MonoBehaviour
     {
-        _spawner.OnEnemyDead += OnEnemyDead;
-        _spawner.OnSpawnerReset += OnResetWave;
-    }
+        [SerializeField] private EnemySpawner _spawner;
 
-    private void OnDisable()
-    {
-        _spawner.OnEnemyDead -= OnEnemyDead;
-        _spawner.OnSpawnerReset -= OnResetWave;
-    }
+        private int _countEnemy;
+        private int _deadEnemiesCount;
 
-    private void OnEnemyDead()
-    {
-        _deadEnemiesCount++;
-        EnemiesDied?.Invoke(_deadEnemiesCount, _countEnemy);
+        public event Action AllEnemiesDied;
+        public event Action<int, int> EnemiesDied;
 
-        if (_deadEnemiesCount == _countEnemy)
-            AllEnemiesDied?.Invoke();
-    }
+        private void OnEnable()
+        {
+            _spawner.OnEnemyDead += OnEnemyDead;
+            _spawner.OnSpawnerReset += OnResetWave;
+        }
 
-    private void OnResetWave()
-    {
-        _countEnemy = _spawner.GetEnemyCount();
-        _deadEnemiesCount = 0;
-        EnemiesDied.Invoke(_deadEnemiesCount, _countEnemy);
+        private void OnDisable()
+        {
+            _spawner.OnEnemyDead -= OnEnemyDead;
+            _spawner.OnSpawnerReset -= OnResetWave;
+        }
+
+        private void OnEnemyDead()
+        {
+            _deadEnemiesCount++;
+            EnemiesDied?.Invoke(_deadEnemiesCount, _countEnemy);
+
+            if (_deadEnemiesCount == _countEnemy)
+                AllEnemiesDied?.Invoke();
+        }
+
+        private void OnResetWave()
+        {
+            _countEnemy = _spawner.GetEnemyCount();
+            _deadEnemiesCount = 0;
+            EnemiesDied.Invoke(_deadEnemiesCount, _countEnemy);
+        }
     }
 }

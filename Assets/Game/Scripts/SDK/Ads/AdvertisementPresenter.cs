@@ -1,45 +1,51 @@
 using Agava.YandexGames;
+using ProtectiveTurret.GameControl;
+using ProtectiveTurret.PlayerScripts;
+using ProtectiveTurret.SaveAndLoad;
 using UnityEngine;
 
-public class AdvertisementPresenter : MonoBehaviour
+namespace ProtectiveTurret.SDK
 {
-    [SerializeField] private PlayerMoney _playerMoney;
-    [SerializeField] private AudioHandler _volumeChange;
-    [SerializeField] private int _revard = 500;
-    [SerializeField] private SaveAndLoadSytem _save;
-
-    public void ShowRewardAd() =>
-        VideoAd.Show(OnOpenCallBack, OnRewardedCallback, OnCloseCallBack);
-
-    public void ShowInterstitialAd()
+    public class AdvertisementPresenter : MonoBehaviour
     {
+        [SerializeField] private PlayerMoney _playerMoney;
+        [SerializeField] private AudioHandler _volumeChange;
+        [SerializeField] private int _revard = 500;
+        [SerializeField] private SaveAndLoadSytem _save;
+
+        public void ShowRewardAd() =>
+            VideoAd.Show(OnOpenCallBack, OnRewardedCallback, OnCloseCallBack);
+
+        public void ShowInterstitialAd()
+        {
 #if UNITY_WEBGL && !UNITY_EDITOR
         InterstitialAd.Show(OnOpenCallBack, OnCloseCallBack);
 #endif
-    }
+        }
 
-    private void OnOpenCallBack()
-    {
-        AudioListener.volume = 0f;
-        Time.timeScale = 0f;
-    }
+        private void OnOpenCallBack()
+        {
+            AudioListener.volume = 0f;
+            Time.timeScale = 0f;
+        }
 
-    private void OnCloseCallBack(bool canShow)
-    {
-        OnCloseCallBack();
-    }
+        private void OnCloseCallBack(bool canShow)
+        {
+            OnCloseCallBack();
+        }
 
-    private void OnCloseCallBack()
-    {
-        if (_volumeChange.IsAudioPlay)
-            AudioListener.volume = 1f;
+        private void OnCloseCallBack()
+        {
+            if (_volumeChange.IsAudioPlay)
+                AudioListener.volume = 1f;
 
-        Time.timeScale = 1f;
-    }
+            Time.timeScale = 1f;
+        }
 
-    private void OnRewardedCallback()
-    {
-        _playerMoney.AddMoney(_revard);
-        _save.SetSaveData();
+        private void OnRewardedCallback()
+        {
+            _playerMoney.AddMoney(_revard);
+            _save.SetSaveData();
+        }
     }
 }

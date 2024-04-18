@@ -3,38 +3,41 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadindPlayScene : MonoBehaviour
+namespace ProtectiveTurret.SDK
 {
-    private const string SceneName = "BaseScene";
-
-    [SerializeField] private Image _loadingImage;
-
-    private AsyncOperation _asyncOperation;
-    private Coroutine _coroutine;
-
-    public void StartLoadScene()
+    public class LoadindPlayScene : MonoBehaviour
     {
-        _asyncOperation.allowSceneActivation = true;
-    }
+        private const string SceneName = "BaseScene";
 
-    private void Start()
-    {
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
+        [SerializeField] private Image _loadingImage;
 
-        _coroutine = StartCoroutine(LoadScene());
-    }
+        private AsyncOperation _asyncOperation;
+        private Coroutine _coroutine;
 
-    private IEnumerator LoadScene()
-    {
-        _asyncOperation = SceneManager.LoadSceneAsync(SceneName);
-        _asyncOperation.allowSceneActivation = false;
-
-        while (!_asyncOperation.isDone)
+        public void StartLoadScene()
         {
-            float progress = _asyncOperation.progress / 0.9f;
-            _loadingImage.fillAmount = progress;
-            yield return null;
+            _asyncOperation.allowSceneActivation = true;
+        }
+
+        private void Start()
+        {
+            if (_coroutine != null)
+                StopCoroutine(_coroutine);
+
+            _coroutine = StartCoroutine(LoadScene());
+        }
+
+        private IEnumerator LoadScene()
+        {
+            _asyncOperation = SceneManager.LoadSceneAsync(SceneName);
+            _asyncOperation.allowSceneActivation = false;
+
+            while (!_asyncOperation.isDone)
+            {
+                float progress = _asyncOperation.progress / 0.9f;
+                _loadingImage.fillAmount = progress;
+                yield return null;
+            }
         }
     }
 }

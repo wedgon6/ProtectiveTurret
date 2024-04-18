@@ -2,33 +2,36 @@ using System.Collections;
 using Agava.YandexGames;
 using UnityEngine;
 
-public class SDKInitialize : MonoBehaviour
+namespace ProtectiveTurret.SDK
 {
-    [SerializeField] private LoadindPlayScene _loadindScene;
-
-    private void Awake()
+    public class SDKInitialize : MonoBehaviour
     {
-        YandexGamesSdk.CallbackLogging = true;
-    }
+        [SerializeField] private LoadindPlayScene _loadindScene;
 
-    private IEnumerator Start()
-    {
-        yield return YandexGamesSdk.Initialize(OnInitialized);
-    }
-
-    private void OnInitialized()
-    {
-        if (PlayerAccount.IsAuthorized)
+        private void Awake()
         {
-            Agava.YandexGames.Utility.PlayerPrefs.Load(OnSuccessColback, OnErrorColbak);
+            YandexGamesSdk.CallbackLogging = true;
         }
-        else
+
+        private IEnumerator Start()
         {
-            _loadindScene.StartLoadScene();
+            yield return YandexGamesSdk.Initialize(OnInitialized);
         }
+
+        private void OnInitialized()
+        {
+            if (PlayerAccount.IsAuthorized)
+            {
+                Agava.YandexGames.Utility.PlayerPrefs.Load(OnSuccessColback, OnErrorColbak);
+            }
+            else
+            {
+                _loadindScene.StartLoadScene();
+            }
+        }
+
+        private void OnSuccessColback() => _loadindScene.StartLoadScene();
+
+        private void OnErrorColbak(string error) => _loadindScene.StartLoadScene();
     }
-
-    private void OnSuccessColback() => _loadindScene.StartLoadScene();
-
-    private void OnErrorColbak(string error) => _loadindScene.StartLoadScene();
 }

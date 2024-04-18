@@ -1,13 +1,17 @@
+using ProtectiveTurret.EnemyScripts;
 using System;
 using UnityEngine;
 
-public class RedLine : MonoBehaviour
+namespace ProtectiveTurret.Map
 {
-    public event Action GameLoosed;
-
-    private void OnTriggerEnter(Collider other)
+    public class RedLine : MonoBehaviour
     {
-        if (other.TryGetComponent(out Enemy enemy))
-            GameLoosed?.Invoke();
+        public event Action GameLoosed;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Enemy enemy))
+                GameLoosed?.Invoke();
+        }
     }
 }

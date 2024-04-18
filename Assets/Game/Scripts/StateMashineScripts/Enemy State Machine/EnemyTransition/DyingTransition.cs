@@ -1,0 +1,22 @@
+using ProtectiveTurret.EnemyScripts;
+using UnityEngine;
+
+namespace ProtectiveTurret.StateMashineScripts
+{
+    [RequireComponent(typeof(Enemy))]
+    public class DyingTransition : Transition
+    {
+        private Enemy _enemy;
+
+        private void Start()
+        {
+            _enemy = GetComponent<Enemy>();
+        }
+
+        private void Update()
+        {
+            if (_enemy.Health == 0)
+                NeedTransit = true;
+        }
+    }
+}

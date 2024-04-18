@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class CloseButton : MonoBehaviour
+namespace ProtectiveTurret.UI
 {
-    [SerializeField] private GameObject _leaderbardPanel;
-
-    public void ClosePanel()
+    public class CloseButton : MonoBehaviour
     {
-        _leaderbardPanel.SetActive(false);
+        [SerializeField] private GameObject _leaderbardPanel;
+
+        public void ClosePanel()
+        {
+            _leaderbardPanel.SetActive(false);
+        }
     }
 }

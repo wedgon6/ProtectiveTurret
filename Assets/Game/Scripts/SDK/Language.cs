@@ -1,6 +1,9 @@
-﻿internal enum Language
+﻿namespace ProtectiveTurret.SDK
 {
-    En,
-    Ru,
-    Tr,
+    internal enum Language
+    {
+        En,
+        Ru,
+        Tr,
+    }
 }
